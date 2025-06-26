@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Candle & Heart Animasi</title>
+  <style>
+    body {
+      background: #f6fafd;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    /* Candle */
+    .candle {
+      width: 22px;
+      height: 64px;
+      background: #ffe4b3;
+      margin: 50px auto 10px;
+      border-radius: 5px;
+      position: relative;
+      box-shadow: 0 6px 18px #bbb8;
+    }
+    .flame {
+      width: 16px;
+      height: 18px;
+      background: radial-gradient(ellipse at center, #fff6ad 0%, #ffd500 60%, #ff9100 90%);
+      border-radius: 60% 60% 54% 54%/88% 90% 100% 100%;
+      position: absolute;
+      top: -20px; left: 50%; transform: translateX(-50%);
+      animation: flicker 0.48s infinite alternate;
+      box-shadow: 0 0 22px 6px #ffd70077;
+    }
+    @keyframes flicker {
+      to {
+        transform: translateX(-49%) scaleY(1.12) rotateZ(-4deg);
+        filter: brightness(1.28);
+        box-shadow: 0 0 30px 12px #ffd700aa;
+      }
+    }
+    .candle:after {
+      content:"";
+      display:block;
+      width:4px; height:10px;
+      background:#333;
+      border-radius: 99px;
+      position:absolute;
+      left:50%; top: -10px;
+      transform: translateX(-50%);
+    }
+
+    /* Heart */
+    .heart {
+      position: relative;
+      width: 42px;
+      height: 38px;
+      margin: 0 auto;
+      top: 0;
+      animation: heartFloat 2.2s infinite alternate;
+    }
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      left: 21px;
+      top: 0;
+      width: 21px;
+      height: 34px;
+      background: #ff4f8b;
+      border-radius: 21px 21px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+      box-shadow: 0 1px 12px #ff1744a0;
+    }
+    .heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+    @keyframes heartFloat {
+      0% { top: 0; }
+      100% { top: -26px; }
+    }
+
+    /* Heart Box */
+    .heart-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff; /* FIX: TIDAK kuning! */
+      border: 2.5px solid #ff4f8b;
+      margin: 32px auto;
+      box-shadow: 0 2px 22px #ffc0cb38;
+      transition: background 0.24s;
+    }
+    .heart-box:hover {
+      background: #ffd0e4;
+    }
+    /* Informasi */
+    .info {
+      text-align: center;
+      font-size: 17px;
+      color: #e53935;
+      margin-top: 34px;
+      letter-spacing: 0.2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="candle">
+    <div class="flame"></div>
+  </div>
+  <div class="heart-box">
+    <div class="heart"></div>
+  </div>
+  <div class="info">
+    Contoh animasi <b>lilin</b> & <b>hati</b> dengan heart box warna <span style="color:#ffb300">putih</span>.<br>
+    Hover/coba arahkan mouse ke kotaknya!
+  </div>
+</body>
+</html>
