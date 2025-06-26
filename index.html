@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JALUSTORE - Top Up & Joki Sky</title>
-  <!-- Font lucu dan profesional -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Quicksand:wght@500&display=swap" rel="stylesheet">
   <style>
     html, body { min-height: 100%; }
@@ -16,415 +14,76 @@
       overflow-x: hidden;
       position: relative;
     }
-    /* Cloud BG Atas */
-    .cloudbg {
-      position: fixed;
-      left: 0; right: 0; top: 0; height: 300px; width: 100vw;
-      pointer-events: none;
-      z-index: 0;
-    }
-    /* Extra Clouds */
-    .cloud-small {
-      position: absolute;
-      pointer-events: none;
-      z-index: 1;
-      opacity:0.77;
-      filter: blur(0.3px);
-    }
-    .cloud-small.cloud1 { left:6vw; top:100px; width:105px;}
-    .cloud-small.cloud2 { right:8vw; top:220px; width:85px;}
-    .cloud-small.cloud3 { left:43vw; top:210px; width:70px;}
-    .cloud-small.cloud4 { left:12vw; bottom:38px; width:80px; opacity:0.62;}
-    .cloud-small.cloud5 { right:7vw; bottom:55px; width:110px; opacity:0.73;}
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 28px 12px 18px;
-      background: rgba(255,255,255,0.7);
-      border-radius: 28px;
-      box-shadow: 0 6px 24px rgba(130, 176, 255, 0.15);
-      margin: 28px auto 0 auto;
-      max-width: 410px;
-      position: relative;
-      backdrop-filter: blur(2px);
-    }
-    header h1 {
-      font-size: 2.5em;
-      letter-spacing: 1px;
-      color: #73a7ef;
-      text-shadow: 0 2px 8px #fff9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap:12px;
-    }
-    header .logoicon {
-      width: 42px; height:42px; vertical-align: middle; margin-right:5px;
-    }
-    header p {
-      margin-top: 8px;
-      font-size: 1.08em;
-      color: #6478ac;
-      font-family: 'Quicksand', sans-serif;
-      letter-spacing: 0.5px;
-    }
-    section.produk {
-      margin: 34px auto 0;
-      max-width: 540px;
-      position: relative;
-      z-index: 2;
-      padding: 0 6px;
-    }
-    section h2 {
-      text-align: center;
-      font-size: 1.2em;
-      margin-bottom: 15px;
-      color: #76a6e6;
-      font-family: 'Baloo 2', cursive;
-      font-weight: bold;
-      padding-bottom: 5px;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: center;
-      gap:7px;
-      justify-content: center;
-    }
-    .prodicon {
-      width: 25px;
-      height: 25px;
-      vertical-align: middle;
-      display: inline-block;
-    }
-    /* List Produk Card */
-    .card-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 18px;
-    }
-    .card {
-      background: rgba(248, 251, 255, 0.92);
-      border-radius: 18px;
-      padding: 16px 12px 14px 12px;
-      min-width: 124px;
-      min-height: 90px;
-      max-width: 150px;
-      text-align: center;
-      box-shadow: 0 3px 16px rgba(105,165,255,0.13), 0 0.5px 1.5px #e1e7ff;
-      font-size: 1.1em;
-      color: #253e7b;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .card:before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 12%;
-      top: -12px;
-      width: 76%;
-      height: 40%;
-      border-radius: 50%;
-      background: linear-gradient(90deg,rgba(132,209,255,0.13),rgba(255,246,194,0.07));
-      z-index: 0;
-      pointer-events: none;
-    }
-    .card .iconwrap {
-      font-size: 1.9em;
-      margin-bottom: 4px;
-      filter: drop-shadow(0 1px 3px #fff7);
-      width: 38px; height:38px;
-      display: flex; align-items: center; justify-content: center;
-      z-index:2;
-    }
-    .card .iconwrap svg {
-      width: 34px;height:34px;display: inline-block;
-    }
-    .card:hover {
-      transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 5px 20px rgba(130,176,255,0.18), 0 2px 8px #fff5;
-      background: rgba(243, 254, 255, 0.99);
-    }
-    .card span {
-      display: block;
-      font-size: 1.24em;
-      font-weight: bold;
-      color: #edacc0;
-      margin-top: 2px;
-      font-family: 'Baloo 2', cursive;
-    }
-    .card.highlight {
-      border: 2.2px solid #ffe070;
-      background: rgba(255, 251, 176, 0.21);
-      box-shadow: 0 2px 18px #fbe09d4d, 0 0.5px 1.5px #e1e7ff;
-    }
+    .cloudbg, .cloud-small { position: absolute; pointer-events: none; z-index: 0; }
+    .cloudbg { top: 0; height: 300px; width: 100vw; }
+    .cloud-small { opacity:0.77; filter: blur(0.3px); }
+    .cloud1 { left:6vw; top:100px; width:105px; }
+    .cloud2 { right:8vw; top:220px; width:85px; }
+    .cloud3 { left:43vw; top:210px; width:70px; }
+    .cloud4 { left:12vw; bottom:38px; width:80px; opacity:0.62; }
+    .cloud5 { right:7vw; bottom:55px; width:110px; opacity:0.73; }
+    header { text-align: center; padding: 28px 12px 18px; background: rgba(255,255,255,0.7); border-radius: 28px; box-shadow: 0 6px 24px rgba(130, 176, 255, 0.15); margin: 28px auto 0 auto; max-width: 410px; position: relative; backdrop-filter: blur(2px); }
+    header h1 { font-size: 2.5em; letter-spacing: 1px; color: #73a7ef; text-shadow: 0 2px 8px #fff9; display: flex; align-items: center; justify-content: center; gap:12px; }
+    .logoicon { width: 42px; height:42px; }
+    header p { margin-top: 8px; font-size: 1.08em; color: #6478ac; font-family: 'Quicksand'; }
+    section.produk { margin: 34px auto 0; max-width: 540px; padding: 0 6px; z-index: 2; position: relative; }
+    h2 { text-align: center; font-size: 1.2em; margin-bottom: 15px; color: #76a6e6; font-family: 'Baloo 2'; font-weight: bold; }
+    .card-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+    .card { background: rgba(248, 251, 255, 0.92); border-radius: 18px; padding: 16px 12px; max-width: 150px; text-align: center; box-shadow: 0 3px 16px rgba(105,165,255,0.13); font-size: 1.1em; color: #253e7b; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: transform 0.2s; position: relative; overflow: hidden; }
+    .card:hover { transform: translateY(-2px) scale(1.05); background: rgba(243, 254, 255, 0.99); }
+    .card span { font-size: 1.24em; font-weight: bold; color: #edacc0; font-family: 'Baloo 2'; margin-top: 2px; }
+    .card.highlight { border: 2.2px solid #ffe070; background: rgba(255, 251, 176, 0.21); }
     .card.highlight span { color: #ffcc43; }
-    /* FOOTER */
-    footer {
-      text-align: center;
-      margin: 44px auto 10px;
-      font-size: 1.01em;
-      color: #82a1d9;
-      position: relative;
-      z-index: 2;
-      font-family: 'Quicksand', sans-serif;
-    }
-    footer a {
-      color: #54aaff;
-      text-decoration: none;
-    }
-    /* message icon */
-    .footericon{
-      width:19px; height:19px;vertical-align: middle;
-      margin-right:5px;margin-bottom:3px;display:inline-block;
-    }
-    /* CHIBI FLOAT */
-    .chibi-float {
-      position: fixed;
-      bottom: 22px;
-      right: 20px;
-      width: 105px;
-      z-index: 100;
-      pointer-events: none;
-      animation: float 3.2s ease-in-out infinite, pulse 2.8s ease-in-out infinite;
-      filter: drop-shadow(0 0 18px rgba(240, 246, 255, 0.99));
-      opacity: 0.96;
-      user-select: none;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px);}
-      50% {transform: translateY(-15px);}
-    }
-    @keyframes pulse {
-      0%, 100% {filter: drop-shadow(0 0 8px #fff8);}
-      50% {filter: drop-shadow(0 0 26px #c7e6ffcc);}
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      header { max-width:98vw;}
-      .card-list {gap: 10px;}
-      .card { max-width: 105px; min-width: 90px; font-size: 0.96em;}
-      .chibi-float { width:62px; bottom:10px; right: 6px;}
-      section.produk { max-width:99vw;}
-      .cloud-small {display:none;}
-    }
+    footer { text-align: center; margin: 44px auto 10px; font-size: 1.01em; color: #82a1d9; font-family: 'Quicksand'; position: relative; z-index: 2; }
+    .chibi-float { position: fixed; bottom: 22px; right: 20px; width: 105px; z-index: 100; pointer-events: none; animation: float 3.2s ease-in-out infinite, pulse 2.8s ease-in-out infinite; filter: drop-shadow(0 0 18px rgba(240, 246, 255, 0.99)); opacity: 0.96; }
+    @keyframes float { 0%, 100% { transform: translateY(0px);} 50% {transform: translateY(-15px);} }
+    @keyframes pulse { 0%, 100% {filter: drop-shadow(0 0 8px #fff8);} 50% {filter: drop-shadow(0 0 26px #c7e6ffcc);} }/* Candle & Heart Animation */
+.candle-box { display: flex; flex-direction: column; align-items: center; margin: 60px auto 40px; z-index: 2; }
+.candle { width: 26px; height: 70px; background: #ffe4b3; border-radius: 6px; position: relative; box-shadow: 0 4px 16px #d6b95890; border: 2px solid #d3ae63; }
+.flame { width: 22px; height: 26px; background: radial-gradient(ellipse at center, #ffed86 0%, #ffc400 60%, #ffb100 100%); border-radius: 50% 50% 80% 80%/90% 90% 100% 100%; position: absolute; top: -32px; left: 50%; transform: translateX(-50%); animation: flicker 0.5s infinite alternate; box-shadow: 0 0 22px 6px #ffd70080; border-bottom: 2px solid #d3ae63; }
+@keyframes flicker { to { transform: translateX(-54%) scaleY(1.18) scaleX(0.93) rotateZ(-5deg); filter: brightness(1.17); } }
+.wick { width: 3px; height: 12px; background: #794017; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); border-radius: 2px; }
+.heart-box { width: 70px; height: 70px; border-radius: 16px; display: flex; align-items: center; justify-content: center; background: #fff; border: 2.5px solid #ff4f8b; margin-top: 28px; box-shadow: 0 2px 18px #bbb4; }
+.heart { position: relative; width: 44px; height: 40px; animation: heartFloat 1.6s infinite alternate ease-in-out; }
+.heart:before, .heart:after { content: ""; position: absolute; top: 0; width: 22px; height: 36px; background: #ff4f8b; border-radius: 22px 22px 0 0; box-shadow: 0 1px 6px #bc005099; }
+.heart:before { left: 22px; transform: rotate(-45deg); transform-origin: 0 100%; }
+.heart:after { left: 0; transform: rotate(45deg); transform-origin: 100% 100%; }
+@keyframes heartFloat { from { top: 0; } to { top: -18px; } }
+.caption { text-align: center; margin-top: 24px; font-size: 1.12em; letter-spacing: 0.7px; color: #c4568c; font-family: 'Quicksand'; }
+
   </style>
 </head>
 <body>
-  <!-- SVG Awan Atas -->
-  <svg class="cloudbg" viewBox="0 0 1440 300">
-    <path fill="#fff" fill-opacity="0.79" d="M0,32L120,58.7C240,85,480,139,720,149.3C960,160,1200,128,1320,112L1440,96L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
-  </svg>
-
-  <!-- SVG AWAN TAMBAHAN (Cloud foreground) -->
-  <svg class="cloud-small cloud1" viewBox="0 0 120 64"><ellipse cx="35" cy="42" rx="30" ry="18" fill="#fff"/><ellipse cx="65" cy="36" rx="24" ry="14" fill="#f8fbff"/><ellipse cx="82" cy="49" rx="14" ry="10" fill="#e7e1fa"/></svg>
-  <svg class="cloud-small cloud2" viewBox="0 0 80 54"><ellipse cx="24" cy="32" rx="20" ry="11" fill="#fff"/><ellipse cx="56" cy="24" rx="15" ry="9" fill="#f8fbff"/><ellipse cx="65" cy="42" rx="9" ry="7" fill="#e7e1fa"/></svg>
-  <svg class="cloud-small cloud3" viewBox="0 0 68 40"><ellipse cx="16" cy="30" rx="14" ry="7" fill="#fff"/><ellipse cx="48" cy="20" rx="14" ry="10" fill="#f8fbff"/></svg>
-  <svg class="cloud-small cloud4" viewBox="0 0 74 36"><ellipse cx="25" cy="20" rx="18" ry="10" fill="#fff"/><ellipse cx="50" cy="14" rx="19" ry="8" fill="#f8fbff"/></svg>
-  <svg class="cloud-small cloud5" viewBox="0 0 130 50"><ellipse cx="64" cy="35" rx="38" ry="14" fill="#fff"/><ellipse cx="95" cy="20" rx="30" ry="12" fill="#f8fbff"/></svg>
-
+  <!-- Background SVGs -->
+  <svg class="cloudbg" viewBox="0 0 1440 300"><path fill="#fff" fill-opacity="0.79" d="M0,32L120,58.7C240,85,480,139,720,149.3C960,160,1200,128,1320,112L1440,96L1440,0L0,0Z"></path></svg>
+  <!-- Chibi Floating -->
+  <img src="https://i.ibb.co/tDRvFvp/chibi-sky-example.png" class="chibi-float" alt="Chibi Sky" />
+  <!-- Header -->
   <header>
-    <h1>
-      <svg class="logoicon" viewBox="0 0 50 50" fill="none">
-        <!-- Matahari lucu: Bulat -->
-        <circle cx="25" cy="25" r="18" fill="#ffe070" stroke="#fff7b5" stroke-width="2"/>
-        <!-- Awan -->
-        <ellipse cx="28" cy="33" rx="12" ry="7" fill="#fff" opacity=".82"/>
-        <ellipse cx="36" cy="31" rx="7" ry="4" fill="#e7e1fa" opacity=".76"/>
-        <!-- Sinar -->
-        <g stroke="#ffe070" stroke-width="2">
-          <line x1="25" y1="4" x2="25" y2="12"/>
-          <line x1="25" y1="38" x2="25" y2="46"/>
-          <line x1="46" y1="25" x2="38" y2="25"/>
-          <line x1="12" y1="25" x2="4" y2="25"/>
-        </g>
-      </svg>
-      JALUSTORE
-    </h1>
+    <h1><svg class="logoicon" viewBox="0 0 50 50"><circle cx="25" cy="25" r="18" fill="#ffe070" stroke="#fff7b5" stroke-width="2"/><ellipse cx="28" cy="33" rx="12" ry="7" fill="#fff" opacity=".82"/></svg>JALUSTORE</h1>
     <p>Top-up & Joki <span style="color:#ffd760;font-weight:bold;">Sky: COTL</span> lucu, <b>aman</b>, dan penuh kehangatan!</p>
   </header>
-
+  <!-- Produk Section Placeholder -->
   <section class="produk">
-    <h2>
-      <svg class="prodicon" viewBox="0 0 32 32">
-        <ellipse cx="16" cy="17" rx="12" ry="9" fill="#e7e1fa"/>
-        <path d="M11 14c0-5 10-5 10 0 0 4-5 8-5 8s-5-4-5-8z" fill="#fff" stroke="#99badb" stroke-width="0.6"/>
-        <ellipse cx="16" cy="14" rx="3.2" ry="2.3" fill="#ffe0ec"/>
-      </svg>
-      Top Up Heart
-    </h2>
+    <h2>Contoh Produk</h2>
     <div class="card-list">
-      <a class="card" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20beli%2080%20Heart%20(10.000)">
-        <div class="iconwrap">
-          <!-- icon heart lucu -->
-          <svg viewBox="0 0 32 32" fill="none">
-            <path d="M16 27 S3 19 6 11C7.7 7 13.2 7.3 16 11.5C18.8 7.3 24.3 7 26 11c3 8-10 16-10 16z"
-            fill="#fff" stroke="#edacc0" stroke-width="1.1"/>
-            <ellipse cx="20" cy="17" rx="3" ry="2" fill="#ffe0ec" opacity=".8"/>
-          </svg>
-        </div>
-        80 Heart<br>
-        <span>10.000</span>
-      </a>
-      <a class="card" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20beli%20150%20Heart%20(15.000)">
-        <div class="iconwrap">
-          <svg viewBox="0 0 32 32" fill="none">
-            <path d="M16 27 S3 19 6 11C7.7 7 13.2 7.3 16 11.5C18.8 7.3 24.3 7 26 11c3 8-10 16-10 16z"
-            fill="#fff" stroke="#edacc0" stroke-width="1.1"/>
-            <ellipse cx="20" cy="17" rx="3" ry="2" fill="#ffe0ec" opacity=".8"/>
-          </svg>
-        </div>
-        150 Heart<br>
-        <span>15.000</span>
-      </a>
-      <a class="card" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20beli%20210%20Heart%20(20.000)">
-        <div class="iconwrap">
-          <svg viewBox="0 0 32 32" fill="none">
-            <path d="M16 27 S3 19 6 11C7.7 7 13.2 7.3 16 11.5C18.8 7.3 24.3 7 26 11c3 8-10 16-10 16z"
-            fill="#fff" stroke="#edacc0" stroke-width="1.1"/>
-            <ellipse cx="20" cy="17" rx="3" ry="2" fill="#ffe0ec" opacity=".8"/>
-          </svg>
-        </div>
-        210 Heart<br>
-        <span>20.000</span>
-      </a>
-      <a class="card highlight" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20beli%20320%20Heart%20(30.000)">
-        <div class="iconwrap">
-          <svg viewBox="0 0 32 32" fill="none">
-            <path d="M16 27 S3 19 6 11C7.7 7 13.2 7.3 16 11.5C18.8 7.3 24.3 7 26 11c3 8-10 16-10 16z"
-            fill="#fff" stroke="#ffcc43" stroke-width="1.3"/>
-            <ellipse cx="20" cy="17" rx="3" ry="2" fill="#ffedbf" opacity=".95"/>
-          </svg>
-        </div>
-        320 Heart<br>
-        <span>30.000</span>
-      </a>
-      <a class="card" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20beli%20530%20Heart%20(50.000)">
-        <div class="iconwrap">
-          <svg viewBox="0 0 32 32" fill="none">
-            <path d="M16 27 S3 19 6 11C7.7 7 13.2 7.3 16 11.5C18.8 7.3 24.3 7 26 11c3 8-10 16-10 16z"
-            fill="#fff" stroke="#edacc0" stroke-width="1.1"/>
-            <ellipse cx="20" cy="17" rx="3" ry="2" fill="#ffe0ec" opacity=".8"/>
-          </svg>
-        </div>
-        530 Heart<br>
-        <span>50.000</span>
-      </a>
-      <a class="card" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20beli%20850%20Heart%20(80.000)">
-        <div class="iconwrap">
-          <svg viewBox="0 0 32 32" fill="none">
-            <path d="M16 27 S3 19 6 11C7.7 7 13.2 7.3 16 11.5C18.8 7.3 24.3 7 26 11c3 8-10 16-10 16z"
-            fill="#fff" stroke="#edacc0" stroke-width="1.1"/>
-            <ellipse cx="20" cy="17" rx="3" ry="2" fill="#ffe0ec" opacity=".8"/>
-          </svg>
-        </div>
-        850 Heart<br>
-        <span>80.000</span>
-      </a>
+      <a class="card highlight" href="#"><div class="iconwrap">❤️</div>320 Heart<br><span>30.000</span></a>
     </div>
   </section>
-
-  <section class="produk">
-    <h2>
-      <svg class="prodicon" viewBox="0 0 32 32">
-        <ellipse cx="16" cy="19" rx="13" ry="8" fill="#e7e1fa"/>
-        <path d="M13 27c0-5 6-18 6-19s1-2 2-2c1 0 2 1 2 2s-0.5 2-1 3c1 0 3 2 3 4s-2 4-6 12z" fill="#fff" stroke="#a5bccc" stroke-width="0.6"/>
-        <ellipse cx="17" cy="16.5" rx="2" ry="1.2" fill="#ffe0ec"/>
-      </svg>
-      Jasa Joki Sky
-    </h2>
-    <div class="card-list">
-      <a class="card" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20paket%20Joki%20Wing">
-        <div class="iconwrap">
-          <!-- icon wing -->
-          <svg viewBox="0 0 34 34" fill="none">
-            <path d="M12 30C7 15 12 4 22 8C23 13 22 18 27 20C17 33 16 33 12 30Z" fill="#e7e1fa"/>
-            <path d="M6 20C3 14 11 7 18 14C14 18 13 24 16 30" fill="#fff"/>
-            <ellipse cx="21" cy="21" rx="7" ry="2" fill="#ffe0ec" opacity=".5"/>
-            <path d="M17 28Q19 16 24 20" stroke="#cdd4e6" stroke-width="0.8" opacity=".8"/>
-          </svg>
-        </div>
-        Joki Wing<br>
-        <span>Mulai 10K</span>
-      </a>
-      <a class="card" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20paket%20Joki%20Candle">
-        <div class="iconwrap">
-          <!-- icon candle -->
-          <svg viewBox="0 0 32 32">
-            <ellipse cx="16" cy="28" rx="8" ry="3" fill="#edeaff"/>
-            <rect x="12" y="12" width="8" height="14" rx="4" fill="#fff9db" stroke="#ffe070" stroke-width="1.1"/>
-            <ellipse cx="16" cy="28" rx="6" ry="2" fill="#ffe0ec" opacity=".5"/>
-            <rect x="14" y="18" width="4" height="6" rx="2" fill="#ffd76a"/>
-            <ellipse cx="16" cy="13" rx="1" ry="2.4" fill="#ffbe6d"/>
-          </svg>
-        </div>
-        Joki Candle<br>
-        <span>7K / hari</span>
-      </a>
-      <a class="card" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20paket%20Joki%20Daily%20Quest">
-        <div class="iconwrap">
-          <!-- icon sprout lucu -->
-          <svg viewBox="0 0 38 38" fill="none">
-            <ellipse cx="19" cy="33" rx="13" ry="4" fill="#e7e1fa"/>
-            <ellipse cx="19" cy="34" rx="9" ry="2.2" fill="#ffe0ec" opacity=".38"/>
-            <path d="M18 34Q13 29 19.5 21" stroke="#b8ecd2" stroke-width="2"/>
-            <circle cx="21" cy="12" r="6" fill="#b7fad8" stroke="#fff" stroke-width=".8"/>
-            <ellipse cx="15" cy="10" rx="5" ry="2.1" fill="#edffd5" opacity="0.65"/>
-            <ellipse cx="24" cy="16" rx="2" ry="1" fill="#b8ecd2" opacity=".8"/>
-          </svg>
-        </div>
-        Daily Quest<br>
-        <span>5K</span>
-      </a>
-      <a class="card" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20paket%20Eden%20Run">
-        <div class="iconwrap">
-          <!-- icon eden run Star -->
-          <svg viewBox="0 0 36 36">
-            <ellipse cx="18" cy="32" rx="10" ry="3.5" fill="#e7e1fa"/>
-            <polygon points="18,6 20.3,14.5 29,14.5 22,19.5 24.6,27 18,22.5 11.4,27 14,19.5 7,14.5 15.7,14.5"
-              fill="#fffde5" stroke="#ffc55a" stroke-width="1"/>
-            <ellipse cx="18" cy="19" rx="3.4" ry="1.4" fill="#ffe0ec" opacity=".5"/>
-          </svg>
-        </div>
-        Eden Run<br>
-        <span>20K~</span>
-      </a>
-      <a class="card highlight" href="https://wa.me/6285189014747?text=Halo%20kak%2C%20saya%20mau%20paket%20Combo%20Hemat%20Joki">
-        <div class="iconwrap">
-          <!-- icon combo bintang warna -->
-          <svg viewBox="0 0 36 36">
-            <ellipse cx="18" cy="33" rx="10" ry="3.7" fill="#ffe5ec"/>
-            <circle cx="18" cy="17" r="9" fill="#fff" stroke="#ffd760" stroke-width="1.7"/>
-            <polygon points="18,10.5 20,16 26.2,16.2 21.5,19.3 23.2,25 18,21.6 12.8,25 14.5,19.3 9.8,16.2 16,16"
-              fill="#ffd760" stroke="#ffeab7" stroke-width="0.8"/>
-          </svg>
-        </div>
-        Paket Combo<br>
-        <span>Bundling hemat</span>
-      </a>
+  <!-- Candle & Heart Animation -->
+  <div class="candle-box">
+    <div class="candle">
+      <div class="flame"></div>
+      <div class="wick"></div>
     </div>
-  </section>
-
+    <div class="heart-box">
+      <div class="heart"></div>
+    </div>
+    <div class="caption">Candle &amp; Heart Animation Box</div>
+  </div>
+  <!-- Footer -->
   <footer>
-    <p>
-      <svg class="footericon" viewBox="0 0 24 24" fill="none">
-        <!-- chat/message balloon -->
-        <ellipse cx="12" cy="13" rx="8" ry="6" fill="#fff" stroke="#aed7ff" stroke-width="1.4"/>
-        <ellipse cx="9" cy="12" rx="1.4" ry="1" fill="#caf2ff"/>
-        <ellipse cx="15" cy="12" rx="1.4" ry="1" fill="#caf2ff"/>
-        <path d="M12 19 l-2 2.5 4-2.5z" fill="#b0dbff"/>
-      </svg>
-      Klik produk untuk order via <b>WhatsApp</b>
-    </p>
     <p>© 2025 JALUSTORE | Sky Fansite</p>
   </footer>
-  <!-- Gambar chibi Sky (rekomendasi: pakai svg/png asli karakter Sky chibi, sementara pakai link lama) -->
-  <img src="https://i.ibb.co/tDRvFvp/chibi-sky-example.png" class="chibi-float" alt="Chibi Sky" />
 </body>
-        </html>
-        
+</html>
