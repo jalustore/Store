@@ -39,12 +39,6 @@
         --soft-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Bayangan lebih dalam */
         --inner-shadow: inset 0 2px 7px rgba(0,0,0,0.08); /* Bayangan dalam lebih kuat */
         --subtle-pulse: pulse 1.5s infinite alternate;
-
-        /* FAQ Colors */
-        --faq-summary-bg: var(--sky-blue-light);
-        --faq-summary-hover: var(--sky-blue-medium);
-        --faq-content-bg: var(--sky-yellow-light);
-        --faq-border: var(--card-border);
     }
 
     /* Base Styling */
@@ -341,103 +335,6 @@
         color: var(--heading-color);
     }
 
-    /* FAQ Styling */
-    .faq-container {
-        margin-top: 2.5rem;
-    }
-    .faq-item {
-        background: var(--card-bg);
-        border: 1px solid var(--faq-border);
-        border-radius: 15px;
-        margin-bottom: 15px;
-        box-shadow: var(--soft-shadow);
-        overflow: hidden; /* Ensures inner content respects border-radius */
-    }
-    .faq-item summary {
-        display: flex;
-        align-items: center;
-        padding: 1.2rem 1.5rem;
-        font-size: 1.15rem;
-        font-weight: 600;
-        background-color: var(--faq-summary-bg);
-        color: var(--heading-color);
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        list-style: none; /* Remove default marker */
-        position: relative;
-    }
-    .faq-item summary::-webkit-details-marker {
-        display: none; /* For Webkit browsers */
-    }
-    .faq-item summary::after {
-        content: '+'; /* Plus sign for closed state */
-        font-size: 1.8em;
-        position: absolute;
-        right: 1.5rem;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: transform 0.3s ease;
-        color: var(--heading-color);
-    }
-    .faq-item[open] summary::after {
-        content: '-'; /* Minus sign for open state */
-        transform: translateY(-50%) rotate(0deg); /* No rotation needed for minus */
-    }
-    .faq-item summary:hover {
-        background-color: var(--faq-summary-hover);
-    }
-    .faq-item .faq-content {
-        padding: 1rem 1.5rem 1.5rem 1.5rem;
-        background-color: var(--faq-content-bg);
-        border-top: 1px solid var(--faq-border);
-        line-height: 1.7;
-        color: var(--text-color);
-    }
-    .faq-item .faq-content p {
-        margin-bottom: 10px;
-    }
-    .faq-item .faq-content p:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Testimonial Styling */
-    .testimonial-card {
-        background: var(--card-bg);
-        border: 2px solid var(--card-border);
-        border-radius: 20px;
-        padding: 2rem;
-        margin-top: 2.5rem;
-        text-align: center;
-        box-shadow: var(--inner-shadow);
-    }
-    .testimonial-card p {
-        font-style: italic;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-    }
-    .testimonial-card .author {
-        font-weight: 600;
-        color: var(--heading-color);
-        font-size: 1.1rem;
-    }
-    .testimonial-link {
-        display: inline-block;
-        margin-top: 1.5rem;
-        padding: 0.8rem 1.5rem;
-        background: linear-gradient(45deg, #F09433, #E6683C, #DC2743, #CC2366, #BC1888); /* Instagram Gradient */
-        color: #fff;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 700;
-        box-shadow: var(--soft-shadow);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .testimonial-link:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
 
     /* Footer */
     footer {
@@ -473,12 +370,6 @@
         th, td { padding: 1rem 1.2rem; font-size: 1rem;}
         .final-info ul li { padding-left: 40px; }
         .final-info ul li::before { font-size: 1.6em; left: 10px;}
-        .faq-item summary { font-size: 1.05rem; padding: 1rem 1.2rem;}
-        .faq-item summary::after { right: 1rem; font-size: 1.5em; }
-        .faq-item .faq-content { padding: 0.8rem 1.2rem 1.2rem 1.2rem; }
-        .testimonial-card { padding: 1.5rem; }
-        .testimonial-card p { font-size: 1rem; }
-        .testimonial-link { padding: 0.7rem 1.2rem; font-size: 0.95rem;}
     }
 
     @media (max-width: 600px) {
@@ -499,12 +390,6 @@
         .final-info ul li { padding-left: 35px; font-size: 0.95rem; }
         .final-info ul li::before { font-size: 1.5em; left: 8px;}
         footer { padding: 2rem 0.5rem; font-size: 0.85rem; }
-        .faq-item summary { font-size: 1rem; padding: 0.8rem 1rem;}
-        .faq-item summary::after { right: 0.8rem; font-size: 1.3em;}
-        .faq-item .faq-content { padding: 0.7rem 1rem 1rem 1rem; font-size: 0.9rem;}
-        .testimonial-card { padding: 1.2rem; }
-        .testimonial-card p { font-size: 0.95rem; }
-        .testimonial-link { padding: 0.6rem 1rem; font-size: 0.9rem;}
     }
     @media (max-width: 400px) {
         h1 { font-size: 2rem; }
@@ -543,4 +428,84 @@
     </header>
 
     <main>
-      <section id="hearts-catalog"
+      <section id="hearts-catalog">
+        <h2 class="section-title"><span class="emoji">💖</span> Katalog Harga Hati (Hearts)</h2>
+        <p class="section-intro">
+          Dapatkan hati dengan harga super kompetitif dan pengiriman cepat! <br>
+          **Jaminan Pengiriman hingga 20 Hati per Hari!** 💫
+        </p>
+
+        <h3><span class="emoji">❤️</span> Small & Medium Heart Packs</h3>
+        <table class="hearts-table">
+          <thead>
+            <tr>
+              <th>Jumlah Hati (❤️)</th>
+              <th>Harga (Rp)</th>
+              <th>Perkiraan Harga per Hati</th>
+              <th>Estimasi Pengiriman (Hari)*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>80</strong> Hati</td><td><strong>10.000</strong></td><td>Rp125</td><td><strong>4</strong> Hari</td></tr>
+            <tr><td><strong>150</strong> Hati</td><td><strong>15.000</strong></td><td>Rp100</td><td><strong>8</strong> Hari</td></tr>
+            <tr><td><strong>210</strong> Hati</td><td><strong>20.000</strong></td><td>Rp95,2</td><td><strong>11</strong> Hari</td></tr>
+          </tbody>
+        </table>
+
+        <h3><span class="emoji">❤️</span> Large & XL Heart Packs</h3>
+        <table class="hearts-table">
+          <thead>
+            <tr>
+              <th>Jumlah Hati (❤️)</th>
+              <th>Harga (Rp)</th>
+              <th>Perkiraan Harga per Hati</th>
+              <th>Estimasi Pengiriman (Hari)*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>320</strong> Hati</td><td><strong>30.000</strong></td><td>Rp93,75</td><td><strong>16</strong> Hari</td></tr>
+            <tr><td><strong>530</strong> Hati</td><td><strong>50.000</strong></td><td>Rp94,3</td><td><strong>27</strong> Hari</td></tr>
+            <tr><td><strong>850</strong> Hati</td><td><strong>80.000</strong></td><td>Rp94,1</td><td><strong>43</strong> Hari</td></tr>
+          </tbody>
+        </table>
+        <p class="note">
+          <span class="emoji">⚠️</span> **Penting:** Pengiriman hati di Sky bersifat bertahap. Estimasi waktu di atas berdasarkan kemampuan kami mengirim hingga 20 hati/hari. Pastikan Anda rutin mengirimkan cahaya (light) ke akun kami setiap hari untuk kelancaran proses. <span class="emoji">✨</span>
+        </p>
+      </section>
+
+      <section id="joki-grinding-catalog">
+        <h2 class="section-title"><span class="emoji">🏃‍♀️</span> Katalog Joki Grinding</h2>
+        <p class="section-intro">
+          Malas grinding? Serahkan pada JALUSTORE! Hemat waktumu dengan harga super hemat! <span class="emoji">⏳</span>
+        </p>
+
+        <h3><span class="emoji">🕯️</span> Joki Candle Run</h3>
+        <table class="joki-run-table">
+          <thead>
+            <tr>
+              <th>Layanan</th>
+              <th>Estimasi Lilin yang Didapat</th>
+              <th>Harga (Rp)</th>
+              <th>Estimasi Pengerjaan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1 Hari Penuh</strong></td><td>(15-20 Lilin Harian)</td><td><strong>Rp5.000</strong></td><td>1-2 Jam</td></tr>
+            <tr><td><strong>3 Hari Penuh</strong></td><td>(45-60 Lilin)</td><td><strong>Rp15.000</strong></td><td>3-6 Jam</td></tr>
+            <tr><td><strong>7 Hari Penuh</strong></td><td>(105-140 Lilin)</td><td><strong>Rp35.000</strong></td><td>7-14 Jam</td></tr>
+          </tbody>
+        </table>
+
+        <h3><span class="emoji">📜</span> Joki Quest Harian</h3>
+        <table class="joki-run-table">
+          <thead>
+            <tr>
+              <th>Layanan</th>
+              <th>Estimasi Quest yang Diselesaikan</th>
+              <th>Harga (Rp)</th>
+              <th>Estimasi Pengerjaan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1 Hari Quest</strong></td><td>(Semua 4 Quest Harian)</td><td><strong>Rp3.000</strong></td><td>15-30 Menit</td></tr>
+            <tr><td><strong>3 Hari Quest</strong></td><td>(Semua 12 Quest Ha
