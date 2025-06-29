@@ -61,9 +61,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* Ensure overlay can scroll if content exceeds viewport */
+        /* Allow overlay to scroll */
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+         width: 100%; /* Ensure overlay takes full width */
     }
 
     /* Sticky Navigation Bar */
@@ -165,8 +166,10 @@
         width: 100%; /* Main should also take full width */
         max-width: 900px; /* Match section max-width */
         flex-grow: 1; /* Make main take up available vertical space */
-        /* Add padding to main instead of overlay for better control */
-        /* padding: 0 2rem; */ /* Removed padding from here, keep it on overlay or sections */
+        /* Add border for debugging */
+        border: 2px dashed blue; /* DEBUG: Add border to main */
+        margin: 0 auto; /* Center main within overlay */
+        padding: 0; /* Remove any default padding */
     }
 
 
@@ -174,7 +177,7 @@
     section {
         margin-bottom: 3rem;
         width: 100%;
-        /* max-width: 900px; /* Lebar maksimum konten - Already set on main */ */
+        /* max-width: 900px; /* Lebar maksimum konten - Already set on main/overlay */ */
         background: var(--card-bg); /* Use card background for entire section */
         border: 2px solid var(--card-border);
         border-radius: 25px; /* More rounded corners */
@@ -183,6 +186,10 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         /* Ensure sections don't shrink in flex container */
         flex-shrink: 0;
+         /* Add border for debugging */
+        border: 2px solid green; /* DEBUG: Add border to sections */
+         margin-left: auto; /* Center sections within main */
+         margin-right: auto; /* Center sections within main */
     }
     section:hover { /* Hover effect for sections */
         transform: translateY(-7px);
@@ -371,6 +378,7 @@
         box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
         width: 100%; /* Ensure footer takes full width */
         max-width: 900px; /* Match section max-width */
+        margin: 0 auto; /* Center footer within overlay */
     }
     footer a {
         color: var(--heading-color);
@@ -524,8 +532,4 @@
       <!-- START: Bagian Cara Melakukan Pemesanan -->
       <section id="how-to-order-section">
           <h2 class="section-title">📄 Cara Melakukan Pemesanan</h2>
-          <p class="section-intro">
-              Ikuti langkah-langkah mudah ini untuk mendapatkan Heart atau layanan Joki yang Anda inginkan! <span class="emoji">✅</span>
-          </p>
-          <ol>
-              <li><strong>Pilih Layanan:</strong> Jelajahi katalog Heart dan Joki di atas dan tentukan layanan mana yang Anda butuhkan (misalnya, paket 150 Heart atau Joki Can
+          
