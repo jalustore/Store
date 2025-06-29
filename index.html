@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* CSS Variables for Sky Chibi Theme (Copied from Dashboard) */
+    /* CSS Variables for Sky Chibi Theme */
     :root {
         --sky-blue-light: #C0E8F9; /* Langit cerah */
         --sky-blue-medium: #87CEEB; /* Awan biru */
@@ -51,6 +51,7 @@
         color: var(--text-color);
         min-height: 100vh;
         overflow-x: hidden;
+        padding-top: 70px; /* Add padding top to prevent content from being hidden behind fixed nav */
     }
     .overlay {
         background-color: var(--bg-color-overlay);
@@ -62,7 +63,34 @@
         align-items: center;
     }
 
-    /* Header & Hero Section (Adapted from Dashboard Title) */
+    /* Sticky Navigation Bar */
+    .sticky-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000; /* Ensure it stays on top */
+        padding: 0.5rem 2rem;
+        text-align: center;
+        backdrop-filter: blur(8px);
+    }
+    .sticky-nav a {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: var(--heading-color);
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 1rem;
+        transition: color 0.2s ease;
+    }
+     .sticky-nav a:hover {
+        color: #6A1B9A; /* Slightly darker purple on hover */
+        text-decoration: underline;
+    }
+
+    /* Header & Hero Section */
     header {
         text-align: center;
         margin-bottom: 3rem;
@@ -106,6 +134,8 @@
         transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
         letter-spacing: 1.5px;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        margin-top: 1.5rem; /* Add some margin above */
+        margin-bottom: 1rem; /* Add some margin below */
     }
     .contact-button:hover {
         transform: translateY(-5px);
@@ -123,7 +153,7 @@
         font-weight: 600;
     }
 
-    /* Section Styling (Similar to Dashboard Slots) */
+    /* Section Styling */
     section {
         margin-bottom: 3rem;
         width: 100%;
@@ -173,7 +203,7 @@
         color: var(--heading-color);
     }
 
-    /* Sub-headings for smaller categories within a section */
+    /* Sub-headings */
     h3 {
         font-family: 'Fredoka', sans-serif;
         font-size: 1.6rem;
@@ -184,7 +214,7 @@
         text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
     }
 
-    /* Table Styling (Adapted from Dashboard Card Style for a cohesive look) */
+    /* Table Styling */
     table {
         width: 100%;
         border-collapse: collapse;
@@ -196,7 +226,19 @@
         border-radius: 15px;
         overflow: hidden; /* Ensures rounded corners */
         box-shadow: var(--inner-shadow);
+        /* Tambahan CSS untuk responsif tabel */
+        display: block; /* Memungkinkan tabel untuk scroll horizontal jika terlalu lebar */
+        overflow-x: auto; /* Tambahkan scrollbar horizontal jika konten terlalu lebar */
+        white-space: nowrap; /* Hindari teks pecah baris di dalam sel */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
     }
+     /* Styling for table content to prevent overflow */
+    table td, table th {
+        white-space: normal; /* Allow text wrapping inside cells */
+        min-width: 100px; /* Minimum width for columns to prevent extreme squishing */
+    }
+
+
     th, td {
         padding: 1.1rem 1.2rem;
         text-align: left;
@@ -235,6 +277,41 @@
         color: var(--heading-color);
     }
 
+    /* Gaya khusus untuk FAQ */
+    #faq-section .faq-question { /* Use section ID to target specific h3 */
+        font-family: 'Fredoka', sans-serif;
+        color: #6A1B9A;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: left; /* Align questions left */
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+    #faq-section .faq-answer { /* Use section ID to target specific p */
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        text-align: justify;
+        padding: 0; /* Remove padding for answers within this section */
+    }
+
+     /* Gaya khusus untuk Cara Order */
+     #how-to-order-section ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    #how-to-order-section li {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        color: #555;
+    }
+    #how-to-order-section li strong {
+         color: var(--heading-color);
+    }
+
+
     /* Footer */
     footer {
         text-align: center;
@@ -255,22 +332,45 @@
     footer a:hover {
         text-decoration: underline;
     }
+    footer p {
+        margin-bottom: 0.5rem;
+    }
+    footer .footer-links a {
+        margin: 0 0.5rem;
+    }
 
-    /* Responsive Adjustments (Copied from Dashboard) */
+
+    /* Responsive Adjustments */
     @media (max-width: 768px) {
+        body { padding-top: 60px; /* Adjust padding for smaller nav */ }
         .overlay {padding: 1.5rem;}
+        .sticky-nav { padding: 0.4rem 1rem; }
+        .sticky-nav a { margin: 0 0.5rem; font-size: 0.9rem;}
         h1 { font-size: 2.5rem; }
         .tagline { font-size: 1.2rem; }
-        .contact-button { font-size: 1.1rem; padding: 0.7rem 1.5rem; margin-bottom: 2rem;}
+        .contact-button { font-size: 1.1rem; padding: 0.7rem 1.5rem; margin-bottom: 1.5rem;}
         section { padding: 1.8rem; margin-bottom: 2rem; border-radius: 20px;}
         .section-title { font-size: 1.8rem; padding: 0.7rem 1.5rem; }
         h3 { font-size: 1.4rem; }
         .section-intro { font-size: 1rem; }
-        th, td { padding: 0.8rem 1rem; font-size: 0.9rem;}
+        /* Tables: Will use overflow-x: auto */
+        th, td { padding: 0.8rem 1rem; font-size: 0.9rem; min-width: 80px;}
+        .note { font-size: 0.9rem; padding: 0.9rem 1.2rem; }
+
+        /* Responsive for FAQ */
+        #faq-section .faq-question { font-size: 1.3rem; text-align: center;}
+        #faq-section .faq-answer { font-size: 0.95rem; }
+
+         /* Responsive for Cara Order */
+        #how-to-order-section ol { padding-left: 1rem; }
+        #how-to-order-section li { font-size: 0.95rem; }
     }
 
     @media (max-width: 500px) {
+        body { padding-top: 50px; /* Adjust padding for smallest nav */ }
         .overlay {padding: 1rem;}
+         .sticky-nav { padding: 0.3rem 0.5rem; }
+        .sticky-nav a { margin: 0 0.3rem; font-size: 0.8rem; }
         h1 { font-size: 2rem; margin-bottom: 1.5rem;}
         h1 em { font-size: 0.8em; }
         .tagline { font-size: 1rem; }
@@ -280,17 +380,53 @@
         h3 { font-size: 1.2rem; }
         .section-intro { font-size: 0.9rem; margin-bottom: 1.5rem;}
         table { font-size: 0.85rem; border-radius: 10px; }
-        th, td { padding: 0.7rem 0.8rem; }
+        th, td { padding: 0.7rem 0.8rem; min-width: 60px;}
         .note { padding: 0.8rem 1rem; font-size: 0.85rem; }
         footer { padding: 1.5rem 0.5rem; font-size: 0.8rem; }
+        footer .footer-links a {
+            display: block; /* Stack links on very small screens */
+            margin: 0.3rem 0;
+        }
+
+        /* Responsive for FAQ */
+        #faq-section .faq-question { font-size: 1.2rem; }
+        #faq-section .faq-answer { font-size: 0.9rem; }
+
+         /* Responsive for Cara Order */
+        #how-to-order-section ol { padding-left: 0.8rem; }
+         #how-to-order-section li { font-size: 0.9rem; }
     }
     ::-webkit-scrollbar {width:8px; background:#e0f7fa;}
     ::-webkit-scrollbar-thumb {background:var(--sky-blue-medium); border-radius:8px;}
     ::-webkit-scrollbar-thumb:hover {background:#67B2D2;}
+
+     /* Scrollbar untuk tabel responsif */
+    table::-webkit-scrollbar {
+        height: 6px; /* Tinggi scrollbar horizontal */
+    }
+    table::-webkit-scrollbar-thumb {
+        background: rgba(135, 206, 235, 0.7); /* Warna thumb scrollbar tabel */
+        border-radius: 3px;
+    }
+     table::-webkit-scrollbar-thumb:hover {
+        background: #67B2D2;
+    }
   </style>
 </head>
 <body>
   <div class="overlay">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky-nav">
+        <a href="#hearts-catalog">Hearts</a>
+        <a href="#joki-grinding-catalog">Joki Grinding</a>
+        <a href="#joki-exploration-catalog">Joki Eksplorasi</a>
+        <a href="#joki-emote-catalog">Joki Emote</a>
+        <a href="#how-to-order-section">Cara Order</a>
+        <a href="#faq-section">FAQ</a>
+    </nav>
+    <!-- End Sticky Navigation Bar -->
+
     <header>
       <h1>✨ JALUSTORE ✨ <br><em>Jual Heart & Jasa Joki Sky</em></h1>
       <p class="tagline">
@@ -306,178 +442,51 @@
     </header>
 
     <main>
+
+      <!-- START: Bagian Promo/Layanan Unggulan (Placeholder) -->
+      <section id="promo-section">
+          <h2 class="section-title">🔥 Layanan Unggulan Kami!</h2>
+          <p class="section-intro">
+              Cek penawaran spesial atau layanan Joki paling populer bulan ini! <span class="emoji">✨</span>
+          </p>
+          <div class="promo-item" style="text-align: center;">
+              <!-- Placeholder untuk konten promo, misalnya: -->
+              <h3>Diskon Joki Candle Run 7 Hari!</h3>
+              <p>Dapatkan **Joki Candle Run selama 7 hari** dengan harga spesial hanya **Rp30.000** (Normal Rp35.000)! Hemat Rp5.000!</p>
+               <!-- Contoh penempatan gambar -->
+              <!-- <img src="placeholder-candle-icon.png" alt="Ikon Lilin" style="width: 50px; margin: 1rem auto; display: block;"> -->
+              <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20minat%20promo%20Joki%20Candle%20Run%207%20Hari!" class="contact-button" style="margin-top: 1rem; padding: 0.8rem 2rem; font-size: 1.1rem;">Ambil Promo Ini!</a>
+          </div>
+          <!-- Anda bisa tambahkan item promo lain di sini -->
+      </section>
+      <!-- END: Bagian Promo/Layanan Unggulan -->
+
+
+      <!-- START: Bagian Cara Melakukan Pemesanan -->
+      <section id="how-to-order-section">
+          <h2 class="section-title">📄 Cara Melakukan Pemesanan</h2>
+          <p class="section-intro">
+              Ikuti langkah-langkah mudah ini untuk mendapatkan Heart atau layanan Joki yang Anda inginkan! <span class="emoji">✅</span>
+          </p>
+          <ol>
+              <li><strong>Pilih Layanan:</strong> Jelajahi katalog Heart dan Joki di atas dan tentukan layanan mana yang Anda butuhkan (misalnya, paket 150 Heart atau Joki Candle Run 3 Hari).</li>
+              <li><strong>Hubungi Kami:</strong> Klik tombol <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20dengan%20layanan%20Anda.%20Bisa%20berikan%20informasi%20lebih%20lanjut%3F" target="_blank" style="color: var(--heading-color); text-decoration: underline;">Hubungi Kami Sekarang</a> atau tombol kontak spesifik di dekat layanan untuk memulai chat via WhatsApp. Sampaikan layanan yang Anda pilih.</li>
+              <li><strong>Konfirmasi & Pembayaran:</strong> Kami akan mengkonfirmasi ketersediaan layanan, total biaya, dan memberikan instruksi pembayaran (via Bank atau E-wallet). Lakukan pembayaran.</li>
+              <li><strong>Berikan Detail (Khusus Joki/Heart):</strong> Jika Anda order Heart atau Joki, kami akan meminta detail yang dibutuhkan (misalnya, username Sky untuk Heart, atau detail login untuk Joki). Kami menjamin kerahasiaan data Anda.</li>
+              <li><strong>Proses Pengerjaan:</strong> Kami akan segera memproses pesanan Anda sesuai estimasi waktu yang tertera. Untuk Heart, pastikan Anda rutin mengirimkan cahaya (light) ke akun kami. Untuk Joki, Anda bisa istirahat dan biarkan kami yang bekerja!</li>
+              <li><strong>Selesai & Konfirmasi:</strong> Setelah pesanan selesai (Heart terkirim semua atau Joki selesai), kami akan mengabari Anda. Anda bisa cek hasilnya. Jika ada Joki yang butuh akses login, pastikan untuk mengganti password Anda kembali setelah pengerjaan selesai dan Anda mengkonfirmasi semuanya beres.</li>
+          </ol>
+          <p class="note">
+              <span class="emoji">👍</span> Jangan ragu bertanya jika ada langkah yang kurang jelas! Kami siap membantu.
+          </p>
+      </section>
+      <!-- END: Bagian Cara Melakukan Pemesanan -->
+
+
       <section id="hearts-catalog">
         <h2 class="section-title">💖 Katalog Harga Hati (Hearts)</h2>
         <p class="section-intro">
           Dapatkan hati dengan harga super kompetitif dan pengiriman cepat! <br>
           <strong>Jaminan Pengiriman hingga 20 Hati per Hari!</strong> 💫
-        </p>
-
-        <h3>❤️ Small & Medium Heart Packs</h3>
-        <table class="hearts-table">
-          <thead>
-            <tr>
-              <th>Jumlah Hati (❤️)</th>
-              <th>Harga (Rp)</th>
-              <th>Perkiraan Harga per Hati</th>
-              <th>Estimasi Pengiriman (Hari)*</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>80</strong> Hati</td><td><strong>13.000</strong></td><td>Rp162,5</td><td><strong>4</strong> Hari</td></tr>
-            <tr><td><strong>150</strong> Hati</td><td><strong>23.000</strong></td><td>Rp153,3</td><td><strong>8</strong> Hari</td></tr>
-            <tr><td><strong>210</strong> Hati</td><td><strong>30.000</strong></td><td>Rp142,8</td><td><strong>11</strong> Hari</td></tr>
-          </tbody>
-        </table>
-
-        <h3>❤️ Large & XL Heart Packs</h3>
-        <table class="hearts-table">
-          <thead>
-            <tr>
-              <th>Jumlah Hati (❤️)</th>
-              <th>Harga (Rp)</th>
-              <th>Perkiraan Harga per Hati</th>
-              <th>Estimasi Pengiriman (Hari)*</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>320</strong> Hati</td><td><strong>45.000</strong></td><td>Rp140,6</td><td><strong>16</strong> Hari</td></tr>
-            <tr><td><strong>530</strong> Hati</td><td><strong>70.000</strong></td><td>Rp132,0</td><td><strong>27</strong> Hari</td></tr>
-            <tr><td><strong>850</strong> Hati</td><td><strong>100.000</strong></td><td>Rp117,6</td><td><strong>43</strong> Hari</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          <span class="emoji">⚠️</span> **Penting:** Pengiriman hati di Sky bersifat bertahap. Estimasi waktu di atas berdasarkan kemampuan kami mengirim hingga 20 hati/hari. Pastikan Anda rutin mengirimkan cahaya (light) ke akun kami setiap hari untuk kelancaran proses. <span class="emoji">✨</span>
-        </p>
-      </section>
-
-      <section id="joki-grinding-catalog">
-        <h2 class="section-title">🏃‍♀️ Katalog Joki Grinding (Candle Run & Quest Harian)</h2>
-        <p class="section-intro">
-          Malas grinding? Serahkan pada JALUSTORE! Hemat waktumu dengan harga super hemat! <span class="emoji">⏳</span>
-        </p>
-
-        <h3>🕯️ Joki Candle Run</h3>
-        <table class="joki-run-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Estimasi Lilin yang Didapat</th>
-              <th>Harga (Rp)</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>1 Hari Penuh</strong></td><td>(15-20 Lilin Harian)</td><td><strong>Rp5.000</strong></td><td>1-2 Jam</td></tr>
-            <tr><td><strong>3 Hari Penuh</strong></td><td>(45-60 Lilin)</td><td><strong>Rp15.000</strong></td><td>3-6 Jam</td></tr>
-            <tr><td><strong>7 Hari Penuh</strong></td><td>(105-140 Lilin)</td><td><strong>Rp35.000</strong></td><td>7-14 Jam</td></tr>
-          </tbody>
-        </table>
-
-        <h3>📜 Joki Quest Harian</h3>
-        <table class="joki-run-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Estimasi Quest yang Diselesaikan</th>
-              <th>Harga (Rp)</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>1 Hari Quest</strong></td><td>(Semua 4 Quest Harian)</td><td><strong>Rp3.000</strong></td><td>15-30 Menit</td></tr>
-            <tr><td><strong>3 Hari Quest</strong></td><td>(Semua 12 Quest Harian)</td><td><strong>Rp9.000</strong></td><td>45-90 Menit</td></tr>
-            <tr><td><strong>7 Hari Quest</strong></td><td>(Semua 28 Quest Harian)</td><td><strong>Rp21.000</strong></td><td>1,5-3,5 Jam</td></tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section id="joki-exploration-catalog">
-        <h2 class="section-title">✨ Katalog Joki Eksplorasi (WL Run & Eden Run)</h2>
-        <p class="section-intro">
-          Kumpulkan Winged Light & Ascended Candles dengan Mudah & Cepat! <span class="emoji">🌟</span>
-        </p>
-
-        <h3>🌟 Joki Winged Light (WL) Run (Per Realm)</h3>
-        <table class="joki-wl-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Estimasi WL yang Dikumpulkan</th>
-              <th>Harga (Rp)</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>WL Run Per Realm (Pilih)</strong></td><td>(Semua WL di 1 Realm)</td><td><strong>Rp15.000</strong></td><td>30 menit - 1 Jam</td></tr>
-            <tr><td colspan="4"><em>Contoh Realm: Isle of Dawn, Daylight Prairie, Hidden Forest, Valley of Triumph, Golden Wasteland, Vault of Knowledge, Home</em></td></tr>
-          </tbody>
-        </table>
-
-        <h3>🌟 Joki Winged Light (WL) Run (Total Wings)</h3>
-        <table class="joki-wl-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Estimasi WL yang Didapat (Total)</th>
-              <th>Harga (Rp)</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>WL Run untuk +1 Wing</strong></td><td>(Biasanya 4 WL)</td><td><strong>Rp10.000</strong></td><td>30 menit - 1 Jam</td></tr>
-            <tr><td><strong>WL Run Full Map (Basic)</strong></td><td>(Sekitar 75-80 WL awal)</td><td><strong>Rp70.000</strong></td><td>3-5 Jam</td></tr>
-            <tr><td><strong>WL Run Full Map (Lengkap)</strong></td><td>(Semua WL yang ada saat ini, termasuk event/TS jika memungkinkan)</td><td><strong>Rp120.000</strong></td><td>5-8 Jam (atau lebih)</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          <span class="emoji">💡</span> **Penting:** Setelah melakukan Eden run, semua WL akan hilang dan perlu dikumpulkan ulang. Layanan ini dapat membantu mengumpulkannya kembali.
-        </p>
-
-        <h3>🔥 Joki Eden Run</h3>
-        <table class="joki-eden-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Estimasi Ascended Candles (Mata)</th>
-              <th>Harga (Rp)</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Eden Run Standar</strong></td><td>(Hingga 10-12 Mata)</td><td><strong>Rp20.000</strong></td><td>30 menit - 1 Jam</td></tr>
-            <tr><td><strong>Eden Run Full</strong></td><td>(Hingga 15-17 Mata / Semua Patung)</td><td><strong>Rp30.000</strong></td><td>1 - 1.5 Jam</td></tr>
-            <tr><td><strong>Eden Run + WL Run Kembali</strong></td><td>(Eden Run Full + Kumpulkan ulang semua WL awal setelahnya)</td><td><strong>Rp100.000</strong></td><td>3 - 5 Jam</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          <span class="emoji">‼️</span> **Penting:** Sebelum Eden Run, Sky Kid Anda harus memiliki Winged Light yang cukup (disarankan minimal 70-100 WL untuk run efektif), karena semua WL akan dikorbankan. Eden Run dapat dilakukan sekali seminggu (reset setiap Senin).
-        </p>
-      </section>
-
-      <section id="joki-emote-catalog">
-        <h2 class="section-title">🎭 Katalog Joki Unlock Emote</h2>
-        <p class="section-intro">
-          Ingin Emote Favoritmu Terbuka? Biar JALUSTORE Saja! <span class="emoji">🎉</span>
-        </p>
-
-        <h3>🔓 Paket Unlock Emote (Per Emote/Node)</h3>
-        <table class="joki-emote-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Deskripsi</th>
-              <th>Harga (Rp)</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Unlock 1 Emote/Node</strong></td><td>Membuka 1 emote atau node di pohon Spirit</td><td><strong>Rp10.000</strong></td><td>10-30 menit</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          <span class="emoji">⚠️</span> **Catatan:** Harga jasa joki unlock emote ini **BELUM TERMASUK biaya lilin/hati/Ascended Candles** yang dibutuhkan untuk membuka emote di pohon Spirit. Pastikan akun Anda memiliki resource yang cukup! <span class="emoji">💰</span>
-        </p>
-
-        <h3>👻 Paket Unlock Spirit (Per Spirit)</h3>
-        <tabl
+           <!-- Contoh penempatan gambar/ikon -->
+           <!-- <img src="placehol
