@@ -284,6 +284,13 @@
         .note { padding: 0.8rem 1rem; font-size: 0.85rem; }
         footer { padding: 1.5rem 0.5rem; font-size: 0.8rem; }
     }
+    /* New styles for the currency column */
+    .currency-header {
+      width: 120px; /* Adjust as needed */
+    }
+    .currency-cell {
+      white-space: nowrap; /* Prevent line breaks in currency */
+    }
     ::-webkit-scrollbar {width:8px; background:#e0f7fa;}
     ::-webkit-scrollbar-thumb {background:var(--sky-blue-medium); border-radius:8px;}
     ::-webkit-scrollbar-thumb:hover {background:#67B2D2;}
@@ -319,14 +326,16 @@
             <tr>
               <th>Jumlah Hati (❤️)</th>
               <th>Harga (Rp)</th>
+              <th class="currency-header">Harga ($ USD)*</th>
+              <th class="currency-header">Harga (RM MYR)*</th>
               <th>Perkiraan Harga per Hati</th>
               <th>Estimasi Pengiriman (Hari)*</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong>80</strong> Hati</td><td><strong>13.000</strong></td><td>Rp162,5</td><td><strong>4</strong> Hari</td></tr>
-            <tr><td><strong>150</strong> Hati</td><td><strong>23.000</strong></td><td>Rp153,3</td><td><strong>8</strong> Hari</td></tr>
-            <tr><td><strong>210</strong> Hati</td><td><strong>30.000</strong></td><td>Rp142,8</td><td><strong>11</strong> Hari</td></tr>
+            <tr><td><strong>80</strong> Hati</td><td><strong>13.000</strong></td><td class="currency-cell">~ $0.78</td><td class="currency-cell">~ RM3.66</td><td>Rp162,5</td><td><strong>4</strong> Hari</td></tr>
+            <tr><td><strong>150</strong> Hati</td><td><strong>23.000</strong></td><td class="currency-cell">~ $1.39</td><td class="currency-cell">~ RM6.49</td><td>Rp153,3</td><td><strong>8</strong> Hari</td></tr>
+            <tr><td><strong>210</strong> Hati</td><td><strong>30.000</strong></td><td class="currency-cell">~ $1.81</td><td class="currency-cell">~ RM8.46</td><td>Rp142,8</td><td><strong>11</strong> Hari</td></tr>
           </tbody>
         </table>
 
@@ -336,18 +345,21 @@
             <tr>
               <th>Jumlah Hati (❤️)</th>
               <th>Harga (Rp)</th>
+              <th class="currency-header">Harga ($ USD)*</th>
+              <th class="currency-header">Harga (RM MYR)*</th>
               <th>Perkiraan Harga per Hati</th>
               <th>Estimasi Pengiriman (Hari)*</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong>320</strong> Hati</td><td><strong>45.000</strong></td><td>Rp140,6</td><td><strong>16</strong> Hari</td></tr>
-            <tr><td><strong>530</strong> Hati</td><td><strong>70.000</strong></td><td>Rp132,0</td><td><strong>27</strong> Hari</td></tr>
-            <tr><td><strong>850</strong> Hati</td><td><strong>100.000</strong></td><td>Rp117,6</td><td><strong>43</strong> Hari</td></tr>
+            <tr><td><strong>320</strong> Hati</td><td><strong>45.000</strong></td><td class="currency-cell">~ $2.72</td><td class="currency-cell">~ RM12.69</td><td>Rp140,6</td><td><strong>16</strong> Hari</td></tr>
+            <tr><td><strong>530</strong> Hati</td><td><strong>70.000</strong></td><td class="currency-cell">~ $4.23</td><td class="currency-cell">~ RM19.74</td><td>Rp132,0</td><td><strong>27</strong> Hari</td></tr>
+            <tr><td><strong>850</strong> Hati</td><td><strong>100.000</strong></td><td class="currency-cell">~ $6.04</td><td class="currency-cell">~ RM28.20</td><td>Rp117,6</td><td><strong>43</strong> Hari</td></tr>
           </tbody>
         </table>
         <p class="note">
-          <span class="emoji">⚠️</span> **Penting:** Pengiriman hati di Sky bersifat bertahap. Estimasi waktu di atas berdasarkan kemampuan kami mengirim hingga 20 hati/hari. Pastikan Anda rutin mengirimkan cahaya (light) ke akun kami setiap hari untuk kelancaran proses. <span class="emoji">✨</span>
+          <span class="emoji">⚠️</span> **Penting:** Pengiriman hati di Sky bersifat bertahap. Estimasi waktu di atas berdasarkan kemampuan kami mengirim hingga 20 hati/hari. Pastikan Anda rutin mengirimkan cahaya (light) ke akun kami setiap hari untuk kelancaran proses. <span class="emoji">✨</span><br>
+          <span class="emoji">💲</span> *Harga dalam Dolar Amerika (USD) dan Ringgit Malaysia (MYR) adalah **estimasi** berdasarkan kurs saat ini (1 USD ≈ Rp16.550, 1 MYR ≈ Rp3.545) dan dapat berubah sewaktu-waktu sesuai fluktuasi pasar. Mohon konfirmasi harga akhir saat pemesanan.
         </p>
       </section>
 
@@ -364,13 +376,15 @@
               <th>Layanan</th>
               <th>Estimasi Lilin yang Didapat</th>
               <th>Harga (Rp)</th>
+              <th class="currency-header">Harga ($ USD)*</th>
+              <th class="currency-header">Harga (RM MYR)*</th>
               <th>Estimasi Pengerjaan</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong>1 Hari Penuh</strong></td><td>(15-20 Lilin Harian)</td><td><strong>Rp5.000</strong></td><td>1-2 Jam</td></tr>
-            <tr><td><strong>3 Hari Penuh</strong></td><td>(45-60 Lilin)</td><td><strong>Rp15.000</strong></td><td>3-6 Jam</td></tr>
-            <tr><td><strong>7 Hari Penuh</strong></td><td>(105-140 Lilin)</td><td><strong>Rp35.000</strong></td><td>7-14 Jam</td></tr>
+            <tr><td><strong>1 Hari Penuh</strong></td><td>(15-20 Lilin Harian)</td><td><strong>Rp5.000</strong></td><td class="currency-cell">~ $0.30</td><td class="currency-cell">~ RM1.41</td><td>1-2 Jam</td></tr>
+            <tr><td><strong>3 Hari Penuh</strong></td><td>(45-60 Lilin)</td><td><strong>Rp15.000</strong></td><td class="currency-cell">~ $0.91</td><td class="currency-cell">~ RM4.23</td><td>3-6 Jam</td></tr>
+            <tr><td><strong>7 Hari Penuh</strong></td><td>(105-140 Lilin)</td><td><strong>Rp35.000</strong></td><td class="currency-cell">~ $2.11</td><td class="currency-cell">~ RM9.87</td><td>7-14 Jam</td></tr>
           </tbody>
         </table>
 
@@ -381,15 +395,20 @@
               <th>Layanan</th>
               <th>Estimasi Quest yang Diselesaikan</th>
               <th>Harga (Rp)</th>
+              <th class="currency-header">Harga ($ USD)*</th>
+              <th class="currency-header">Harga (RM MYR)*</th>
               <th>Estimasi Pengerjaan</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong>1 Hari Quest</strong></td><td>(Semua 4 Quest Harian)</td><td><strong>Rp3.000</strong></td><td>15-30 Menit</td></tr>
-            <tr><td><strong>3 Hari Quest</strong></td><td>(Semua 12 Quest Harian)</td><td><strong>Rp9.000</strong></td><td>45-90 Menit</td></tr>
-            <tr><td><strong>7 Hari Quest</strong></td><td>(Semua 28 Quest Harian)</td><td><strong>Rp21.000</strong></td><td>1,5-3,5 Jam</td></tr>
+            <tr><td><strong>1 Hari Quest</strong></td><td>(Semua 4 Quest Harian)</td><td><strong>Rp3.000</strong></td><td class="currency-cell">~ $0.18</td><td class="currency-cell">~ RM0.85</td><td>15-30 Menit</td></tr>
+            <tr><td><strong>3 Hari Quest</strong></td><td>(Semua 12 Quest Harian)</td><td><strong>Rp9.000</strong></td><td class="currency-cell">~ $0.54</td><td class="currency-cell">~ RM2.54</td><td>45-90 Menit</td></tr>
+            <tr><td><strong>7 Hari Quest</strong></td><td>(Semua 28 Quest Harian)</td><td><strong>Rp21.000</strong></td><td class="currency-cell">~ $1.27</td><td class="currency-cell">~ RM5.92</td><td>1,5-3,5 Jam</td></tr>
           </tbody>
         </table>
+        <p class="note">
+          <span class="emoji">💲</span> *Harga dalam Dolar Amerika (USD) dan Ringgit Malaysia (MYR) adalah **estimasi** berdasarkan kurs saat ini (1 USD ≈ Rp16.550, 1 MYR ≈ Rp3.545) dan dapat berubah sewaktu-waktu sesuai fluktuasi pasar. Mohon konfirmasi harga akhir saat pemesanan.
+        </p>
       </section>
 
       <section id="joki-exploration-catalog">
@@ -405,12 +424,14 @@
               <th>Layanan</th>
               <th>Estimasi WL yang Dikumpulkan</th>
               <th>Harga (Rp)</th>
+              <th class="currency-header">Harga ($ USD)*</th>
+              <th class="currency-header">Harga (RM MYR)*</th>
               <th>Estimasi Pengerjaan</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong>WL Run Per Realm (Pilih)</strong></td><td>(Semua WL di 1 Realm)</td><td><strong>Rp15.000</strong></td><td>30 menit - 1 Jam</td></tr>
-            <tr><td colspan="4"><em>Contoh Realm: Isle of Dawn, Daylight Prairie, Hidden Forest, Valley of Triumph, Golden Wasteland, Vault of Knowledge, Home</em></td></tr>
+            <tr><td><strong>WL Run Per Realm (Pilih)</strong></td><td>(Semua WL di 1 Realm)</td><td><strong>Rp15.000</strong></td><td class="currency-cell">~ $0.91</td><td class="currency-cell">~ RM4.23</td><td>30 menit - 1 Jam</td></tr>
+            <tr><td colspan="6"><em>Contoh Realm: Isle of Dawn, Daylight Prairie, Hidden Forest, Valley of Triumph, Golden Wasteland, Vault of Knowledge, Home</em></td></tr>
           </tbody>
         </table>
 
@@ -421,63 +442,12 @@
               <th>Layanan</th>
               <th>Estimasi WL yang Didapat (Total)</th>
               <th>Harga (Rp)</th>
+              <th class="currency-header">Harga ($ USD)*</th>
+              <th class="currency-header">Harga (RM MYR)*</th>
               <th>Estimasi Pengerjaan</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong>WL Run untuk +1 Wing</strong></td><td>(Biasanya 4 WL)</td><td><strong>Rp10.000</strong></td><td>30 menit - 1 Jam</td></tr>
-            <tr><td><strong>WL Run Full Map (Basic)</strong></td><td>(Sekitar 75-80 WL awal)</td><td><strong>Rp70.000</strong></td><td>3-5 Jam</td></tr>
-            <tr><td><strong>WL Run Full Map (Lengkap)</strong></td><td>(Semua WL yang ada saat ini, termasuk event/TS jika memungkinkan)</td><td><strong>Rp120.000</strong></td><td>5-8 Jam (atau lebih)</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          <span class="emoji">💡</span> **Penting:** Setelah melakukan Eden run, semua WL akan hilang dan perlu dikumpulkan ulang. Layanan ini dapat membantu mengumpulkannya kembali.
-        </p>
-
-        <h3>🔥 Joki Eden Run</h3>
-        <table class="joki-eden-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Estimasi Ascended Candles (Mata)</th>
-              <th>Harga (Rp)</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Eden Run Standar</strong></td><td>(Hingga 10-12 Mata)</td><td><strong>Rp20.000</strong></td><td>30 menit - 1 Jam</td></tr>
-            <tr><td><strong>Eden Run Full</strong></td><td>(Hingga 15-17 Mata / Semua Patung)</td><td><strong>Rp30.000</strong></td><td>1 - 1.5 Jam</td></tr>
-            <tr><td><strong>Eden Run + WL Run Kembali</strong></td><td>(Eden Run Full + Kumpulkan ulang semua WL awal setelahnya)</td><td><strong>Rp100.000</strong></td><td>3 - 5 Jam</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          <span class="emoji">‼️</span> **Penting:** Sebelum Eden Run, Sky Kid Anda harus memiliki Winged Light yang cukup (disarankan minimal 70-100 WL untuk run efektif), karena semua WL akan dikorbankan. Eden Run dapat dilakukan sekali seminggu (reset setiap Senin).
-        </p>
-      </section>
-
-      <section id="joki-emote-catalog">
-        <h2 class="section-title">🎭 Katalog Joki Unlock Emote</h2>
-        <p class="section-intro">
-          Ingin Emote Favoritmu Terbuka? Biar JALUSTORE Saja! <span class="emoji">🎉</span>
-        </p>
-
-        <h3>🔓 Paket Unlock Emote (Per Emote/Node)</h3>
-        <table class="joki-emote-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Deskripsi</th>
-              <th>Harga (Rp)</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Unlock 1 Emote/Node</strong></td><td>Membuka 1 emote atau node di pohon Spirit</td><td><strong>Rp10.000</strong></td><td>10-30 menit</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          <span class="emoji">⚠️</span> **Catatan:** Harga jasa joki unlock emote ini **BELUM TERMASUK biaya lilin/hati/Ascended Candles** yang dibutuhkan untuk membuka emote di pohon Spirit. Pastikan akun Anda memiliki resource yang cukup! <span class="emoji">💰</span>
-        </p>
-
-        <h3>👻 Paket Unlock Spirit (Per Spirit)</h3>
-        <tabl
+            <tr><td><strong>WL Run untuk +1 Wing</strong></td><td>(Biasanya 4 WL)</td><td><strong>Rp10.000</strong></td><td class="currency-cell">~ $0.60</td><td class="currency-cell">~ RM2.82</td><td>30 menit - 1 Jam</td></tr>
+            <tr><td><strong>WL Run Full Map (Basic)</strong></td><td>(Sekitar 75-80 WL awal)</td><td><strong>Rp70.000</strong></td><td class="currency-cell">~ $4.23</td><td class="currency-cell">~ RM19.74</td><td>3-5 Jam</td></tr>
+            <tr><td><strong>WL Run Full Map (Lengkap)</strong></td><td>(Semua WL yang ada saat
