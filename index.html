@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>JALUSTORE - Jual Heart & Jasa Joki Sky: Children of the Light</title>
+  <title>JALUSTORE - Jual Heart Sky: Children of the Light</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -14,31 +14,17 @@
         --sky-yellow-light: #FFF8DC; /* Cahaya lembut */
         --sky-purple-soft: #E0BBE4; /* Sentuhan magis */
 
-        --bg-color-overlay: rgba(255, 255, 255, 0.7); /* Lebih transparan dan cerah */
+        --bg-color-overlay: rgba(255, 255, 255, 0.85); /* Sedikit kurang transparan untuk kerapihan */
         --text-color: #333; /* Teks lebih gelap agar terbaca di latar cerah */
         --heading-color: #8A2BE2; /* Warna ungu kebiruan yang manis */
-        --card-bg: rgba(255, 255, 255, 0.9); /* Card lebih solid dan cerah */
-        --card-border: rgba(180, 200, 255, 0.6); /* Border lembut */
+        --card-bg: rgba(255, 255, 255, 0.95); /* Card lebih solid dan cerah */
+        --card-border: rgba(180, 200, 255, 0.7); /* Border sedikit lebih jelas */
         --slot-gradient: linear-gradient(135deg, var(--sky-blue-light) 0%, var(--sky-pink-light) 100%); /* Gradient pelangi */
         
-        --status-done-bg: #80CBC4; /* Hijau mint lembut */
-        --status-done-text: #004D40;
-        --status-fail-bg: #FFAB91; /* Oranye peach lembut */
-        --status-fail-text: #D84315;
-        --status-pending-bg: #FFCC80; /* Kuning pastel */
-        --status-pending-text: #E65100; /* Not used directly in webstore but kept for consistency */
-
-        --progress-bar-bg: rgba(200, 230, 250, 0.7); /* Not used in webstore but kept for consistency */
-        --progress-fill-color: #64B5F6; /* Not used in webstore but kept for consistency */
-
         /* Shadow dan efek lainnya */
-        --soft-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        --inner-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
-
-        /* New variables for tables/specific webstore elements */
-        --table-header-bg-soft: var(--sky-blue-light);
-        --table-row-even-soft: var(--sky-yellow-light);
-        --table-border-soft: rgba(180, 200, 255, 0.4);
+        --soft-shadow: 0 6px 20px rgba(0,0,0,0.08); /* Bayangan lebih halus dan menyebar */
+        --hover-shadow: 0 12px 30px rgba(0,0,0,0.15); /* Bayangan saat hover lebih menonjol */
+        --inner-shadow: inset 0 2px 5px rgba(0,0,0,0.03); /* Inner shadow lebih subtle */
     }
 
     * { box-sizing: border-box; }
@@ -55,52 +41,52 @@
     .overlay {
         background-color: var(--bg-color-overlay);
         min-height: 100vh;
-        padding: 2rem;
+        padding: 3rem 2rem; /* Padding lebih besar */
         backdrop-filter: blur(5px);
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    /* Header & Hero Section (Adapted from Dashboard Title) */
+    /* Header & Hero Section */
     header {
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 3.5rem; /* Margin lebih besar */
         padding-top: 1rem;
     }
-    h1 { /* Main Title for Webstore */
+    h1 {
         font-family: 'Fredoka', sans-serif;
         color: var(--heading-color);
-        font-size: 3.5rem; /* Larger than dashboard title */
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+        font-size: 3.8rem; /* Ukuran lebih besar */
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.25);
         letter-spacing: 2px;
         line-height: 1.2;
         margin-bottom: 0.5rem;
     }
-    h1 em { /* JaluStore part */
+    h1 em {
         font-family: 'Pacifico', cursive;
         display: block;
-        font-size: 0.7em;
+        font-size: 0.65em; /* Sedikit lebih kecil */
         font-style: normal;
         color: var(--text-color);
-        opacity: 0.8;
+        opacity: 0.85; /* Sedikit lebih jelas */
     }
     .tagline {
-        font-size: 1.5rem;
+        font-size: 1.6rem; /* Ukuran lebih besar */
         font-weight: 600;
         color: var(--text-color);
-        margin-bottom: 2rem;
-        max-width: 700px;
+        margin-bottom: 2.5rem; /* Margin lebih besar */
+        max-width: 750px;
         line-height: 1.5;
     }
-    .contact-button { /* Main Call to Action Button */
+    .contact-button {
         display: inline-block;
-        background: linear-gradient(45deg, #FFD1DC, #FFABAB); /* Pink lembut ke peach */
+        background: linear-gradient(45deg, #FFD1DC, #FFABAB);
         color: #fff;
-        padding: 1rem 2.5rem;
+        padding: 1.1rem 3rem; /* Padding lebih besar */
         border-radius: 40px;
         text-decoration: none;
-        font-size: 1.3rem;
+        font-size: 1.4rem; /* Ukuran lebih besar */
         font-weight: 700;
         box-shadow: var(--soft-shadow);
         transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
@@ -108,14 +94,14 @@
         text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
     .contact-button:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(255,100,150,0.5);
+        transform: translateY(-7px); /* Efek hover lebih kentara */
+        box-shadow: var(--hover-shadow);
         background: linear-gradient(45deg, #FFABAB, #FFD1DC);
     }
     .dashboard-link {
         font-size: 1.1rem;
-        margin-top: 1rem;
-        color: var(--text-color);
+        margin-top: 1.5rem; /* Margin lebih besar */
+        color: #555; /* Warna lebih lembut */
     }
     .dashboard-link a {
         color: var(--heading-color);
@@ -123,129 +109,101 @@
         font-weight: 600;
     }
 
-    /* Section Styling (Similar to Dashboard Slots) */
+    /* Section Styling */
     section {
-        margin-bottom: 3rem;
+        margin-bottom: 4rem; /* Margin lebih besar antar section */
         width: 100%;
-        max-width: 900px; /* Lebar maksimum konten */
-        background: var(--card-bg); /* Use card background for entire section */
+        max-width: 950px; /* Lebar maksimum konten lebih besar */
+        background: var(--card-bg);
         border: 2px solid var(--card-border);
-        border-radius: 25px; /* More rounded corners */
-        padding: 2.5rem; /* Inner padding for the section content */
+        border-radius: 30px; /* Sudut lebih membulat */
+        padding: 3rem; /* Padding lebih besar */
         box-shadow: var(--soft-shadow);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    section:hover { /* Hover effect for sections */
-        transform: translateY(-7px);
-        box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+    section:hover {
+        transform: translateY(-10px); /* Efek hover lebih menonjol */
+        box-shadow: var(--hover-shadow);
     }
 
-    .section-title { /* Main Title for each catalog section (similar to slot-title) */
+    .section-title {
         font-family: 'Fredoka', sans-serif;
-        font-size: 2.2rem;
+        font-size: 2.5rem; /* Ukuran lebih besar */
         font-weight: 700;
         background: var(--slot-gradient);
         color: #fff;
-        padding: 0.8rem 1.8rem;
-        border-radius: 30px;
-        margin-bottom: 2rem; /* Spacing below main section title */
-        display: inline-block; /* Allows centering with text-align on parent */
+        padding: 1rem 2.2rem; /* Padding lebih besar */
+        border-radius: 35px; /* Lebih membulat */
+        margin-bottom: 2.5rem; /* Spacing lebih besar */
         box-shadow: var(--soft-shadow);
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-        transition: transform 0.2s ease-in-out;
-        letter-spacing: 1px;
-        margin-left: auto; /* For centering */
-        margin-right: auto; /* For centering */
-        display: block; /* To apply text-align center */
-        text-align: center; /* Center the section title text */
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.3); /* Bayangan teks lebih jelas */
+        letter-spacing: 1.5px;
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
     .section-title:hover {
-        transform: translateY(-3px);
+        transform: translateY(-5px); /* Efek hover lebih kentara */
+        box-shadow: 0 8px 25px rgba(0,0,0,0.18);
     }
     .section-intro {
         text-align: center;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 2rem;
+        font-size: 1.2rem; /* Ukuran lebih besar */
+        line-height: 1.7; /* Line-height lebih lega */
+        margin-bottom: 3rem; /* Spacing lebih besar */
         color: #555;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .section-intro strong {
         color: var(--heading-color);
     }
 
-    /* Sub-headings for smaller categories within a section */
-    h3 {
-        font-family: 'Fredoka', sans-serif;
-        font-size: 1.6rem;
-        color: #6A1B9A; /* Slightly darker purple for sub-headings */
-        text-align: center;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-    }
-
-    /* Table Styling (Adapted from Dashboard Card Style for a cohesive look) */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 1.5rem;
-        margin-bottom: 2rem;
-        font-size: 1rem;
-        background: rgba(255, 255, 255, 0.8); /* Slightly transparent white for tables */
-        border: 1px solid var(--table-border-soft);
-        border-radius: 15px;
-        overflow: hidden; /* Ensures rounded corners */
-        box-shadow: var(--inner-shadow);
-    }
-    th, td {
-        padding: 1.1rem 1.2rem;
-        text-align: left;
-        border-bottom: 1px solid var(--table-border-soft);
-    }
-    th {
-        background-color: var(--table-header-bg-soft);
-        color: var(--heading-color);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-    tr:nth-child(even) {
-        background-color: var(--table-row-even-soft);
-    }
-    tr:hover {
-        background-color: var(--sky-blue-light);
-        transform: scale(1.005);
-        transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-    td strong {
-        color: #555; /* Make strong text inside cells stand out */
-    }
-
     .note {
-        font-size: 0.95rem;
+        font-size: 1rem; /* Ukuran font lebih standar */
         background-color: var(--sky-yellow-light);
-        border-left: 5px solid var(--heading-color);
-        padding: 1rem 1.5rem;
-        margin-top: 1.5rem;
-        border-radius: 10px;
+        border-left: 6px solid var(--heading-color); /* Border lebih tebal */
+        padding: 1.5rem 2rem; /* Padding lebih besar */
+        margin-top: 2.5rem; /* Margin lebih besar */
+        border-radius: 12px; /* Sudut lebih halus */
         box-shadow: var(--inner-shadow);
         color: #444;
+        line-height: 1.6;
     }
     .note strong {
         color: var(--heading-color);
     }
+    .note ul {
+      list-style: none; /* Hilangkan bullet default */
+      padding: 0;
+      margin-top: 0.8em;
+    }
+    .note ul li {
+      margin-bottom: 0.5em;
+      position: relative;
+      padding-left: 1.5em; /* Ruang untuk ikon custom */
+    }
+    .note ul li::before {
+      content: '✅'; /* Ikon centang */
+      position: absolute;
+      left: 0;
+      color: var(--heading-color);
+    }
+
 
     /* Footer */
     footer {
         text-align: center;
-        padding: 2rem 1rem;
-        margin-top: 3rem;
-        font-size: 0.9rem;
+        padding: 2.5rem 1rem; /* Padding lebih besar */
+        margin-top: 4rem; /* Margin lebih besar */
+        font-size: 0.95rem; /* Ukuran font sedikit lebih besar */
         color: #666;
-        background-color: rgba(255, 255, 255, 0.7);
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+        background-color: rgba(255, 255, 255, 0.75); /* Sedikit lebih solid */
+        border-top-left-radius: 25px; /* Sudut lebih membulat */
+        border-top-right-radius: 25px; /* Sudut lebih membulat */
+        box-shadow: 0 -8px 20px rgba(0,0,0,0.1); /* Bayangan lebih halus */
     }
     footer a {
         color: var(--heading-color);
@@ -256,198 +214,322 @@
         text-decoration: underline;
     }
 
-    /* Responsive Adjustments (Copied from Dashboard) */
-    @media (max-width: 768px) {
-        .overlay {padding: 1.5rem;}
-        h1 { font-size: 2.5rem; }
-        .tagline { font-size: 1.2rem; }
-        .contact-button { font-size: 1.1rem; padding: 0.7rem 1.5rem; margin-bottom: 2rem;}
-        section { padding: 1.8rem; margin-bottom: 2rem; border-radius: 20px;}
-        .section-title { font-size: 1.8rem; padding: 0.7rem 1.5rem; }
-        h3 { font-size: 1.4rem; }
-        .section-intro { font-size: 1rem; }
-        th, td { padding: 0.8rem 1rem; font-size: 0.9rem;}
-    }
-
-    @media (max-width: 500px) {
-        .overlay {padding: 1rem;}
-        h1 { font-size: 2rem; margin-bottom: 1.5rem;}
-        h1 em { font-size: 0.8em; }
-        .tagline { font-size: 1rem; }
-        .contact-button { font-size: 1rem; padding: 0.6rem 1.2rem; margin-bottom: 1.5rem; border-radius: 30px;}
-        section { padding: 1.2rem; margin-bottom: 1.5rem; border-radius: 15px; }
-        .section-title { font-size: 1.5rem; padding: 0.6rem 1.2rem; border-radius: 25px; }
-        h3 { font-size: 1.2rem; }
-        .section-intro { font-size: 0.9rem; margin-bottom: 1.5rem;}
-        table { font-size: 0.85rem; border-radius: 10px; }
-        th, td { padding: 0.7rem 0.8rem; }
-        .note { padding: 0.8rem 1rem; font-size: 0.85rem; }
-        footer { padding: 1.5rem 0.5rem; font-size: 0.8rem; }
-    }
-    /* New styles for the currency column */
-    .currency-header {
-      width: 120px; /* Adjust as needed */
-    }
-    .currency-cell {
-      white-space: nowrap; /* Prevent line breaks in currency */
-    }
+    /* Scrollbar */
     ::-webkit-scrollbar {width:8px; background:#e0f7fa;}
     ::-webkit-scrollbar-thumb {background:var(--sky-blue-medium); border-radius:8px;}
     ::-webkit-scrollbar-thumb:hover {background:#67B2D2;}
+
+    /* Heartbeat Animation */
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      20% { transform: scale(1.15); }
+      40% { transform: scale(1); }
+      60% { transform: scale(1.05); }
+      80% { transform: scale(1); }
+      100% { transform: scale(1); }
+    }
+
+    .heart-icon {
+      display: inline-block;
+      animation: heartbeat 1.5s infinite;
+      color: #FF69B4;
+      font-size: 1.2em;
+      vertical-align: middle;
+      margin-left: 8px; /* Spasi lebih besar dari teks */
+    }
+
+    /* NEW CARD-BASED LAYOUT STYLES */
+    .heart-cards-container {
+        display: grid;
+        /* Mengatur agar selalu 2 kolom pada layar desktop/tablet yang cukup lebar */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 2.5rem; /* Spacing antar kartu lebih besar */
+        justify-content: center;
+        padding: 0 1rem; /* Padding horizontal */
+    }
+
+    .heart-card {
+        background: var(--card-bg);
+        border: 2px solid var(--card-border);
+        border-radius: 25px; /* Sudut lebih halus */
+        padding: 2rem; /* Padding lebih besar di dalam kartu */
+        box-shadow: var(--soft-shadow);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .heart-card:hover {
+        transform: translateY(-12px) scale(1.03); /* Efek hover lebih menonjol */
+        box-shadow: var(--hover-shadow);
+    }
+
+    .heart-card h3 {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 2rem; /* Ukuran lebih besar */
+        color: var(--heading-color);
+        margin-top: 0.5rem;
+        margin-bottom: 1.2rem; /* Spacing lebih besar */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem; /* Spasi antara teks dan ikon hati lebih besar */
+    }
+
+    .heart-card .price-idr {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 2.8rem; /* Ukuran lebih besar */
+        font-weight: 700;
+        color: #FF69B4;
+        margin-bottom: 1.5rem; /* Spacing lebih besar */
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.15); /* Bayangan teks lebih jelas */
+    }
+
+    .heart-card .card-details {
+        font-size: 1rem; /* Ukuran font lebih standar */
+        color: #666;
+        margin-bottom: 2rem; /* Spasi lebih besar */
+        flex-grow: 1;
+        line-height: 1.6; /* Line-height lebih lega */
+    }
+
+    .card-details p {
+      margin-bottom: 0.5em; /* Memberikan sedikit spasi antar baris detail */
+    }
+
+    .heart-card .card-details strong {
+        color: var(--text-color);
+    }
+
+    .heart-card .currency-estimates {
+        font-size: 0.9rem; /* Ukuran lebih kecil untuk detail */
+        color: #888;
+        margin-top: 1rem; /* Spasi lebih besar */
+    }
+
+    .card-button {
+        display: inline-block;
+        background: linear-gradient(45deg, #FFABAB, #FFD1DC);
+        color: #fff;
+        padding: 1rem 1.8rem; /* Padding lebih besar */
+        border-radius: 35px; /* Lebih membulat */
+        text-decoration: none;
+        font-size: 1.1rem; /* Ukuran font lebih besar */
+        font-weight: 600;
+        box-shadow: var(--soft-shadow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+        margin-top: auto;
+        width: 85%; /* Sedikit lebih lebar */
+        max-width: 220px; /* Max-width lebih besar */
+    }
+
+    .card-button:hover {
+        transform: translateY(-5px); /* Efek hover lebih kentara */
+        box-shadow: 0 8px 25px rgba(255,100,150,0.45);
+        background: linear-gradient(45deg, #FFD1DC, #FFABAB);
+    }
+
+    /* Responsive Adjustments for Cards */
+    @media (max-width: 768px) {
+        .overlay {padding: 2rem 1.5rem;}
+        h1 { font-size: 3rem; }
+        .tagline { font-size: 1.3rem; margin-bottom: 2rem;}
+        .contact-button { font-size: 1.2rem; padding: 0.9rem 2rem; margin-bottom: 2rem;}
+        section { padding: 2.2rem; margin-bottom: 3rem; border-radius: 25px;}
+        .section-title { font-size: 2rem; padding: 0.9rem 1.8rem; }
+        .section-intro { font-size: 1.1rem; margin-bottom: 2.5rem; }
+        
+        .heart-cards-container {
+            /* Tetap 2 kolom jika lebar layar memungkinkan (tablet dalam mode landscape) */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 2rem;
+            padding: 0;
+        }
+        .heart-card {
+            padding: 1.5rem;
+            border-radius: 20px;
+        }
+        .heart-card h3 {
+            font-size: 1.8rem;
+        }
+        .heart-card .price-idr {
+            font-size: 2.5rem;
+        }
+        .heart-card .card-details {
+            font-size: 0.95rem;
+        }
+        .card-button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            width: 85%;
+        }
+        .note { padding: 1.2rem 1.5rem; font-size: 0.95rem; margin-top: 2rem;}
+        footer { padding: 2rem 0.8rem; font-size: 0.9rem; margin-top: 3rem;}
+    }
+
+    @media (max-width: 500px) {
+        .overlay {padding: 1.5rem 0.8rem;}
+        h1 { font-size: 2.2rem; margin-bottom: 1rem;}
+        h1 em { font-size: 0.7em; }
+        .tagline { font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.4;}
+        .contact-button { font-size: 1rem; padding: 0.7rem 1.5rem; margin-bottom: 1.5rem; border-radius: 35px;}
+        section { padding: 1.5rem; margin-bottom: 2rem; border-radius: 18px; }
+        .section-title { font-size: 1.7rem; padding: 0.8rem 1.5rem; border-radius: 30px; margin-bottom: 2rem;}
+        .section-intro { font-size: 0.95rem; margin-bottom: 2rem;}
+        
+        .heart-cards-container {
+            grid-template-columns: 1fr; /* Kolom tunggal untuk layar ponsel */
+            gap: 1.5rem;
+            padding: 0;
+        }
+        .heart-card {
+            padding: 1.2rem;
+            border-radius: 15px;
+            width: 98%; /* Hampir penuh lebar untuk pengalaman mobile yang lebih baik */
+            margin: 0 auto;
+        }
+        .heart-card h3 {
+            font-size: 1.6rem;
+        }
+        .heart-card .price-idr {
+            font-size: 2.2rem;
+        }
+        .heart-card .card-details {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .card-button {
+            width: 90%;
+            max-width: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+        }
+        .note { padding: 1rem 1.2rem; font-size: 0.9rem; margin-top: 1.5rem; border-left-width: 5px;}
+        footer { padding: 1.5rem 0.5rem; font-size: 0.85rem; margin-top: 2.5rem;}
+    }
   </style>
 </head>
 <body>
   <div class="overlay">
     <header>
-      <h1>✨ JALUSTORE ✨ <br><em>Jual Heart & Jasa Joki Sky</em></h1>
+      <h1>✨ JALUSTORE ✨ <br></h1>
       <p class="tagline">
-        Dapatkan Hearts & Layanan Joki Terbaik untuk Petualangan Sky-mu!<br>
-        <span style="color: var(--heading-color);">Harga Paling Hemat, Proses Cepat, Dijamin Aman!</span>
+        Dapatkan Hearts eksklusif untuk Sky: Children of the Light dengan harga kompetitif, proses cepat, dan jaminan keamanan transaksi. Kami hadir untuk memenuhi kebutuhan hati Anda!
       </p>
-      <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20dengan%20layanan%20Anda.%20Bisa%20berikan%20informasi%20lebih%20lanjut%3F" class="contact-button" target="_blank">
-        📞 Hubungi Kami Sekarang!
+      <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20untuk%20membeli%20Heart%20Sky.%20Mohon%20bantuan%20untuk%20pemesanan." class="contact-button" target="_blank">
+        📞 Pesan Hearts Sekarang!
       </a>
       <p class="dashboard-link">
-        (Cek juga <a href="https://jalu010120.github.io/Jalustore/" target="_blank">Dashboard Pengiriman Heart</a> kami!)
+        (Pantau status pengiriman Heart Anda di <a href="https://jalu010120.github.io/Jalustore/" target="_blank">Dashboard Kami</a>)
       </p>
     </header>
 
     <main>
       <section id="hearts-catalog">
-        <h2 class="section-title">💖 Katalog Harga Hati (Hearts)</h2>
+        <h2 class="section-title">💖 Daftar Harga Heart (Hati) Eksklusif</h2>
         <p class="section-intro">
-          Dapatkan hati dengan harga super kompetitif dan pengiriman cepat! <br>
-          <strong>Jaminan Pengiriman hingga 20 Hati per Hari!</strong> 💫
+          Temukan berbagai paket Heart dengan penawaran terbaik dan jaminan pengiriman yang efisien. Kami berkomitmen menyediakan layanan terpercaya untuk pengalaman bermain Sky Anda yang lebih baik. <br>
+          <strong>Kapasitas Pengiriman Terjamin: Hingga 20 Heart per Hari!</strong> 💫
         </p>
 
-        <h3>❤️ Small & Medium Heart Packs</h3>
-        <table class="hearts-table">
-          <thead>
-            <tr>
-              <th>Jumlah Hati (❤️)</th>
-              <th>Harga (Rp)</th>
-              <th class="currency-header">Harga ($ USD)*</th>
-              <th class="currency-header">Harga (RM MYR)*</th>
-              <th>Perkiraan Harga per Hati</th>
-              <th>Estimasi Pengiriman (Hari)*</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>80</strong> Hati</td><td><strong>13.000</strong></td><td class="currency-cell">~ $0.78</td><td class="currency-cell">~ RM3.66</td><td>Rp162,5</td><td><strong>4</strong> Hari</td></tr>
-            <tr><td><strong>150</strong> Hati</td><td><strong>23.000</strong></td><td class="currency-cell">~ $1.39</td><td class="currency-cell">~ RM6.49</td><td>Rp153,3</td><td><strong>8</strong> Hari</td></tr>
-            <tr><td><strong>210</strong> Hati</td><td><strong>30.000</strong></td><td class="currency-cell">~ $1.81</td><td class="currency-cell">~ RM8.46</td><td>Rp142,8</td><td><strong>11</strong> Hari</td></tr>
-          </tbody>
-        </table>
+        <div class="heart-cards-container">
+          <div class="heart-card">
+            <h3><strong>40</strong> Heart <span class="heart-icon">❤️</span></h3>
+            <p class="price-idr">Rp 5.000</p>
+            <div class="card-details">
+              <p>Harga per Heart: <strong>~ Rp125</strong></p>
+              <p>Estimasi Pengiriman: <strong>2 Hari</strong></p>
+              <p class="currency-estimates">($0.30 USD / RM1.41 MYR)*</p>
+            </div>
+            <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20dengan%20paket%2040%20Heart%20(Rp5.000)." class="card-button" target="_blank">Pesan Paket Ini</a>
+          </div>
 
-        <h3>❤️ Large & XL Heart Packs</h3>
-        <table class="hearts-table">
-          <thead>
-            <tr>
-              <th>Jumlah Hati (❤️)</th>
-              <th>Harga (Rp)</th>
-              <th class="currency-header">Harga ($ USD)*</th>
-              <th class="currency-header">Harga (RM MYR)*</th>
-              <th>Perkiraan Harga per Hati</th>
-              <th>Estimasi Pengiriman (Hari)*</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>320</strong> Hati</td><td><strong>45.000</strong></td><td class="currency-cell">~ $2.72</td><td class="currency-cell">~ RM12.69</td><td>Rp140,6</td><td><strong>16</strong> Hari</td></tr>
-            <tr><td><strong>530</strong> Hati</td><td><strong>70.000</strong></td><td class="currency-cell">~ $4.23</td><td class="currency-cell">~ RM19.74</td><td>Rp132,0</td><td><strong>27</strong> Hari</td></tr>
-            <tr><td><strong>850</strong> Hati</td><td><strong>100.000</strong></td><td class="currency-cell">~ $6.04</td><td class="currency-cell">~ RM28.20</td><td>Rp117,6</td><td><strong>43</strong> Hari</td></tr>
-          </tbody>
-        </table>
+          <div class="heart-card">
+            <h3><strong>80</strong> Heart <span class="heart-icon">❤️</span></h3>
+            <p class="price-idr">Rp 10.000</p>
+            <div class="card-details">
+              <p>Harga per Heart: <strong>~ Rp125</strong></p>
+              <p>Estimasi Pengiriman: <strong>4 Hari</strong></p>
+              <p class="currency-estimates">($0.60 USD / RM2.82 MYR)*</p>
+            </div>
+            <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20dengan%20paket%2080%20Heart%20(Rp10.000)." class="card-button" target="_blank">Pesan Paket Ini</a>
+          </div>
+
+          <div class="heart-card">
+            <h3><strong>120</strong> Heart <span class="heart-icon">❤️</span></h3>
+            <p class="price-idr">Rp 15.000</p>
+            <div class="card-details">
+              <p>Harga per Heart: <strong>~ Rp125</strong></p>
+              <p>Estimasi Pengiriman: <strong>6 Hari</strong></p>
+              <p class="currency-estimates">($0.91 USD / RM4.23 MYR)*</p>
+            </div>
+            <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20dengan%20paket%20120%20Heart%20(Rp15.000)." class="card-button" target="_blank">Pesan Paket Ini</a>
+          </div>
+
+          <div class="heart-card">
+            <h3><strong>210</strong> Heart <span class="heart-icon">❤️</span></h3>
+            <p class="price-idr">Rp 20.000</p>
+            <div class="card-details">
+              <p>Harga per Heart: <strong>~ Rp95.24</strong></p>
+              <p>Estimasi Pengiriman: <strong>11 Hari</strong></p>
+              <p class="currency-estimates">($1.21 USD / RM5.64 MYR)*</p>
+            </div>
+            <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20dengan%20paket%20210%20Heart%20(Rp20.000)." class="card-button" target="_blank">Pesan Paket Ini</a>
+          </div>
+
+          <div class="heart-card">
+            <h3><strong>320</strong> Heart <span class="heart-icon">❤️</span></h3>
+            <p class="price-idr">Rp 30.000</p>
+            <div class="card-details">
+              <p>Harga per Heart: <strong>~ Rp93.75</strong></p>
+              <p>Estimasi Pengiriman: <strong>16 Hari</strong></p>
+              <p class="currency-estimates">($1.81 USD / RM8.46 MYR)*</p>
+            </div>
+            <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20dengan%20paket%20320%20Heart%20(Rp30.000)." class="card-button" target="_blank">Pesan Paket Ini</a>
+          </div>
+
+          <div class="heart-card">
+            <h3><strong>430</strong> Heart <span class="heart-icon">❤️</span></h3>
+            <p class="price-idr">Rp 40.000</p>
+            <div class="card-details">
+              <p>Harga per Heart: <strong>~ Rp93.02</strong></p>
+              <p>Estimasi Pengiriman: <strong>22 Hari</strong></p>
+              <p class="currency-estimates">($2.42 USD / RM11.28 MYR)*</p>
+            </div>
+            <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20dengan%20paket%20430%20Heart%20(Rp40.000)." class="card-button" target="_blank">Pesan Paket Ini</a>
+          </div>
+
+          <div class="heart-card">
+            <h3><strong>540</strong> Heart <span class="heart-icon">❤️</span></h3>
+            <p class="price-idr">Rp 50.000</p>
+            <div class="card-details">
+              <p>Harga per Heart: <strong>~ Rp92.59</strong></p>
+              <p>Estimasi Pengiriman: <strong>27 Hari</strong></p>
+              <p class="currency-estimates">($3.02 USD / RM14.10 MYR)*</p>
+            </div>
+            <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20dengan%20paket%20540%20Heart%20(Rp50.000)." class="card-button" target="_blank">Pesan Paket Ini</a>
+          </div>
+        </div>
+
         <p class="note">
-          <span class="emoji">⚠️</span> **Penting:** Pengiriman hati di Sky bersifat bertahap. Estimasi waktu di atas berdasarkan kemampuan kami mengirim hingga 20 hati/hari. Pastikan Anda rutin mengirimkan cahaya (light) ke akun kami setiap hari untuk kelancaran proses. <span class="emoji">✨</span><br>
-          <span class="emoji">💲</span> *Harga dalam Dolar Amerika (USD) dan Ringgit Malaysia (MYR) adalah **estimasi** berdasarkan kurs saat ini (1 USD ≈ Rp16.550, 1 MYR ≈ Rp3.545) dan dapat berubah sewaktu-waktu sesuai fluktuasi pasar. Mohon konfirmasi harga akhir saat pemesanan.
+          <span class="emoji">⚠️</span> **Perhatian Penting Mengenai Pengiriman Heart:**
+          <ul>
+            <li>Pengiriman Heart di Sky: Children of the Light dilakukan secara bertahap dan membutuhkan **interaksi harian**.</li>
+            <li>Estimasi waktu pengiriman di atas didasarkan pada kemampuan kami untuk mengirim hingga **20 Heart per hari**.</li>
+            <li>Untuk kelancaran dan kecepatan proses, mohon pastikan Anda **rutin mengirimkan cahaya (light) ke akun kami setiap hari**.</li>
+            <li><span class="emoji">💲</span> Harga dalam Dolar Amerika (USD) dan Ringgit Malaysia (MYR) adalah **estimasi** berdasarkan kurs nilai tukar saat ini (1 USD ≈ Rp16.550, 1 MYR ≈ Rp3.545). Harga ini dapat berfluktuasi sesuai perubahan pasar. Mohon konfirmasi harga akhir saat melakukan pemesanan.</li>
+          </ul>
         </p>
       </section>
+    </main>
 
-      <section id="joki-grinding-catalog">
-        <h2 class="section-title">🏃‍♀️ Katalog Joki Grinding (Candle Run & Quest Harian)</h2>
-        <p class="section-intro">
-          Malas grinding? Serahkan pada JALUSTORE! Hemat waktumu dengan harga super hemat! <span class="emoji">⏳</span>
-        </p>
-
-        <h3>🕯️ Joki Candle Run</h3>
-        <table class="joki-run-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Estimasi Lilin yang Didapat</th>
-              <th>Harga (Rp)</th>
-              <th class="currency-header">Harga ($ USD)*</th>
-              <th class="currency-header">Harga (RM MYR)*</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>1 Hari Penuh</strong></td><td>(15-20 Lilin Harian)</td><td><strong>Rp5.000</strong></td><td class="currency-cell">~ $0.30</td><td class="currency-cell">~ RM1.41</td><td>1-2 Jam</td></tr>
-            <tr><td><strong>3 Hari Penuh</strong></td><td>(45-60 Lilin)</td><td><strong>Rp15.000</strong></td><td class="currency-cell">~ $0.91</td><td class="currency-cell">~ RM4.23</td><td>3-6 Jam</td></tr>
-            <tr><td><strong>7 Hari Penuh</strong></td><td>(105-140 Lilin)</td><td><strong>Rp35.000</strong></td><td class="currency-cell">~ $2.11</td><td class="currency-cell">~ RM9.87</td><td>7-14 Jam</td></tr>
-          </tbody>
-        </table>
-
-        <h3>📜 Joki Quest Harian</h3>
-        <table class="joki-run-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Estimasi Quest yang Diselesaikan</th>
-              <th>Harga (Rp)</th>
-              <th class="currency-header">Harga ($ USD)*</th>
-              <th class="currency-header">Harga (RM MYR)*</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>1 Hari Quest</strong></td><td>(Semua 4 Quest Harian)</td><td><strong>Rp3.000</strong></td><td class="currency-cell">~ $0.18</td><td class="currency-cell">~ RM0.85</td><td>15-30 Menit</td></tr>
-            <tr><td><strong>3 Hari Quest</strong></td><td>(Semua 12 Quest Harian)</td><td><strong>Rp9.000</strong></td><td class="currency-cell">~ $0.54</td><td class="currency-cell">~ RM2.54</td><td>45-90 Menit</td></tr>
-            <tr><td><strong>7 Hari Quest</strong></td><td>(Semua 28 Quest Harian)</td><td><strong>Rp21.000</strong></td><td class="currency-cell">~ $1.27</td><td class="currency-cell">~ RM5.92</td><td>1,5-3,5 Jam</td></tr>
-          </tbody>
-        </table>
-        <p class="note">
-          <span class="emoji">💲</span> *Harga dalam Dolar Amerika (USD) dan Ringgit Malaysia (MYR) adalah **estimasi** berdasarkan kurs saat ini (1 USD ≈ Rp16.550, 1 MYR ≈ Rp3.545) dan dapat berubah sewaktu-waktu sesuai fluktuasi pasar. Mohon konfirmasi harga akhir saat pemesanan.
-        </p>
-      </section>
-
-      <section id="joki-exploration-catalog">
-        <h2 class="section-title">✨ Katalog Joki Eksplorasi (WL Run & Eden Run)</h2>
-        <p class="section-intro">
-          Kumpulkan Winged Light & Ascended Candles dengan Mudah & Cepat! <span class="emoji">🌟</span>
-        </p>
-
-        <h3>🌟 Joki Winged Light (WL) Run (Per Realm)</h3>
-        <table class="joki-wl-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Estimasi WL yang Dikumpulkan</th>
-              <th>Harga (Rp)</th>
-              <th class="currency-header">Harga ($ USD)*</th>
-              <th class="currency-header">Harga (RM MYR)*</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>WL Run Per Realm (Pilih)</strong></td><td>(Semua WL di 1 Realm)</td><td><strong>Rp15.000</strong></td><td class="currency-cell">~ $0.91</td><td class="currency-cell">~ RM4.23</td><td>30 menit - 1 Jam</td></tr>
-            <tr><td colspan="6"><em>Contoh Realm: Isle of Dawn, Daylight Prairie, Hidden Forest, Valley of Triumph, Golden Wasteland, Vault of Knowledge, Home</em></td></tr>
-          </tbody>
-        </table>
-
-        <h3>🌟 Joki Winged Light (WL) Run (Total Wings)</h3>
-        <table class="joki-wl-table">
-          <thead>
-            <tr>
-              <th>Layanan</th>
-              <th>Estimasi WL yang Didapat (Total)</th>
-              <th>Harga (Rp)</th>
-              <th class="currency-header">Harga ($ USD)*</th>
-              <th class="currency-header">Harga (RM MYR)*</th>
-              <th>Estimasi Pengerjaan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>WL Run untuk +1 Wing</strong></td><td>(Biasanya 4 WL)</td><td><strong>Rp10.000</strong></td><td class="currency-cell">~ $0.60</td><td class="currency-cell">~ RM2.82</td><td>30 menit - 1 Jam</td></tr>
-            <tr><td><strong>WL Run Full Map (Basic)</strong></td><td>(Sekitar 75-80 WL awal)</td><td><strong>Rp70.000</strong></td><td class="currency-cell">~ $4.23</td><td class="currency-cell">~ RM19.74</td><td>3-5 Jam</td></tr>
-            <tr><td><strong>WL Run Full Map (Lengkap)</strong></td><td>(Semua WL yang ada saat
+    <footer>
+      <p>
+        &copy; 2025 JALUSTORE. Dedikasi untuk Komunitas Sky: Children of the Light.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
