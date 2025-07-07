@@ -4,30 +4,35 @@
   <meta charset="UTF-8" />
   <title>JALUSTORE - Jual Heart Sky: Children of the Light</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Beli Heart Sky: Children of the Light dengan harga terbaik. Pengiriman cepat dan aman. Garansi 100%.">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* CSS Variables for Sky Chibi Theme (Copied from Dashboard) */
+    /* CSS Variables for Sky Chibi Theme */
     :root {
-        --sky-blue-light: #C0E8F9; /* Langit cerah */
-        --sky-blue-medium: #87CEEB; /* Awan biru */
-        --sky-pink-light: #FFDDE1; /* Nuansa awan pink */
-        --sky-yellow-light: #FFF8DC; /* Cahaya lembut */
-        --sky-purple-soft: #E0BBE4; /* Sentuhan magis */
+        --sky-blue-light: #C0E8F9;
+        --sky-blue-medium: #87CEEB;
+        --sky-pink-light: #FFDDE1;
+        --sky-yellow-light: #FFF8DC;
+        --sky-purple-soft: #E0BBE4;
+        --primary-accent: #8A2BE2;
+        --secondary-accent: #FF69B4;
+        --success-color: #2ED573;
+        --warning-color: #FFA502;
+        --danger-color: #FF4757;
 
-        --bg-color-overlay: rgba(255, 255, 255, 0.85); /* Sedikit kurang transparan untuk kerapihan */
-        --text-color: #333; /* Teks lebih gelap agar terbaca di latar cerah */
-        --heading-color: #8A2BE2; /* Warna ungu kebiruan yang manis */
-        --card-bg: rgba(255, 255, 255, 0.95); /* Card lebih solid dan cerah */
-        --card-border: rgba(180, 200, 255, 0.7); /* Border sedikit lebih jelas */
-        --slot-gradient: linear-gradient(135deg, var(--sky-blue-light) 0%, var(--sky-pink-light) 100%); /* Gradient pelangi */
+        --bg-color-overlay: rgba(255, 255, 255, 0.85);
+        --text-color: #333;
+        --heading-color: var(--primary-accent);
+        --card-bg: rgba(255, 255, 255, 0.95);
+        --card-border: rgba(180, 200, 255, 0.7);
+        --slot-gradient: linear-gradient(135deg, var(--sky-blue-light) 0%, var(--sky-pink-light) 100%);
         
-        /* Shadow dan efek lainnya */
-        --soft-shadow: 0 6px 20px rgba(0,0,0,0.08); /* Bayangan lebih halus dan menyebar */
-        --hover-shadow: 0 12px 30px rgba(0,0,0,0.15); /* Bayangan saat hover lebih menonjol */
-        --inner-shadow: inset 0 2px 5px rgba(0,0,0,0.03); /* Inner shadow lebih subtle */
+        --soft-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        --hover-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        --inner-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
         font-family: 'Poppins', sans-serif;
         margin: 0;
@@ -37,28 +42,49 @@
         color: var(--text-color);
         min-height: 100vh;
         overflow-x: hidden;
+        line-height: 1.6;
     }
     .overlay {
         background-color: var(--bg-color-overlay);
         min-height: 100vh;
-        padding: 3rem 2rem; /* Padding lebih besar */
+        padding: 3rem 2rem;
         backdrop-filter: blur(5px);
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-badge {
+      background: rgba(255,255,255,0.7);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
     /* Header & Hero Section */
     header {
         text-align: center;
-        margin-bottom: 3.5rem; /* Margin lebih besar */
+        margin-bottom: 3.5rem;
         padding-top: 1rem;
-        position: relative; /* Needed for absolute positioning of buttons */
+        position: relative;
     }
     h1 {
         font-family: 'Fredoka', sans-serif;
         color: var(--heading-color);
-        font-size: 3.8rem; /* Ukuran lebih besar */
+        font-size: 3.8rem;
         text-shadow: 2px 2px 10px rgba(0,0,0,0.25);
         letter-spacing: 2px;
         line-height: 1.2;
@@ -67,27 +93,27 @@
     h1 em {
         font-family: 'Pacifico', cursive;
         display: block;
-        font-size: 0.65em; /* Sedikit lebih kecil */
+        font-size: 0.65em;
         font-style: normal;
         color: var(--text-color);
-        opacity: 0.85; /* Sedikit lebih jelas */
+        opacity: 0.85;
     }
     .tagline {
-        font-size: 1.6rem; /* Ukuran lebih besar */
+        font-size: 1.6rem;
         font-weight: 600;
         color: var(--text-color);
-        margin-bottom: 2.5rem; /* Margin lebih besar */
+        margin-bottom: 2.5rem;
         max-width: 750px;
         line-height: 1.5;
     }
     .contact-button {
         display: inline-block;
-        background: linear-gradient(45deg, #FFD1DC, #FFABAB);
+        background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent));
         color: #fff;
-        padding: 1.1rem 3rem; /* Padding lebih besar */
+        padding: 1.1rem 3rem;
         border-radius: 40px;
         text-decoration: none;
-        font-size: 1.4rem; /* Ukuran lebih besar */
+        font-size: 1.4rem;
         font-weight: 700;
         box-shadow: var(--soft-shadow);
         transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
@@ -95,14 +121,14 @@
         text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
     .contact-button:hover {
-        transform: translateY(-7px); /* Efek hover lebih kentara */
+        transform: translateY(-7px);
         box-shadow: var(--hover-shadow);
-        background: linear-gradient(45deg, #FFABAB, #FFD1DC);
+        background: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent));
     }
     .dashboard-link {
         font-size: 1.1rem;
-        margin-top: 1.5rem; /* Margin lebih besar */
-        color: #555; /* Warna lebih lembut */
+        margin-top: 1.5rem;
+        color: #555;
     }
     .dashboard-link a {
         color: var(--heading-color);
@@ -110,34 +136,57 @@
         font-weight: 600;
     }
 
+    /* Order Tracking */
+    .order-tracking {
+      margin-top: 1.5rem;
+    }
+
+    .track-order-button {
+      display: inline-block;
+      background: rgba(138, 43, 226, 0.1);
+      color: var(--heading-color);
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid var(--heading-color);
+    }
+
+    .track-order-button:hover {
+      background: var(--heading-color);
+      color: white;
+      transform: translateY(-3px);
+    }
+
     /* Section Styling */
     section {
-        margin-bottom: 4rem; /* Margin lebih besar antar section */
+        margin-bottom: 4rem;
         width: 100%;
-        max-width: 950px; /* Lebar maksimum konten lebih besar */
+        max-width: 950px;
         background: var(--card-bg);
         border: 2px solid var(--card-border);
-        border-radius: 30px; /* Sudut lebih membulat */
-        padding: 3rem; /* Padding lebih besar */
+        border-radius: 30px;
+        padding: 3rem;
         box-shadow: var(--soft-shadow);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     section:hover {
-        transform: translateY(-10px); /* Efek hover lebih menonjol */
-        box-shadow: var(--hover-shadow);
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.08);
     }
 
     .section-title {
         font-family: 'Fredoka', sans-serif;
-        font-size: 2.5rem; /* Ukuran lebih besar */
+        font-size: 2.5rem;
         font-weight: 700;
         background: var(--slot-gradient);
         color: #fff;
-        padding: 1rem 2.2rem; /* Padding lebih besar */
-        border-radius: 35px; /* Lebih membulat */
-        margin-bottom: 2.5rem; /* Spacing lebih besar */
+        padding: 1rem 2.2rem;
+        border-radius: 35px;
+        margin-bottom: 2.5rem;
         box-shadow: var(--soft-shadow);
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.3); /* Bayangan teks lebih jelas */
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
         letter-spacing: 1.5px;
         display: block;
         text-align: center;
@@ -145,14 +194,14 @@
         margin-right: auto;
     }
     .section-title:hover {
-        transform: translateY(-5px); /* Efek hover lebih kentara */
+        transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(0,0,0,0.18);
     }
     .section-intro {
         text-align: center;
-        font-size: 1.2rem; /* Ukuran lebih besar */
-        line-height: 1.7; /* Line-height lebih lega */
-        margin-bottom: 3rem; /* Spacing lebih besar */
+        font-size: 1.2rem;
+        line-height: 1.7;
+        margin-bottom: 3rem;
         color: #555;
         max-width: 700px;
         margin-left: auto;
@@ -163,12 +212,12 @@
     }
 
     .note {
-        font-size: 1rem; /* Ukuran font lebih standar */
+        font-size: 1rem;
         background-color: var(--sky-yellow-light);
-        border-left: 6px solid var(--heading-color); /* Border lebih tebal */
-        padding: 1.5rem 2rem; /* Padding lebih besar */
-        margin-top: 2.5rem; /* Margin lebih besar */
-        border-radius: 12px; /* Sudut lebih halus */
+        border-left: 6px solid var(--heading-color);
+        padding: 1.5rem 2rem;
+        margin-top: 2.5rem;
+        border-radius: 12px;
         box-shadow: var(--inner-shadow);
         color: #444;
         line-height: 1.6;
@@ -177,34 +226,376 @@
         color: var(--heading-color);
     }
     .note ul {
-      list-style: none; /* Hilangkan bullet default */
+      list-style: none;
       padding: 0;
       margin-top: 0.8em;
     }
     .note ul li {
       margin-bottom: 0.5em;
       position: relative;
-      padding-left: 1.5em; /* Ruang untuk ikon custom */
+      padding-left: 1.5em;
     }
     .note ul li::before {
-      content: '✅'; /* Ikon centang */
+      content: '✅';
       position: absolute;
       left: 0;
       color: var(--heading-color);
     }
 
+    /* Heart Cards */
+    .heart-cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 2.5rem;
+        justify-content: center;
+        padding: 0 1rem;
+    }
+
+    .heart-card {
+        background: var(--card-bg);
+        border: 2px solid var(--card-border);
+        border-radius: 25px;
+        padding: 2rem;
+        box-shadow: var(--soft-shadow);
+        text-align: center;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .heart-card:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: var(--danger-color);
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      z-index: 1;
+    }
+
+    .savings-badge {
+      background: var(--success-color);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+
+    .heart-card h3 {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 2rem;
+        color: var(--heading-color);
+        margin-top: 0.5rem;
+        margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .heart-card .price-idr {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #FF69B4;
+        margin-bottom: 1.5rem;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+    }
+
+    .heart-card .card-details {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 2rem;
+        flex-grow: 1;
+        line-height: 1.6;
+    }
+
+    .card-details p {
+      margin-bottom: 0.5em;
+    }
+
+    .heart-card .card-details strong {
+        color: var(--text-color);
+    }
+
+    .heart-card .currency-estimates {
+        font-size: 0.9rem;
+        color: #888;
+        margin-top: 1rem;
+    }
+
+    .card-button {
+        display: inline-block;
+        background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent));
+        color: #fff;
+        padding: 1rem 1.8rem;
+        border-radius: 35px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        box-shadow: var(--soft-shadow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+        margin-top: auto;
+        width: 85%;
+        max-width: 220px;
+        cursor: pointer;
+        border: none;
+    }
+
+    .card-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(255,100,150,0.45);
+        background: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent));
+    }
+
+    /* Cart Section */
+    #cart-section {
+      display: none;
+    }
+
+    .cart-steps {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      gap: 1rem;
+    }
+
+    .step {
+      padding: 0.5rem 1.5rem;
+      background: #f0f0f0;
+      border-radius: 20px;
+      font-weight: 600;
+      color: #888;
+    }
+
+    .step.active {
+      background: var(--heading-color);
+      color: white;
+    }
+
+    #cart-items {
+      border-top: 1px dashed var(--card-border);
+      padding-top: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0;
+      border-bottom: 1px dotted rgba(0,0,0,0.1);
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item-info {
+      flex-grow: 1;
+    }
+
+    .cart-item-name {
+      font-weight: 600;
+      color: var(--heading-color);
+    }
+
+    .cart-item-price {
+      font-weight: 500;
+      color: var(--text-color);
+    }
+
+    .remove-from-cart-button {
+      background-color: var(--danger-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      font-size: 0.8rem;
+      margin-left: 1rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .remove-from-cart-button:hover {
+      background-color: #E5533A;
+    }
+
+    #empty-cart-message {
+      text-align: center;
+      color: #888;
+      font-style: italic;
+    }
+
+    .cart-summary {
+      background: rgba(255,255,255,0.7);
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .summary-row.total {
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-bottom: none;
+    }
+
+    .payment-methods {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .payment-methods img {
+      height: 30px;
+      object-fit: contain;
+      filter: grayscale(30%);
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+
+    .payment-methods img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    /* Testimonials Section */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .testimonial-content {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .testimonial-content::before,
+    .testimonial-content::after {
+      content: '"';
+      font-size: 2rem;
+      color: var(--heading-color);
+      opacity: 0.3;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      font-size: 2rem;
+    }
+
+    .author-name {
+      font-weight: bold;
+    }
+
+    .author-detail {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* FAQ Section */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.2rem 2rem;
+      background: var(--card-bg);
+      border: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: rgba(138, 43, 226, 0.1);
+    }
+
+    .faq-toggle {
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      padding: 0 2rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      background: var(--card-bg);
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 1rem 2rem 2rem;
+      max-height: 500px;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
 
     /* Footer */
     footer {
         text-align: center;
-        padding: 2.5rem 1rem; /* Padding lebih besar */
-        margin-top: 4rem; /* Margin lebih besar */
-        font-size: 0.95rem; /* Ukuran font sedikit lebih besar */
+        padding: 2.5rem 1rem;
+        margin-top: 4rem;
+        font-size: 0.95rem;
         color: #666;
-        background-color: rgba(255, 255, 255, 0.75); /* Sedikit lebih solid */
-        border-top-left-radius: 25px; /* Sudut lebih membulat */
-        border-top-right-radius: 25px; /* Sudut lebih membulat */
-        box-shadow: 0 -8px 20px rgba(0,0,0,0.1); /* Bayangan lebih halus */
+        background-color: rgba(255, 255, 255, 0.75);
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        box-shadow: 0 -8px 20px rgba(0,0,0,0.1);
     }
     footer a {
         color: var(--heading-color);
@@ -220,195 +611,33 @@
     ::-webkit-scrollbar-thumb {background:var(--sky-blue-medium); border-radius:8px;}
     ::-webkit-scrollbar-thumb:hover {background:#67B2D2;}
 
-    /* Heartbeat Animation - UPGRADED */
+    /* Heartbeat Animation */
     @keyframes heartbeat {
       0% { transform: scale(1); opacity: 1; }
-      25% { transform: scale(1.2); opacity: 0.8; color: #FF0000; } /* Lebih besar, sedikit transparan, merah */
-      50% { transform: scale(1); opacity: 1; color: #FF69B4; } /* Kembali normal, warna pink asli */
-      75% { transform: scale(1.1); opacity: 0.9; color: #FF3366; } /* Sedikit lebih besar, merah muda gelap */
+      25% { transform: scale(1.2); opacity: 0.8; color: #FF0000; }
+      50% { transform: scale(1); opacity: 1; color: #FF69B4; }
+      75% { transform: scale(1.1); opacity: 0.9; color: #FF3366; }
       100% { transform: scale(1); opacity: 1; }
     }
 
     .heart-icon {
       display: inline-block;
-      animation: heartbeat 1.8s infinite ease-in-out; /* Durasi lebih panjang, timing function lebih halus */
-      color: #FF69B4; /* Default color, akan dianimasikan oleh keyframes */
+      animation: heartbeat 1.8s infinite ease-in-out;
+      color: #FF69B4;
       font-size: 1.2em;
       vertical-align: middle;
       margin-left: 8px;
     }
 
-    /* NEW CARD-BASED LAYOUT STYLES */
-    .heart-cards-container {
-        display: grid;
-        /* Mengatur agar selalu 2 kolom pada layar desktop/tablet yang cukup lebar */
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 2.5rem; /* Spacing antar kartu lebih besar */
-        justify-content: center;
-        padding: 0 1rem; /* Padding horizontal */
+    /* Floating Animation */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
     }
 
-    .heart-card {
-        background: var(--card-bg);
-        border: 2px solid var(--card-border);
-        border-radius: 25px; /* Sudut lebih halus */
-        padding: 2rem; /* Padding lebih besar di dalam kartu */
-        box-shadow: var(--soft-shadow);
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .heart-card:hover {
-        transform: translateY(-12px) scale(1.03); /* Efek hover lebih menonjol */
-        box-shadow: var(--hover-shadow);
-    }
-
-    .heart-card h3 {
-        font-family: 'Fredoka', sans-serif;
-        font-size: 2rem; /* Ukuran lebih besar */
-        color: var(--heading-color);
-        margin-top: 0.5rem;
-        margin-bottom: 1.2rem; /* Spacing lebih besar */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.8rem; /* Spasi antara teks dan ikon hati lebih besar */
-    }
-
-    .heart-card .price-idr {
-        font-family: 'Fredoka', sans-serif;
-        font-size: 2.8rem; /* Ukuran lebih besar */
-        font-weight: 700;
-        color: #FF69B4;
-        margin-bottom: 1.5rem; /* Spacing lebih besar */
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.15); /* Bayangan teks lebih jelas */
-    }
-
-    .heart-card .card-details {
-        font-size: 1rem; /* Ukuran font lebih standar */
-        color: #666;
-        margin-bottom: 2rem; /* Spasi lebih besar */
-        flex-grow: 1;
-        line-height: 1.6; /* Line-height lebih lega */
-    }
-
-    .card-details p {
-      margin-bottom: 0.5em; /* Memberikan sedikit spasi antar baris detail */
-    }
-
-    .heart-card .card-details strong {
-        color: var(--text-color);
-    }
-
-    .heart-card .currency-estimates {
-        font-size: 0.9rem; /* Ukuran lebih kecil untuk detail */
-        color: #888;
-        margin-top: 1rem; /* Spasi lebih besar */
-    }
-
-    .card-button {
-        display: inline-block;
-        background: linear-gradient(45deg, #FFABAB, #FFD1DC);
-        color: #fff;
-        padding: 1rem 1.8rem; /* Padding lebih besar */
-        border-radius: 35px; /* Lebih membulat */
-        text-decoration: none;
-        font-size: 1.1rem; /* Ukuran font lebih besar */
-        font-weight: 600;
-        box-shadow: var(--soft-shadow);
-        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-        margin-top: auto;
-        width: 85%; /* Sedikit lebih lebar */
-        max-width: 220px; /* Max-width lebih besar */
-        cursor: pointer; /* Ensure button cursor */
-    }
-
-    .card-button:hover {
-        transform: translateY(-5px); /* Efek hover lebih kentara */
-        box-shadow: 0 8px 25px rgba(255,100,150,0.45);
-        background: linear-gradient(45deg, #FFD1DC, #FFABAB);
-    }
-
-    /* Responsive Adjustments for Cards */
-    @media (max-width: 768px) {
-        .overlay {padding: 2rem 1.5rem;}
-        h1 { font-size: 3rem; }
-        .tagline { font-size: 1.3rem; margin-bottom: 2rem;}
-        .contact-button { font-size: 1.2rem; padding: 0.9rem 2rem; margin-bottom: 2rem;}
-        section { padding: 2.2rem; margin-bottom: 3rem; border-radius: 25px;}
-        .section-title { font-size: 2rem; padding: 0.9rem 1.8rem; }
-        .section-intro { font-size: 1.1rem; margin-bottom: 2.5rem; }
-        
-        .heart-cards-container {
-            /* Tetap 2 kolom jika lebar layar memungkinkan (tablet dalam mode landscape) */
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 2rem;
-            padding: 0;
-        }
-        .heart-card {
-            padding: 1.5rem;
-            border-radius: 20px;
-        }
-        .heart-card h3 {
-            font-size: 1.8rem;
-        }
-        .heart-card .price-idr {
-            font-size: 2.5rem;
-        }
-        .heart-card .card-details {
-            font-size: 0.95rem;
-        }
-        .card-button {
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            width: 85%;
-        }
-        .note { padding: 1.2rem 1.5rem; font-size: 0.95rem; margin-top: 2rem;}
-        footer { padding: 2rem 0.8rem; font-size: 0.9rem; margin-top: 3rem;}
-    }
-
-    @media (max-width: 500px) {
-        .overlay {padding: 1.5rem 0.8rem;}
-        h1 { font-size: 2.2rem; margin-bottom: 1rem;}
-        h1 em { font-size: 0.7em; }
-        .tagline { font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.4;}
-        .contact-button { font-size: 1rem; padding: 0.7rem 1.5rem; margin-bottom: 1.5rem; border-radius: 35px;}
-        section { padding: 1.5rem; margin-bottom: 2rem; border-radius: 18px; }
-        .section-title { font-size: 1.7rem; padding: 0.8rem 1.5rem; border-radius: 30px; margin-bottom: 2rem;}
-        .section-intro { font-size: 0.95rem; margin-bottom: 2rem;}
-        
-        .heart-cards-container {
-            grid-template-columns: 1fr; /* Kolom tunggal untuk layar ponsel */
-            gap: 1.5rem;
-            padding: 0;
-        }
-        .heart-card {
-            padding: 1.2rem;
-            border-radius: 15px;
-            width: 98%; /* Hampir penuh lebar untuk pengalaman mobile yang lebih baik */
-            margin: 0 auto;
-        }
-        .heart-card h3 {
-            font-size: 1.6rem;
-        }
-        .heart-card .price-idr {
-            font-size: 2.2rem;
-        }
-        .heart-card .card-details {
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-        .card-button {
-            width: 90%;
-            max-width: none;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-        }
-        .note { padding: 1rem 1.2rem; font-size: 0.9rem; margin-top: 1.5rem; border-left-width: 5px;}
-        footer { padding: 1.5rem 0.5rem; font-size: 0.85rem; margin-top: 2.5rem;}
+    .hero-float {
+      animation: float 6s ease-in-out infinite;
     }
 
     /* Theme Toggle Button */
@@ -440,20 +669,46 @@
       box-shadow: var(--hover-shadow);
     }
 
+    /* Language Toggle Button */
+    .language-switcher {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      z-index: 1000;
+    }
+
+    #langToggle {
+      background-color: var(--sky-pink-light);
+      color: var(--text-color);
+      border: none;
+      border-radius: 40px;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: var(--soft-shadow);
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      font-weight: 600;
+    }
+
+    #langToggle:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--hover-shadow);
+    }
+
     /* Dark Mode Styles */
     body.dark-mode {
-        background: url('https://i.pinimg.com/originals/a0/04/b8/a004b89895c1a798a760f38b251a37c9.jpg') no-repeat center center fixed; /* Gambar latar belakang yang lebih gelap */
+        background: url('https://i.pinimg.com/originals/a0/04/b8/a004b89895c1a798a760f38b251a37c9.jpg') no-repeat center center fixed;
         background-size: cover;
-        color: #f0f0f0; /* Teks terang */
+        color: #f0f0f0;
     }
 
     body.dark-mode .overlay {
-        background-color: rgba(0, 0, 0, 0.75); /* Overlay lebih gelap */
+        background-color: rgba(0, 0, 0, 0.75);
         backdrop-filter: blur(8px);
     }
 
     body.dark-mode h1 {
-        color: #9370DB; /* Warna ungu yang lebih dalam */
+        color: #9370DB;
         text-shadow: 2px 2px 10px rgba(255,255,255,0.15);
     }
 
@@ -462,13 +717,14 @@
     body.dark-mode .section-intro,
     body.dark-mode footer,
     body.dark-mode .heart-card .card-details,
-    body.dark-mode .heart-card .currency-estimates {
+    body.dark-mode .heart-card .currency-estimates,
+    body.dark-mode .author-detail {
         color: #bbb;
     }
 
     body.dark-mode .contact-button,
     body.dark-mode .card-button {
-        background: linear-gradient(45deg, #7B68EE, #6A5ACD); /* Gradien tombol yang lebih gelap */
+        background: linear-gradient(45deg, #7B68EE, #6A5ACD);
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
     body.dark-mode .contact-button:hover,
@@ -478,9 +734,10 @@
     }
 
     body.dark-mode section,
-    body.dark-mode .heart-card {
-        background: rgba(30, 30, 40, 0.95); /* Latar belakang card lebih gelap */
-        border: 2px solid rgba(100, 100, 150, 0.7); /* Border lebih gelap */
+    body.dark-mode .heart-card,
+    body.dark-mode .testimonial-card {
+        background: rgba(30, 30, 40, 0.95);
+        border: 2px solid rgba(100, 100, 150, 0.7);
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
     body.dark-mode section:hover,
@@ -489,19 +746,20 @@
     }
 
     body.dark-mode .section-title {
-        background: linear-gradient(135deg, #483D8B 0%, #6A5ACD 100%); /* Gradien judul bagian lebih gelap */
+        background: linear-gradient(135deg, #483D8B 0%, #6A5ACD 100%);
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
     body.dark-mode .section-title:hover {
         box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
 
-    body.dark-mode .heart-card h3 {
-        color: #9370DB; /* Warna judul kartu lebih gelap */
+    body.dark-mode .heart-card h3,
+    body.dark-mode .cart-item-name {
+        color: #9370DB;
     }
 
     body.dark-mode .heart-card .price-idr {
-        color: #FFC0CB; /* Warna harga lebih terang */
+        color: #FFC0CB;
         text-shadow: 1px 1px 4px rgba(255,255,255,0.1);
     }
 
@@ -530,149 +788,202 @@
     body.dark-mode ::-webkit-scrollbar-thumb {background:#6A5ACD;}
     body.dark-mode ::-webkit-scrollbar-thumb:hover {background:#7B68EE;}
 
-    /* Responsive Theme Toggle */
-    @media (max-width: 768px) {
-      .theme-switcher {
-        top: 1.5rem;
-        right: 1.5rem;
-      }
-      #themeToggle {
-        width: 45px;
-        height: 45px;
-        font-size: 1.6rem;
-      }
+    body.dark-mode .trust-badge {
+      background: rgba(30,30,40,0.7);
     }
 
-    @media (max-width: 500px) {
-      .theme-switcher {
-        top: 1rem;
-        right: 1rem;
-      }
-      #themeToggle {
-        width: 40px;
-        height: 40px;
-        font-size: 1.4rem;
-      }
+    body.dark-mode .faq-question:hover {
+      background: rgba(138, 43, 226, 0.2);
     }
 
-    /* Language Toggle Button */
-    .language-switcher {
-      position: absolute;
-      top: 2rem;
-      left: 2rem; /* Di sisi kiri */
-      z-index: 1000;
+    body.dark-mode .step {
+      background: #333;
     }
 
-    #langToggle {
-      background-color: var(--sky-pink-light);
-      color: var(--text-color);
-      border: none;
-      border-radius: 40px;
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: var(--soft-shadow);
-      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-      font-weight: 600;
+    body.dark-mode .summary-row {
+      border-bottom: 1px solid #444;
     }
 
-    #langToggle:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--hover-shadow);
+    body.dark-mode .cart-summary {
+      background: rgba(30,30,40,0.7);
     }
+
     body.dark-mode #langToggle {
-        background-color: #6A5ACD;
-        color: white;
+      background-color: #6A5ACD;
+      color: white;
     }
     body.dark-mode #langToggle:hover {
-        background-color: #7B68EE;
+      background-color: #7B68EE;
     }
 
-    /* Responsive Language Toggle */
+    body.dark-mode .track-order-button {
+      background: rgba(138, 43, 226, 0.2);
+    }
+
+    /* Responsive Adjustments */
     @media (max-width: 768px) {
-      .language-switcher {
-        top: 1.5rem;
-        left: 1.5rem;
-      }
-      #langToggle {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.9rem;
-      }
+        .overlay {padding: 2rem 1.5rem;}
+        h1 { font-size: 3rem; }
+        .tagline { font-size: 1.3rem; margin-bottom: 2rem;}
+        .contact-button { font-size: 1.2rem; padding: 0.9rem 2rem; margin-bottom: 2rem;}
+        section { padding: 2.2rem; margin-bottom: 3rem; border-radius: 25px;}
+        .section-title { font-size: 2rem; padding: 0.9rem 1.8rem; }
+        .section-intro { font-size: 1.1rem; margin-bottom: 2.5rem; }
+        
+        .heart-cards-container {
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 2rem;
+            padding: 0;
+        }
+        .heart-card {
+            padding: 1.5rem;
+            border-radius: 20px;
+        }
+        .heart-card h3 {
+            font-size: 1.8rem;
+        }
+        .heart-card .price-idr {
+            font-size: 2.5rem;
+        }
+        .heart-card .card-details {
+            font-size: 0.95rem;
+        }
+        .card-button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            width: 85%;
+        }
+        .note { padding: 1.2rem 1.5rem; font-size: 0.95rem; margin-top: 2rem;}
+        footer { padding: 2rem 0.8rem; font-size: 0.9rem; margin-top: 3rem;}
+
+        .trust-badges {
+          gap: 0.8rem;
+          margin-bottom: 1.5rem;
+        }
+      
+        .trust-badge {
+          padding: 0.5rem 1rem;
+          font-size: 0.8rem;
+        }
+        
+        .cart-steps {
+          flex-wrap: wrap;
+        }
+        
+        .step {
+          padding: 0.3rem 1rem;
+          font-size: 0.9rem;
+        }
+        
+        .payment-methods img {
+          height: 25px;
+        }
+
+        .testimonial-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .theme-switcher {
+          top: 1.5rem;
+          right: 1.5rem;
+        }
+        #themeToggle {
+          width: 45px;
+          height: 45px;
+          font-size: 1.6rem;
+        }
+
+        .language-switcher {
+          top: 1.5rem;
+          left: 1.5rem;
+        }
+        #langToggle {
+          padding: 0.5rem 0.8rem;
+          font-size: 0.9rem;
+        }
     }
 
     @media (max-width: 500px) {
-      .language-switcher {
-        top: 1rem;
-        left: 1rem;
-      }
-      #langToggle {
-        padding: 0.4rem 0.7rem;
-        font-size: 0.8rem;
-      }
-    }
+        .overlay {padding: 1.5rem 0.8rem;}
+        h1 { font-size: 2.2rem; margin-bottom: 1rem;}
+        h1 em { font-size: 0.7em; }
+        .tagline { font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.4;}
+        .contact-button { font-size: 1rem; padding: 0.7rem 1.5rem; margin-bottom: 1.5rem; border-radius: 35px;}
+        section { padding: 1.5rem; margin-bottom: 2rem; border-radius: 18px; }
+        .section-title { font-size: 1.7rem; padding: 0.8rem 1.5rem; border-radius: 30px; margin-bottom: 2rem;}
+        .section-intro { font-size: 0.95rem; margin-bottom: 2rem;}
+        
+        .heart-cards-container {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 0;
+        }
+        .heart-card {
+            padding: 1.2rem;
+            border-radius: 15px;
+            width: 98%;
+            margin: 0 auto;
+        }
+        .heart-card h3 {
+            font-size: 1.6rem;
+        }
+        .heart-card .price-idr {
+            font-size: 2.2rem;
+        }
+        .heart-card .card-details {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .card-button {
+            width: 90%;
+            max-width: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+        }
+        .note { padding: 1rem 1.2rem; font-size: 0.9rem; margin-top: 1.5rem; border-left-width: 5px;}
+        footer { padding: 1.5rem 0.5rem; font-size: 0.85rem; margin-top: 2.5rem;}
 
-    /* Keranjang Belanja Styles */
-    #cart-items {
-      border-top: 1px dashed var(--card-border);
-      padding-top: 1rem;
-      margin-top: 1.5rem;
-    }
+        .trust-badges {
+          gap: 0.5rem;
+        }
+        
+        .trust-badge {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.7rem;
+        }
+        
+        .cart-steps .step {
+          padding: 0.2rem 0.8rem;
+          font-size: 0.8rem;
+          margin-bottom: 0.5rem;
+        }
+        
+        .payment-methods {
+          gap: 0.5rem;
+        }
+        
+        .payment-methods img {
+          height: 20px;
+        }
 
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8rem 0;
-      border-bottom: 1px dotted rgba(0,0,0,0.1);
-    }
-    body.dark-mode .cart-item {
-        border-bottom: 1px dotted rgba(255,255,255,0.1);
-    }
+        .theme-switcher {
+          top: 1rem;
+          right: 1rem;
+        }
+        #themeToggle {
+          width: 40px;
+          height: 40px;
+          font-size: 1.4rem;
+        }
 
-    .cart-item:last-child {
-      border-bottom: none;
-    }
-
-    .cart-item-info {
-      flex-grow: 1;
-    }
-
-    .cart-item-name {
-      font-weight: 600;
-      color: var(--heading-color);
-    }
-    body.dark-mode .cart-item-name {
-        color: #9370DB;
-    }
-
-    .cart-item-price {
-      font-weight: 500;
-      color: var(--text-color);
-    }
-    body.dark-mode .cart-item-price {
-        color: #f0f0f0;
-    }
-
-    .remove-from-cart-button {
-      background-color: #FF6347; /* Tomato */
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 0.3rem 0.6rem;
-      cursor: pointer;
-      font-size: 0.8rem;
-      margin-left: 1rem;
-      transition: background-color 0.2s ease;
-    }
-
-    .remove-from-cart-button:hover {
-      background-color: #E5533A;
-    }
-
-    #empty-cart-message {
-      text-align: center;
-      color: #888;
-      font-style: italic;
+        .language-switcher {
+          top: 1rem;
+          left: 1rem;
+        }
+        #langToggle {
+          padding: 0.4rem 0.7rem;
+          font-size: 0.8rem;
+        }
     }
   </style>
 </head>
@@ -685,13 +996,33 @@
       <div class="theme-switcher">
         <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
       </div>
-      <h1>✨ JALUSTORE ✨ <br></h1>
+      <h1 class="hero-float">✨ JALUSTORE ✨</h1>
+      
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <span>🔒</span> Transaksi Aman
+        </div>
+        <div class="trust-badge">
+          <span>⚡</span> Pengiriman Cepat
+        </div>
+        <div class="trust-badge">
+          <span>💯</span> Garansi 100%
+        </div>
+      </div>
+      
       <p class="tagline" data-translate="tagline">
         Dapatkan Hearts eksklusif untuk Sky: Children of the Light dengan harga kompetitif, proses cepat, dan jaminan keamanan transaksi. Kami hadir untuk memenuhi kebutuhan hati Anda!
       </p>
       <a href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20tertarik%20untuk%20membeli%20Heart%20Sky.%20Mohon%20bantuan%20untuk%20pemesanan." class="contact-button" target="_blank" data-translate="contactButton">
         📞 Pesan Hearts Sekarang!
       </a>
+      
+      <div class="order-tracking">
+        <a href="https://jalustore-dasboard.netlify.app/" target="_blank" class="track-order-button">
+          🚚 Lacak Pesanan Anda
+        </a>
+      </div>
+      
       <p class="dashboard-link" data-translate="dashboardLink">
         (Pantau status pengiriman Heart Anda di <a href="https://jalustore-dasboard.netlify.app/" target="_blank">Dashboard Kami</a>)
       </p>
@@ -699,7 +1030,8 @@
 
     <main>
       <section id="hearts-catalog">
-        <h2 class="section-title" data-translate="sectionTitle">💖 Daftar Harga Heart (Hati) Eksklusif</h2>
+        <h2 class="section-title" data-translate="sectionTitle
+                    <h2 class="section-title" data-translate="sectionTitle">💖 Daftar Harga Heart (Hati) Eksklusif</h2>
         <p class="section-intro" data-translate="sectionIntro">
           Temukan berbagai paket Heart dengan penawaran terbaik dan jaminan pengiriman yang efisien. Kami berkomitmen menyediakan layanan terpercaya untuk pengalaman bermain Sky Anda yang lebih baik. <br>
           <strong>Kapasitas Pengiriman Terjamin: Hingga 20 Heart per Hari!</strong> 💫
@@ -707,12 +1039,16 @@
 
         <div class="heart-cards-container">
           <div class="heart-card">
+            <div class="popular-tag">🔥 POPULER</div>
             <h3><strong>40</strong> Heart <span class="heart-icon">❤️</span></h3>
             <p class="price-idr">Rp 5.000</p>
             <div class="card-details">
               <p data-original="~ Rp125">Harga per Heart: <strong>~ Rp125</strong></p>
               <p data-original="2">Estimasi Pengiriman: <strong>2 Hari</strong></p>
               <p class="currency-estimates">($0.30 USD / RM1.41 MYR)*</p>
+              <div class="savings-badge">
+                Hemat 24%!
+              </div>
             </div>
             <button class="card-button add-to-cart-button" data-name="40 Heart" data-price="5000" data-translate="addToCart">Tambahkan ke Keranjang</button>
           </div>
@@ -746,6 +1082,9 @@
               <p data-original="~ Rp95.24">Harga per Heart: <strong>~ Rp95.24</strong></p>
               <p data-original="11">Estimasi Pengiriman: <strong>11 Hari</strong></p>
               <p class="currency-estimates">($1.21 USD / RM5.64 MYR)*</p>
+              <div class="savings-badge">
+                Hemat 31%!
+              </div>
             </div>
             <button class="card-button add-to-cart-button" data-name="200 Heart" data-price="20000" data-translate="addToCart">Tambahkan ke Keranjang</button>
           </div>
@@ -757,6 +1096,9 @@
               <p data-original="~ Rp93.75">Harga per Heart: <strong>~ Rp93.75</strong></p>
               <p data-original="16">Estimasi Pengiriman: <strong>16 Hari</strong></p>
               <p class="currency-estimates">($1.81 USD / RM8.46 MYR)*</p>
+              <div class="savings-badge">
+                Hemat 33%!
+              </div>
             </div>
             <button class="card-button add-to-cart-button" data-name="310 Heart" data-price="30000" data-translate="addToCart">Tambahkan ke Keranjang</button>
           </div>
@@ -768,6 +1110,9 @@
               <p data-original="~ Rp93.02">Harga per Heart: <strong>~ Rp93.02</strong></p>
               <p data-original="22">Estimasi Pengiriman: <strong>22 Hari</strong></p>
               <p class="currency-estimates">($2.42 USD / RM11.28 MYR)*</p>
+              <div class="savings-badge">
+                Hemat 34%!
+              </div>
             </div>
             <button class="card-button add-to-cart-button" data-name="420 Heart" data-price="40000" data-translate="addToCart">Tambahkan ke Keranjang</button>
           </div>
@@ -779,6 +1124,9 @@
               <p data-original="~ Rp92.59">Harga per Heart: <strong>~ Rp92.59</strong></p>
               <p data-original="27">Estimasi Pengiriman: <strong>27 Hari</strong></p>
               <p class="currency-estimates">($3.02 USD / RM14.10 MYR)*</p>
+              <div class="savings-badge">
+                Hemat 35%!
+              </div>
             </div>
             <button class="card-button add-to-cart-button" data-name="540 Heart" data-price="50000" data-translate="addToCart">Tambahkan ke Keranjang</button>
           </div>
@@ -787,22 +1135,134 @@
         <p class="note" data-translate="noteSection">
           <span class="emoji">⚠️</span> <strong data-translate="noteTitle">**Perhatian Penting Mengenai Pengiriman Heart:**</strong>
           <ul>
+            <li data-translate="note1">Pengiriman Heart di Sky: Children of the Light dilakukan secara bertahap dan membutuhkan <strong>interaksi harian</strong>.</li>
+            <li data-translate="note2">Estimasi waktu pengiriman di atas didasarkan pada kemampuan kami untuk mengirim hingga <strong>20 Heart per hari</strong>.</li>
+            <li data-translate="note3">Untuk kelancaran dan kecepatan proses, mohon pastikan Anda <strong>rutin mengirimkan cahaya (light) ke akun kami setiap hari</strong>.</li>
+            <li data-translate="note4">💲 Harga dalam Dolar Amerika (USD) dan Ringgit Malaysia (MYR) adalah <strong>estimasi</strong> berdasarkan kurs nilai tukar saat ini (1 USD ≈ Rp16.550, 1 MYR ≈ Rp3.545). Harga ini dapat berfluktuasi sesuai perubahan pasar. Mohon konfirmasi harga akhir saat melakukan pemesanan.</li>
+          </ul>
         </p>
       </section>
-    </main>
 
-    <section id="cart-section" style="display: none;">
-      <h2 class="section-title" data-translate="cartTitle">🛒 Keranjang Belanja Anda</h2>
-      <div id="cart-items">
-        <p id="empty-cart-message" data-translate="emptyCart">Keranjang Anda kosong.</p>
-      </div>
-      <p id="cart-total" style="font-size: 1.5rem; font-weight: 700; text-align: right; margin-top: 1.5rem; color: var(--heading-color);">
-        Total: Rp 0
-      </p>
-      <div style="text-align: center; margin-top: 2rem;">
-        <a id="checkout-button" href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20ingin%20memesan%20paket%20Heart%20berikut:%0A" class="contact-button" target="_blank" style="padding: 1rem 2rem; font-size: 1.2rem; display: none;" data-translate="checkoutButton">Checkout Pesanan</a>
-      </div>
-    </section>
+      <section id="faq">
+        <h2 class="section-title" data-translate="faqTitle">❓ Pertanyaan yang Sering Diajukan</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-translate="faq1">Bagaimana cara pembelian heart di JALUSTORE?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-translate="faq1Answer">1. Pilih paket heart yang diinginkan<br>
+              2. Tambahkan ke keranjang<br>
+              3. Lakukan checkout melalui WhatsApp<br>
+              4. Lakukan pembayaran<br>
+              5. Kirim bukti transfer dan ID Sky Anda<br>
+              6. Heart akan dikirim sesuai estimasi</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-translate="faq2">Berapa lama pengiriman heart?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-translate="faq2Answer">Pengiriman heart dilakukan secara bertahap dengan estimasi:<br>
+              - 20 heart per hari<br>
+              - Waktu pengiriman sesuai dengan jumlah heart yang dipesan (lihat estimasi di setiap paket)</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-translate="faq3">Apakah ada garansi?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-translate="faq3Answer">Kami memberikan garansi 100% jika:<br>
+              - Heart tidak terkirim sesuai jumlah yang dipesan<br>
+              - Ada kesalahan dalam proses pengiriman<br>
+              Hubungi kami melalui WhatsApp untuk klaim garansi.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <h2 class="section-title" data-translate="testimonialTitle">🌟 Testimoni Pelanggan</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content" data-translate="testimonial1">
+              "Pengiriman sangat cepat! Hati sampai sebelum estimasi. Seller ramah dan profesional. Recommended banget!"
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">👩</div>
+              <div class="author-info">
+                <div class="author-name">Sarah K.</div>
+                <div class="author-detail" data-translate="testimonial1Detail">Pembeli 200 Heart</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content" data-translate="testimonial2">
+              "Pertama kali beli heart disini dan prosesnya mudah banget. Harganya juga paling murah dibanding yang lain!"
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">👨</div>
+              <div class="author-info">
+                <div class="author-name">Budi W.</div>
+                <div class="author-detail" data-translate="testimonial2Detail">Pembeli 80 Heart</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content" data-translate="testimonial3">
+              "Trusted seller! Sudah beberapa kali repeat order dan selalu puas dengan pelayanannya."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">👧</div>
+              <div class="author-info">
+                <div class="author-name">Dewi L.</div>
+                <div class="author-detail" data-translate="testimonial3Detail">Pembeli 540 Heart</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cart-section" style="display: none;">
+        <h2 class="section-title" data-translate="cartTitle">🛒 Keranjang Belanja Anda</h2>
+        <div class="cart-steps">
+          <div class="step active" data-translate="step1">1. Keranjang</div>
+          <div class="step" data-translate="step2">2. Pembayaran</div>
+          <div class="step" data-translate="step3">3. Selesai</div>
+        </div>
+        <div id="cart-items">
+          <p id="empty-cart-message" data-translate="emptyCart">Keranjang Anda kosong.</p>
+        </div>
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span data-translate="subtotal">Subtotal</span>
+            <span id="cart-subtotal">Rp 0</span>
+          </div>
+          <div class="summary-row">
+            <span data-translate="serviceFee">Biaya Layanan</span>
+            <span>Rp 0</span>
+          </div>
+          <div class="summary-row total">
+            <span data-translate="totalPayment">Total Pembayaran</span>
+            <span id="cart-total">Rp 0</span>
+          </div>
+        </div>
+        <div class="payment-methods">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_ovo_purple.svg/1200px-Logo_ovo_purple.svg.png" alt="OVO" width="50">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/1200px-Logo_dana_blue.svg.png" alt="DANA" width="50">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_BNI_46.svg/1200px-Logo_BNI_46.svg.png" alt="BNI" width="50">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/1200px-Bank_Central_Asia.svg.png" alt="BCA" width="50">
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a id="checkout-button" href="https://wa.me/6285189014747?text=Halo%20JALUSTORE,%20saya%20ingin%20memesan%20paket%20Heart%20berikut:%0A" class="contact-button" target="_blank" style="padding: 1rem 2rem; font-size: 1.2rem; display: none;" data-translate="checkoutButton">Lanjut ke Pembayaran</a>
+        </div>
+      </section>
+    </main>
 
     <footer>
       <p data-translate="footerText">
@@ -840,9 +1300,10 @@
       const cartSection = document.getElementById('cart-section');
       const cartItemsContainer = document.getElementById('cart-items');
       const emptyCartMessage = document.getElementById('empty-cart-message');
+      const cartSubtotalElement = document.getElementById('cart-subtotal');
       const cartTotalElement = document.getElementById('cart-total');
       const checkoutButton = document.getElementById('checkout-button');
-      let cart = []; // Array to store cart items
+      let cart = [];
 
       function saveCart() {
         localStorage.setItem('cart', JSON.stringify(cart));
@@ -856,17 +1317,17 @@
       }
 
       function updateCartDisplay() {
-        cartItemsContainer.innerHTML = ''; // Clear current items
-        let total = 0;
+        cartItemsContainer.innerHTML = '';
+        let subtotal = 0;
         let whatsappMessage = `Halo JALUSTORE, saya ingin memesan paket Heart berikut:%0A`;
 
         if (cart.length === 0) {
           emptyCartMessage.style.display = 'block';
-          cartSection.style.display = 'none'; // Sembunyikan keranjang jika kosong
+          cartSection.style.display = 'none';
           checkoutButton.style.display = 'none';
         } else {
           emptyCartMessage.style.display = 'none';
-          cartSection.style.display = 'block'; // Tampilkan keranjang jika ada isinya
+          cartSection.style.display = 'block';
           checkoutButton.style.display = 'inline-block';
 
           cart.forEach((item, index) => {
@@ -881,14 +1342,15 @@
               <button class="remove-from-cart-button" data-index="${index}" data-translate="removeItem">${translations[currentLang].removeItem}</button>
             `;
             cartItemsContainer.appendChild(itemElement);
-            total += item.price * item.quantity;
+            subtotal += item.price * item.quantity;
             whatsappMessage += `- ${item.name} (x${item.quantity}) - Rp ${(item.price * item.quantity).toLocaleString('id-ID')}%0A`;
           });
         }
         
-        cartTotalElement.textContent = `${translations[currentLang].total} Rp ${total.toLocaleString('id-ID')}`;
-        whatsappMessage += `%0A${translations[currentLang].total} Pembayaran: Rp ${total.toLocaleString('id-ID')}%0AMohon konfirmasi rincian pembayaran. Terima kasih!`;
-        checkoutButton.href = `https://wa.me/6285189014747?text=${whatsappMessage}`;
+        cartSubtotalElement.textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+        cartTotalElement.textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+        whatsappMessage += `%0A${translations[currentLang].subtotal}: Rp ${subtotal.toLocaleString('id-ID')}%0A${translations[currentLang].serviceFee}: Rp 0%0A${translations[currentLang].totalPayment}: Rp ${subtotal.toLocaleString('id-ID')}%0AMohon konfirmasi rincian pembayaran. Terima kasih!`;
+        checkoutButton.href = `https://wa.me/6285189014747?text=${encodeURIComponent(whatsappMessage)}`;
 
         // Add event listeners for remove buttons
         document.querySelectorAll('.remove-from-cart-button').forEach(button => {
@@ -914,13 +1376,13 @@
         if (cart[index].quantity > 1) {
           cart[index].quantity--;
         } else {
-          cart.splice(index, 1); // Remove item if quantity is 1
+          cart.splice(index, 1);
         }
         saveCart();
         updateCartDisplay();
       }
 
-      // Add event listeners to "Tambahkan ke Keranjang" buttons
+      // Add event listeners to "Add to Cart" buttons
       document.querySelectorAll('.add-to-cart-button').forEach(button => {
         button.addEventListener('click', (event) => {
           const name = event.target.dataset.name;
@@ -929,9 +1391,17 @@
         });
       });
 
+      // FAQ Toggle Functionality
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+          const item = question.parentElement;
+          item.classList.toggle('active');
+        });
+      });
+
       // Language Switcher Functionality
       const langToggle = document.getElementById('langToggle');
-      let currentLang = localStorage.getItem('lang') || 'id'; // Default to Indonesian
+      let currentLang = localStorage.getItem('lang') || 'id';
 
       const translations = {
         'id': {
@@ -941,22 +1411,41 @@
           dashboardLink: "(Pantau status pengiriman Heart Anda di <a href='https://jalustore-dasboard.netlify.app/' target='_blank'>Dashboard Kami</a>)",
           sectionTitle: "💖 Daftar Harga Heart (Hati) Eksklusif",
           sectionIntro: "Temukan berbagai paket Heart dengan penawaran terbaik dan jaminan pengiriman yang efisien. Kami berkomitmen menyediakan layanan terpercaya untuk pengalaman bermain Sky Anda yang lebih baik. <br><strong>Kapasitas Pengiriman Terjamin: Hingga 20 Heart per Hari!</strong> 💫",
+          noteTitle: "**Perhatian Penting Mengenai Pengiriman Heart:**",
+          note1: "Pengiriman Heart di Sky: Children of the Light dilakukan secara bertahap dan membutuhkan <strong>interaksi harian</strong>.",
+          note2: "Estimasi waktu pengiriman di atas didasarkan pada kemampuan kami untuk mengirim hingga <strong>20 Heart per hari</strong>.",
+          note3: "Untuk kelancaran dan kecepatan proses, mohon pastikan Anda <strong>rutin mengirimkan cahaya (light) ke akun kami setiap hari</strong>.",
+          note4: "💲 Harga dalam Dolar Amerika (USD) dan Ringgit Malaysia (MYR) adalah <strong>estimasi</strong> berdasarkan kurs nilai tukar saat ini (1 USD ≈ Rp16.550, 1 MYR ≈ Rp3.545). Harga ini dapat berfluktuasi sesuai perubahan pasar. Mohon konfirmasi harga akhir saat melakukan pemesanan.",
+          faqTitle: "❓ Pertanyaan yang Sering Diajukan",
+          faq1: "Bagaimana cara pembelian heart di JALUSTORE?",
+          faq1Answer: "1. Pilih paket heart yang diinginkan<br>2. Tambahkan ke keranjang<br>3. Lakukan checkout melalui WhatsApp<br>4. Lakukan pembayaran<br>5. Kirim bukti transfer dan ID Sky Anda<br>6. Heart akan dikirim sesuai estimasi",
+          faq2: "Berapa lama pengiriman heart?",
+          faq2Answer: "Pengiriman heart dilakukan secara bertahap dengan estimasi:<br>- 20 heart per hari<br>- Waktu pengiriman sesuai dengan jumlah heart yang dipesan (lihat estimasi di setiap paket)",
+          faq3: "Apakah ada garansi?",
+          faq3Answer: "Kami memberikan garansi 100% jika:<br>- Heart tidak terkirim sesuai jumlah yang dipesan<br>- Ada kesalahan dalam proses pengiriman<br>Hubungi kami melalui WhatsApp untuk klaim garansi.",
+          testimonialTitle: "🌟 Testimoni Pelanggan",
+          testimonial1: "\"Pengiriman sangat cepat! Hati sampai sebelum estimasi. Seller ramah dan profesional. Recommended banget!\"",
+          testimonial1Detail: "Pembeli 200 Heart",
+          testimonial2: "\"Pertama kali beli heart disini dan prosesnya mudah banget. Harganya juga paling murah dibanding yang lain!\"",
+          testimonial2Detail: "Pembeli 80 Heart",
+          testimonial3: "\"Trusted seller! Sudah beberapa kali repeat order dan selalu puas dengan pelayanannya.\"",
+          testimonial3Detail: "Pembeli 540 Heart",
           cartTitle: "🛒 Keranjang Belanja Anda",
+          step1: "1. Keranjang",
+          step2: "2. Pembayaran",
+          step3: "3. Selesai",
           emptyCart: "Keranjang Anda kosong.",
-          total: "Total:",
-          checkoutButton: "Checkout Pesanan",
+          subtotal: "Subtotal",
+          serviceFee: "Biaya Layanan",
+          totalPayment: "Total Pembayaran",
+          checkoutButton: "Lanjut ke Pembayaran",
           addToCart: "Tambahkan ke Keranjang",
           pricePerHeart: "Harga per Heart:",
           deliveryEstimate: "Estimasi Pengiriman:",
-          noteTitle: "**Perhatian Penting Mengenai Pengiriman Heart:**",
-          note1: "Pengiriman Heart di Sky: Children of the Light dilakukan secara bertahap dan membutuhkan **interaksi harian**.",
-          note2: "Estimasi waktu pengiriman di atas didasarkan pada kemampuan kami untuk mengirim hingga **20 Heart per hari**.",
-          note3: "Untuk kelancaran dan kecepatan proses, mohon pastikan Anda **rutin mengirimkan cahaya (light) ke akun kami setiap hari**.",
-          note4: "💲 Harga dalam Dolar Amerika (USD) dan Ringgit Malaysia (MYR) adalah **estimasi** berdasarkan kurs nilai tukar saat ini (1 USD ≈ Rp16.550, 1 MYR ≈ Rp3.545). Harga ini dapat berfluktuasi sesuai perubahan pasar. Mohon konfirmasi harga akhir saat melakukan pemesanan.",
-          footerText: "&copy; 2025 JALUSTORE. Dedikasi untuk Komunitas Sky: Children of the Light.",
           removeItem: "Hapus",
-          heartSuffix: "Heart", // for "40 Heart"
-          daySuffix: "Hari", // for "2 Hari"
+          heartSuffix: "Heart",
+          daySuffix: "Hari",
+          footerText: "&copy; 2025 JALUSTORE. Dedikasi untuk Komunitas Sky: Children of the Light."
         },
         'en': {
           heroTitle: "✨ JALUSTORE ✨",
@@ -965,85 +1454,72 @@
           dashboardLink: "(Monitor your Heart delivery status on <a href='https://jalustore-dasboard.netlify.app/' target='_blank'>Our Dashboard</a>)",
           sectionTitle: "💖 Exclusive Heart Price List",
           sectionIntro: "Discover various Heart packages with the best offers and guaranteed efficient delivery. We are committed to providing reliable service for a better Sky gaming experience. <br><strong>Guaranteed Delivery Capacity: Up to 20 Hearts per Day!</strong> 💫",
+          noteTitle: "**Important Note Regarding Heart Delivery:**",
+          note1: "Heart delivery in Sky: Children of the Light is done in stages and requires <strong>daily interaction</strong>.",
+          note2: "The estimated delivery time above is based on our ability to send up to <strong>20 Hearts per day</strong>.",
+          note3: "For smooth and fast processing, please ensure you <strong>regularly send light to our account every day</strong>.",
+          note4: "💲 Prices in United States Dollars (USD) and Malaysian Ringgit (MYR) are <strong>estimates</strong> based on current exchange rates (1 USD ≈ Rp16,550, 1 MYR ≈ Rp3,545). These prices may fluctuate according to market changes. Please confirm the final price when placing an order.",
+          faqTitle: "❓ Frequently Asked Questions",
+          faq1: "How to buy hearts at JALUSTORE?",
+          faq1Answer: "1. Choose your desired heart package<br>2. Add to cart<br>3. Checkout via WhatsApp<br>4. Make payment<br>5. Send payment proof and your Sky ID<br>6. Hearts will be delivered according to estimate",
+          faq2: "How long does heart delivery take?",
+          faq2Answer: "Heart delivery is done gradually with estimate:<br>- 20 hearts per day<br>- Delivery time depends on the number of hearts ordered (see estimate for each package)",
+          faq3: "Is there any guarantee?",
+          faq3Answer: "We provide 100% guarantee if:<br>- Hearts are not delivered according to the ordered quantity<br>- There are errors in the delivery process<br>Contact us via WhatsApp to claim guarantee.",
+          testimonialTitle: "🌟 Customer Testimonials",
+          testimonial1: "\"Very fast delivery! Hearts arrived before estimate. Seller is friendly and professional. Highly recommended!\"",
+          testimonial1Detail: "200 Hearts Buyer",
+          testimonial2: "\"First time buying hearts here and the process was super easy. The price is also the cheapest compared to others!\"",
+          testimonial2Detail: "80 Hearts Buyer",
+          testimonial3: "\"Trusted seller! Have made several repeat orders and always satisfied with the service.\"",
+          testimonial3Detail: "540 Hearts Buyer",
           cartTitle: "🛒 Your Shopping Cart",
+          step1: "1. Cart",
+          step2: "2. Payment",
+          step3: "3. Complete",
           emptyCart: "Your cart is empty.",
-          total: "Total:",
-          checkoutButton: "Proceed to Checkout",
+          subtotal: "Subtotal",
+          serviceFee: "Service Fee",
+          totalPayment: "Total Payment",
+          checkoutButton: "Proceed to Payment",
           addToCart: "Add to Cart",
           pricePerHeart: "Price per Heart:",
           deliveryEstimate: "Delivery Estimate:",
-          noteTitle: "**Important Note Regarding Heart Delivery:**",
-          note1: "Heart delivery in Sky: Children of the Light is done in stages and requires **daily interaction**.",
-          note2: "The estimated delivery time above is based on our ability to send up to **20 Hearts per day**.",
-          note3: "For smooth and fast processing, please ensure you **regularly send light to our account every day**.",
-          note4: "💲 Prices in United States Dollars (USD) and Malaysian Ringgit (MYR) are **estimates** based on current exchange rates (1 USD ≈ Rp16,550, 1 MYR ≈ Rp3,545). These prices may fluctuate according to market changes. Please confirm the final price when placing an order.",
-          footerText: "&copy; 2025 JALUSTORE. Dedicated to the Sky: Children of the Light Community.",
           removeItem: "Remove",
           heartSuffix: "Hearts",
           daySuffix: "Days",
+          footerText: "&copy; 2025 JALUSTORE. Dedicated to the Sky: Children of the Light Community."
         }
       };
 
       function updateContent(lang) {
-        document.querySelector('h1').innerHTML = translations[lang].heroTitle;
-        document.querySelector('.tagline').textContent = translations[lang].tagline;
-        document.querySelector('.contact-button').textContent = translations[lang].contactButton;
-        document.querySelector('.dashboard-link').innerHTML = translations[lang].dashboardLink;
-        document.querySelector('#hearts-catalog .section-title').textContent = translations[lang].sectionTitle;
-        document.querySelector('#hearts-catalog .section-intro').innerHTML = translations[lang].sectionIntro;
-        
-        // Update Add to Cart buttons
-        document.querySelectorAll('.add-to-cart-button').forEach(button => {
-          button.textContent = translations[lang].addToCart;
+        document.querySelectorAll('[data-translate]').forEach(element => {
+          const key = element.dataset.translate;
+          if (translations[lang][key]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              element.value = translations[lang][key];
+            } else {
+              element.innerHTML = translations[lang][key];
+            }
+          }
         });
 
-        // Update Cart Section
-        document.querySelector('#cart-section .section-title').textContent = translations[lang].cartTitle;
-        document.getElementById('empty-cart-message').textContent = translations[lang].emptyCart;
-        document.getElementById('checkout-button').textContent = translations[lang].checkoutButton;
-
-        // Update Card Details
+        // Update heart cards
         document.querySelectorAll('.heart-card').forEach(card => {
-            const hearts = card.querySelector('h3 strong').textContent.replace(' Heart', '').replace(' Hearts', '');
-            card.querySelector('h3').innerHTML = `<strong>${hearts}</strong> ${translations[lang].heartSuffix} <span class="heart-icon">❤️</span>`;
+          const hearts = card.querySelector('h3 strong').textContent.replace(' Heart', '').replace(' Hearts', '');
+          card.querySelector('h3').innerHTML = `<strong>${hearts}</strong> ${translations[lang].heartSuffix} <span class="heart-icon">❤️</span>`;
 
-            const details = card.querySelector('.card-details');
-            const originalPricePerHeart = details.querySelector('p:nth-child(1)').dataset.original;
-            const originalDeliveryEstimate = details.querySelector('p:nth-child(2)').dataset.original;
+          const details = card.querySelector('.card-details');
+          const originalPricePerHeart = details.querySelector('p:nth-child(1)').dataset.original;
+          const originalDeliveryEstimate = details.querySelector('p:nth-child(2)').dataset.original;
 
-            details.querySelector('p:nth-child(1)').innerHTML = `${translations[lang].pricePerHeart} <strong>${originalPricePerHeart}</strong>`;
-            details.querySelector('p:nth-child(2)').innerHTML = `${translations[lang].deliveryEstimate} <strong>${originalDeliveryEstimate} ${translations[lang].daySuffix}</strong>`;
+          details.querySelector('p:nth-child(1)').innerHTML = `${translations[lang].pricePerHeart} <strong>${originalPricePerHeart}</strong>`;
+          details.querySelector('p:nth-child(2)').innerHTML = `${translations[lang].deliveryEstimate} <strong>${originalDeliveryEstimate} ${translations[lang].daySuffix}</strong>`;
         });
 
-        // Update Note Section
-        const noteElement = document.querySelector('.note');
-        noteElement.innerHTML = `
-          <span class="emoji">⚠️</span> <strong data-translate="noteTitle">${translations[lang].noteTitle}</strong>
-          <ul>
-            <li>${translations[lang].note1}</li>
-            <li>${translations[lang].note2}</li>
-            <li>${translations[lang].note3}</li>
-            <li>${translations[lang].note4}</li>
-          </ul>
-        `;
-        
-        // Update Footer
-        document.querySelector('footer p').innerHTML = translations[lang].footerText;
-
-        // Update Cart Total and WhatsApp message for current language
-        updateCartDisplay(); 
+        // Update cart items
+        updateCartDisplay();
       }
-
-      // Add data-original to card details for translation (run once on DOMContentLoaded)
-      document.querySelectorAll('.heart-card').forEach(card => {
-        const details = card.querySelector('.card-details');
-        if (details.querySelector('p:nth-child(1)') && !details.querySelector('p:nth-child(1)').dataset.original) {
-            details.querySelector('p:nth-child(1)').dataset.original = details.querySelector('p:nth-child(1) strong').textContent;
-        }
-        if (details.querySelector('p:nth-child(2)') && !details.querySelector('p:nth-child(2)').dataset.original) {
-            details.querySelector('p:nth-child(2)').dataset.original = details.querySelector('p:nth-child(2) strong').textContent.replace(' Hari', ''); // Remove ' Hari' for numerical value
-        }
-      });
 
       langToggle.addEventListener('click', () => {
         currentLang = (currentLang === 'id') ? 'en' : 'id';
@@ -1053,10 +1529,15 @@
       });
 
       // Initial content load and cart load
-      loadCart(); // Load cart first
-      updateContent(currentLang); // Then update content based on language
+      loadCart();
+      updateContent(currentLang);
       langToggle.textContent = (currentLang === 'id') ? '🇮🇩 / 🇬🇧' : '🇬🇧 / 🇮🇩';
+
+      // Mark popular items
+      document.querySelectorAll('.heart-card:nth-child(4)').forEach(card => {
+        card.querySelector('.popular-tag').style.display = 'block';
+      });
     });
   </script>
 </body>
-</html>
+          </html>
