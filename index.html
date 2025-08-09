@@ -1,243 +1,849 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JaluStore - Sky: Children of the Light Hearts</title>
+    <title>JaluStore - Top Up Heart Sky: Children of the Light</title>
+    <meta name="description" content="Top Up Heart Sky: Children of the Light termurah, proses cepat dan aman. Dapatkan bonus heart di setiap pembelian!">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
+        /* CSS Variables untuk Palet Warna Pastel */
         :root {
-            --primary: #8a6dff;
-            --secondary: #ff9a8b;
-            --dark: #1a1a2e;
-            --light: #f6fafd;
-            --success: #4caf50;
-            --warning: #ff9800;
-            --error: #f44336;
-            --text-primary: #2d3748;
-            --text-secondary: #4a5568;
-            --bg-gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
+            --bg-color: #FDF6EC; /* Latar belakang utama - krem lembut */
+            --text-color: #5C5470; /* Warna teks utama - ungu tua pudar */
+            --header-bg: #FAF3E0; /* Latar belakang header */
+            --primary-accent: #B39CD0; /* Aksen utama - ungu pastel */
+            --secondary-accent: #FFD166; /* Aksen sekunder */
+            --white-color: #FFFFFF;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --success-color: #4CAF50;
+
+            /* Warna Pastel untuk Kartu Harga */
+            --card-1: #FFDAB9; /* Peach Puff */
+            --card-2: #E6E6FA; /* Lavender */
+            --card-3: #BDE0FE; /* Baby Blue */
+            --card-4: #A8D8EA; /* Light Blue */
+            --card-5: #FFC0CB; /* Pink */
+            --card-6: #C1E1C1; /* Mint Green */
+            --card-7: #F0E68C; /* Khaki */
+            --card-8: #F4D35E; /* Naples Yellow */
+            --card-9: #D8BFD8; /* Thistle */
         }
 
-        [data-theme="dark"] {
-            --text-primary: #f8f9fa;
-            --text-secondary: #e9ecef;
-            --dark: #121212;
-            --light: #1e1e1e;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.25);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
+        /* Reset & Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Noto Sans', 'Segoe UI', Arial, sans-serif;
-            background-color: var(--light);
-            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
-            transition: background-color 0.3s ease;
         }
 
-        /* Sky-themed elements */
-        .sky-header {
-            background: var(--bg-gradient);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sky-header::after {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(to bottom, rgba(138,109,255,0.3), transparent);
-            z-index: 1;
-        }
-
-        .heart-icon {
-            color: #ff4f8b;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        /* Layout */
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 20px;
         }
 
-        /* Add your other styles from style.css here */
-        /* ... */
+        /* Header */
+        .site-header {
+            background-color: var(--header-bg);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--primary-accent);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
 
-        /* Responsive */
+        .site-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-accent);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .site-header .tagline {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.unsplash.com/photo-1607513746994-51f730a44832?q=80&w=1374&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(253, 246, 236, 0.9);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(253, 246, 236, 0.9) 0%, rgba(179, 156, 208, 0.2) 100%);
+            z-index: 0;
+        }
+
+        .hero > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px var(--shadow-color);
+            background-color: var(--white-color);
+            border: 5px solid var(--primary-accent);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            max-width: 500px;
+            margin: 0 auto 20px;
+            color: var(--text-color);
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--primary-accent);
+            color: var(--white-color);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(179, 156, 208, 0.4);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-5px);
+            background-color: #a38cc0;
+        }
+
+        .benefits {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-item i {
+            color: var(--primary-accent);
+            font-size: 1.2rem;
+        }
+        
+        /* Profil Section */
+        #profil {
+            padding: 80px 0;
+            background-color: var(--header-bg);
+        }
+
+        #profil h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--text-color);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        #profil h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+            border-radius: 3px;
+        }
+        
+        .profile-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background-color: var(--white-color);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+        
+        .profile-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 4px solid var(--bg-color);
+        }
+
+        .profile-text h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            margin-bottom: 15px;
+        }
+
+        .profile-text p {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .profile-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Price Section */
+        #harga {
+            padding: 60px 0;
+        }
+
+        #harga h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--text-color);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #harga h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+            border-radius: 3px;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background-color: var(--white-color);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 20px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Memberikan warna pastel berbeda untuk setiap kartu */
+        .price-card:nth-child(9n+1) { background-image: linear-gradient(135deg, var(--card-1), #fff); }
+        .price-card:nth-child(9n+2) { background-image: linear-gradient(135deg, var(--card-2), #fff); }
+        .price-card:nth-child(9n+3) { background-image: linear-gradient(135deg, var(--card-3), #fff); }
+        .price-card:nth-child(9n+4) { background-image: linear-gradient(135deg, var(--card-4), #fff); }
+        .price-card:nth-child(9n+5) { background-image: linear-gradient(135deg, var(--card-5), #fff); }
+        .price-card:nth-child(9n+6) { background-image: linear-gradient(135deg, var(--card-6), #fff); }
+        .price-card:nth-child(9n+7) { background-image: linear-gradient(135deg, var(--card-7), #fff); }
+        .price-card:nth-child(9n+8) { background-image: linear-gradient(135deg, var(--card-8), #fff); }
+        .price-card:nth-child(9n+9) { background-image: linear-gradient(135deg, var(--card-9), #fff); }
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background-color: var(--secondary-accent);
+            color: var(--text-color);
+            padding: 5px 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .price-card .heart-icon {
+            font-size: 4rem;
+            line-height: 1;
+            color: #ff4757;
+            margin-bottom: 10px;
+        }
+
+        .price-card h3 {
+            font-size: 1.8rem;
+            margin: 15px 0 5px 0;
+        }
+
+        .price-card .bonus {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #e84393;
+            margin-top: -5px;
+            margin-bottom: 15px;
+        }
+
+        .price-card .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            margin-bottom: 25px;
+        }
+
+        .price-card .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .price-card .order-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--text-color);
+            color: var(--white-color);
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .price-card .order-button:hover {
+            background-color: #3d3a4b;
+            box-shadow: 0 5px 15px rgba(92, 84, 112, 0.3);
+        }
+
+        /* FAQ Section */
+        #faq {
+            padding: 60px 0;
+        }
+
+        #faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--text-color);
+        }
+
+        .faq-item {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px var(--shadow-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(179, 156, 208, 0.1);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* Payment Methods */
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .payment-method {
+            background-color: var(--white-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+
+        .payment-method img {
+            height: 20px;
+        }
+
+        /* Footer */
+        .site-footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+            border-top: 1px solid #e0d9f0;
+            font-size: 0.9rem;
+            background-color: var(--header-bg);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-link {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--primary-accent);
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Media Query untuk Mobile */
         @media (max-width: 768px) {
-            .container {
-                padding: 0 0.5rem;
+            .site-header h1 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            #profil h2, #harga h2, #faq h2 {
+                font-size: 2rem;
+            }
+
+            .profile-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+                gap: 25px;
+            }
+
+            .profile-logo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-text h3 {
+                font-size: 1.3rem;
+            }
+            
+            .benefits {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .price-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
             }
         }
+
     </style>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Sky-themed Header -->
-    <header class="sky-header">
+
+    <header class="site-header">
         <div class="container">
-            <h1><i class="fas fa-cloud"></i> JaluStore <i class="fas fa-heart heart-icon"></i></h1>
-            <p class="tagline" data-translate="tagline">Get exclusive Hearts for Sky: Children of the Light</p>
-            
-            <div class="badges">
-                <span class="badge" data-translate="badgeSecure"><i class="fas fa-lock"></i> Secure</span>
-                <span class="badge" data-translate="badgeFast"><i class="fas fa-bolt"></i> Fast</span>
-                <span class="badge" data-translate="badgeGuaranteed"><i class="fas fa-shield-alt"></i> Guaranteed</span>
-            </div>
+            <h1><i class="fas fa-heart"></i> JaluStore</h1>
+            <p class="tagline">Top Up Heart Sky: Children of the Light - Aman, Cepat, Terpercaya</p>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container">
-        <!-- Candle & Heart Animation -->
-        <section class="animation-section">
-            <div class="sky-candle">
-                <div class="sky-flame"></div>
+    <main>
+        <section class="hero">
+    <div class="container">
+        <img src="<a href="https://freeimage.host/i/FLujuQ2"><img src="https://iili.io/FLujuQ2.md.png" alt="FLujuQ2.md.png" border="0"></a>">
+        
+        <h2>Top Up Heart Sky dengan Harga Termurah!</h2>
+        <p>Proses cepat, pembayaran mudah, dan dijamin aman. Dapatkan bonus heart di setiap pembelian paket besar!</p>
+        <a href="#harga" class="hero-cta" id="scroll-to-prices">
+            <i class="fas fa-shopping-cart"></i> Pesan Sekarang
+        </a>
+        
+        <div class="benefits">
+            <div class="benefit-item">
+                <i class="fas fa-bolt"></i>
+                <span>Proses Cepat</span>
             </div>
-            <div class="sky-heart-container">
-                <div class="sky-heart"></div>
+            <div class="benefit-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>100% Aman</span>
             </div>
-        </section>
-
-        <!-- Products Section -->
-        <section id="products">
-            <h2 class="section-title" data-translate="sectionTitle"><i class="fas fa-gem"></i> Heart Packages</h2>
-            <p class="section-intro" data-translate="sectionIntro">Choose your package below</p>
-            
-            <div class="heart-cards-container"></div>
-            
-            <div class="notes">
-                <h3 data-translate="noteTitle">Important Notes:</h3>
-                <ul>
-                    <li data-translate="note1">Daily interaction required</li>
-                    <li data-translate="note2">20 Hearts per day delivery</li>
-                    <li data-translate="note3">Send light daily for smooth process</li>
-                    <li data-translate="note4">Currency rates may fluctuate</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Cart Section -->
-        <section id="cart-section">
-            <h2 class="cart-title" data-translate="cartTitle"><i class="fas fa-shopping-cart"></i> Your Cart</h2>
-            <div id="empty-cart-message" data-translate="emptyCart">Your cart is empty</div>
-            
-            <div id="cart-form">
-                <div id="cart-items"></div>
-                
-                <form class="cart-form">
-                    <div class="form-group">
-                        <label for="sky-id" data-translate="skyIdLabel">Sky ID</label>
-                        <input type="text" id="sky-id" placeholder="https://sky.thatg.co/..." required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="sky-ign" data-translate="skyIgnLabel">In-Game Name</label>
-                        <input type="text" id="sky-ign" placeholder="Your Sky name" required>
-                    </div>
-                    
-                    <div class="form-group coupon-group">
-                        <label for="coupon-input">Coupon Code</label>
-                        <div class="coupon-input">
-                            <input type="text" id="coupon-input" placeholder="Enter coupon code">
-                            <button type="button" id="apply-coupon-button">Apply</button>
-                        </div>
-                    </div>
-                    
-                    <div class="cart-summary">
-                        <div class="summary-row">
-                            <span data-translate="subtotal">Subtotal</span>
-                            <span id="cart-subtotal">Rp 0</span>
-                        </div>
-                        <div class="summary-row" id="discount-row">
-                            <span data-translate="discount">Discount</span>
-                            <span id="cart-discount">- Rp 0</span>
-                        </div>
-                        <div class="summary-row total-row">
-                            <span data-translate="totalPayment">Total</span>
-                            <span id="cart-total">Rp 0</span>
-                        </div>
-                    </div>
-                    
-                    <button type="button" id="checkout-button" class="checkout-button" disabled>
-                        <span data-translate="checkoutButton">Proceed to Payment</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </form>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section id="faq">
-            <h2 class="faq-title" data-translate="faqTitle"><i class="fas fa-question-circle"></i> FAQs</h2>
-            <div class="faq-container"></div>
-        </section>
-
-        <!-- Testimonials -->
-        <section id="testimonials">
-            <h2 class="testimonial-title" data-translate="testimonialTitle"><i class="fas fa-star"></i> Testimonials</h2>
-            <div class="testimonial-grid"></div>
-        </section>
-    </main>
-
-    <!-- Confirmation Modal -->
-    <div id="confirmation-modal" class="modal">
-        <div class="modal-content sky-modal-content">
-            <div class="modal-header">
-                <h3 data-translate="modalTitle">Confirm Order</h3>
-                <button id="cancel-checkout">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div id="modal-summary"></div>
-            </div>
-            <div class="modal-footer">
-                <button id="confirm-checkout-wa" class="whatsapp-button">
-                    <span data-translate="modalConfirm">Confirm & Chat on WA</span>
-                    <i class="fab fa-whatsapp"></i>
-                </button>
+            <div class="benefit-item">
+                <i class="fas fa-gift"></i>
+                <span>Bonus Heart</span>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Toast Notifications -->
-    <div id="toast-container"></div>
+        <section id="profil">
+            <div class="container">
+                <h2>Tentang JaluStore</h2>
+                <div class="profile-content">
+                    <img src="http://googleusercontent.com/file_content/0" alt="Logo JaluStore" class="profile-logo">
+                    <div class="profile-text">
+                        <h3>Penyedia Heart Terpercaya untuk Petualangan Sky Anda!</h3>
+                        <p>JaluStore lahir dari kecintaan yang mendalam terhadap dunia magis <strong>Sky: Children of the Light</strong>. Kami adalah sesama pemain yang memahami betapa pentingnya 'Heart' untuk menjalin pertemanan, membuka item eksklusif, dan menikmati setiap momen dalam game.</p>
+                        <p>Misi kami sederhana: menyediakan layanan top up Heart yang <strong>Aman</strong>, <strong>Cepat</strong>, dan dengan <strong>Harga Terbaik</strong>. Kami menjamin setiap transaksi diproses secara legal melalui sistem gift dalam game, tanpa memerlukan password atau login akun Anda. Selamat datang di JaluStore, tempat di mana petualangan Anda menjadi lebih bersinar!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Theme/Language Toggles -->
-    <div class="controls">
-        <button id="themeToggle" title="Toggle theme">🌙</button>
-        <button id="langToggle" title="Toggle language">🇬🇧</button>
-    </div>
+        <section id="harga">
+            <div class="container">
+                <h2>Daftar Harga Heart</h2>
+                <div class="price-grid">
+                    <div class="price-card">
+                        <div class="heart-icon">❤️</div>
+                        <h3>40 🤍</h3>
+                        <p class="price">Rp 5.000 <small>/heart</small></p>
+                        <a href="https://wa.me/6285363625159?text=Halo%20JaluStore,%20Saya%20mau%20order%20Heart%20Sky%2040%E2%9D%A4%EF%B8%8F%20seharga%20Rp%205.000." class="order-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                    <div class="price-card">
+                        <div class="heart-icon">❤️</div>
+                        <h3>80 🤍</h3>
+                        <p class="price">Rp 10.000 <small>/heart</small></p>
+                        <a href="https://wa.me/6285363625159?text=Halo%20JaluStore,%20Saya%20mau%20order%20Heart%20Sky%2080%E2%9D%A4%EF%B8%8F%20seharga%20Rp%2010.000." class="order-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                    <div class="price-card">
+                        <div class="heart-icon">❤️</div>
+                        <h3>120 🤍</h3>
+                        <p class="price">Rp 15.000 <small>/heart</small></p>
+                        <a href="https://wa.me/6285363625159?text=Halo%20JaluStore,%20Saya%20mau%20order%20Heart%20Sky%20120%E2%9D%A4%EF%B8%8F%20seharga%20Rp%2015.000." class="order-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                    <div class="price-card">
+                        <div class="heart-icon">❤️</div>
+                        <h3>200 🤍</h3>
+                        <p class="price">Rp 20.000 <small>/heart</small></p>
+                        <a href="https://wa.me/6285363625159?text=Halo%20JaluStore,%20Saya%20mau%20order%20Heart%20Sky%20200%E2%9D%A4%EF%B8%8F%20seharga%20Rp%2020.000." class="order-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                    <div class="price-card">
+                        <div class="popular-badge">POPULER</div>
+                        <div class="heart-icon">❤️</div>
+                        <h3>310 🤍</h3>
+                        <span class="bonus">Bonus 10 🤍</span>
+                        <p class="price">Rp 30.000 <small>/heart</small></p>
+                        <a href="https://wa.me/6285363625159?text=Halo%20JaluStore,%20Saya%20mau%20order%20Heart%20Sky%20310%E2%9D%A4%EF%B8%8F%20(Bonus%2010)%20seharga%20Rp%2030.000." class="order-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                    <div class="price-card">
+                        <div class="heart-icon">❤️</div>
+                        <h3>420 🤍</h3>
+                        <span class="bonus">Bonus 20 🤍</span>
+                        <p class="price">Rp 40.000 <small>/heart</small></p>
+                        <a href="https://wa.me/6285363625159?text=Halo%20JaluStore,%20Saya%20mau%20order%20Heart%20Sky%20420%E2%9D%A4%EF%B8%8F%20(Bonus%2020)%20seharga%20Rp%2040.000." class="order-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                    <div class="price-card">
+                        <div class="heart-icon">❤️</div>
+                        <h3>540 🤍</h3>
+                        <span class="bonus">Bonus 40 🤍</span>
+                        <p class="price">Rp 50.000 <small>/heart</small></p>
+                        <a href="https://wa.me/6285363625159?text=Halo%20JaluStore,%20Saya%20mau%20order%20Heart%20Sky%20540%E2%9D%A4%EF%B8%8F%20(Bonus%2040)%20seharga%20Rp%2050.000." class="order-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                    <div class="price-card">
+                        <div class="heart-icon">❤️</div>
+                        <h3>880 🤍</h3>
+                        <span class="bonus">Bonus 80 🤍</span>
+                        <p class="price">Rp 80.000 <small>/heart</small></p>
+                        <a href="https://wa.me/6285363625159?text=Halo%20JaluStore,%20Saya%20mau%20order%20Heart%20Sky%20880%E2%9D%A4%EF%B8%8F%20(Bonus%2080)%20seharga%20Rp%2080.000." class="order-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                    <div class="price-card">
+                        <div class="heart-icon">❤️</div>
+                        <h3>1100 🤍</h3>
+                        <span class="bonus">Bonus 100 🤍</span>
+                        <p class="price">Rp 100.000 <small>/heart</small></p>
+                        <a href="https://wa.me/6285363625159?text=Halo%20JaluStore,%20Saya%20mau%20order%20Heart%20Sky%201100%E2%9D%A4%EF%B8%8F%20(Bonus%20100)%20seharga%20Rp%20100.000." class="order-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
+        <section id="faq">
+            <div class="container">
+                <h2>Pertanyaan Umum</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Bagaimana cara memesan heart di JaluStore?</div>
+                    <div class="faq-answer">
+                        <p>Anda bisa langsung klik tombol "Order via WhatsApp" pada paket yang diinginkan, atau hubungi kami via WhatsApp di nomor 0853-6362-5159 dengan menyertakan:</p>
+                        <ul>
+                            <li>Nama in-game Sky Anda</li>
+                            <li>Platform yang digunakan (Mobile/PC/Console)</li>
+                            <li>Jumlah heart yang ingin dipesan</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Berapa lama proses pengiriman heart?</div>
+                    <div class="faq-answer">
+                        <p>Proses pengiriman biasanya memakan waktu 10-30 menit setelah pembayaran dikonfirmasi. Waktu bisa lebih lama jika ada banyak antrian order.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Metode pembayaran apa saja yang diterima?</div>
+                    <div class="faq-answer">
+                        <p>Kami menerima pembayaran melalui:</p>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <i class="fas fa-wallet"></i> Dana
+                            </div>
+                            <div class="payment-method">
+                                <i class="fas fa-mobile-alt"></i> OVO
+                            </div>
+                            <div class="payment-method">
+                                <i class="fas fa-qrcode"></i> QRIS
+                            </div>
+                            <div class="payment-method">
+                                <i class="fas fa-university"></i> Transfer Bank
+                            </div>
+                            <div class="payment-method">
+                                <i class="fab fa-shopify"></i> ShopeePay
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Apakah aman melakukan top up di JaluStore?</div>
+                    <div class="faq-answer">
+                        <p>JaluStore telah melayani ribuan transaksi top up heart dengan aman. Kami tidak meminta akses ke akun Sky Anda - heart dikirim melalui sistem friend dan gift resmi dari game.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Bagaimana jika heart tidak masuk setelah pembayaran?</div>
+                    <div class="faq-answer">
+                        <p>Jika dalam 1 jam heart belum juga masuk, silakan hubungi kami via WhatsApp dengan menyertakan bukti transfer. Tim kami akan segera memproses dan memeriksa order Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/6285363625159" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2025 JaluStore. All Rights Reserved.</p>
+            <p>Website ini tidak berafiliasi dengan thatgamecompany. Sky: Children of the Light adalah merek dagang milik thatgamecompany.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6285363625159" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // JavaScript untuk smooth scroll
+        document.getElementById('scroll-to-prices').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Update link WhatsApp untuk menyertakan detail pesanan
+        document.querySelectorAll('.order-button').forEach(button => {
+            const card = button.closest('.price-card');
+            const hearts = card.querySelector('h3').textContent;
+            const price = card.querySelector('.price').textContent;
+            const bonus = card.querySelector('.bonus') ? card.querySelector('.bonus').textContent : '';
+            
+            let message = `Halo JaluStore, Saya mau order Heart Sky paket ${hearts}`;
+            if (bonus) message += ` (${bonus})`;
+            message += ` seharga ${price}.`;
+            
+            button.href = `https://wa.me/6285363625159?text=${encodeURIComponent(message)}`;
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+                
+                // Tutup FAQ lainnya yang terbuka
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    if (faq !== item && faq.classList.contains('active')) {
+                        faq.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Animasi saat scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.profile-content, .price-card, .faq-item').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+
 </body>
-    </html>
+</html>
