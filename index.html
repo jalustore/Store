@@ -1,150 +1,243 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8" />
-    <title>JALUSTORE - Jual Heart Sky: Children of the Light</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Beli Heart Sky: Children of the Light dengan harga terbaik. Pengiriman cepat dan aman. Garansi 100%. Upgrade pengalaman Sky Anda bersama kami.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/style.css">
+    <title>JaluStore - Sky: Children of the Light Hearts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8a6dff;
+            --secondary: #ff9a8b;
+            --dark: #1a1a2e;
+            --light: #f6fafd;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --error: #f44336;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --bg-gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        [data-theme="dark"] {
+            --text-primary: #f8f9fa;
+            --text-secondary: #e9ecef;
+            --dark: #121212;
+            --light: #1e1e1e;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.25);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans', 'Segoe UI', Arial, sans-serif;
+            background-color: var(--light);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Sky-themed elements */
+        .sky-header {
+            background: var(--bg-gradient);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sky-header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(138,109,255,0.3), transparent);
+            z-index: 1;
+        }
+
+        .heart-icon {
+            color: #ff4f8b;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Add your other styles from style.css here */
+        /* ... */
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="overlay">
-        <div class="page-controls">
-            <div class="language-switcher">
-                <button id="langToggle" aria-label="Toggle language">🇮🇩</button>
-            </div>
-            <div class="theme-switcher">
-                <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    <!-- Sky-themed Header -->
+    <header class="sky-header">
+        <div class="container">
+            <h1><i class="fas fa-cloud"></i> JaluStore <i class="fas fa-heart heart-icon"></i></h1>
+            <p class="tagline" data-translate="tagline">Get exclusive Hearts for Sky: Children of the Light</p>
+            
+            <div class="badges">
+                <span class="badge" data-translate="badgeSecure"><i class="fas fa-lock"></i> Secure</span>
+                <span class="badge" data-translate="badgeFast"><i class="fas fa-bolt"></i> Fast</span>
+                <span class="badge" data-translate="badgeGuaranteed"><i class="fas fa-shield-alt"></i> Guaranteed</span>
             </div>
         </div>
+    </header>
 
-        <header>
-            <h1 class="hero-float" data-translate="heroTitle">✨ JALUSTORE ✨</h1>
-            <div class="trust-badges">
-                <div class="trust-badge" data-translate="badgeSecure"><span>🔒</span> Transaksi Aman</div>
-                <div class="trust-badge" data-translate="badgeFast"><span>⚡</span> Proses Cepat</div>
-                <div class="trust-badge" data-translate="badgeGuaranteed"><span>💯</span> Garansi 100%</div>
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Candle & Heart Animation -->
+        <section class="animation-section">
+            <div class="sky-candle">
+                <div class="sky-flame"></div>
             </div>
-            <p class="tagline" data-translate="tagline">
-                Dapatkan Hearts eksklusif untuk Sky: Children of the Light dengan harga terbaik, proses cepat, dan jaminan keamanan transaksi.
-            </p>
-            <a href="#hearts-catalog" class="contact-button scroll-link" data-translate="contactButton">
-                🛒 Lihat Paket Heart
-            </a>
-            <div class="order-tracking">
-                <a href="https://jalustore-dasboard.netlify.app/" target="_blank" class="track-order-button" data-translate="trackOrderButton">
-                    🚚 Lacak Pesanan Anda
-                </a>
+            <div class="sky-heart-container">
+                <div class="sky-heart"></div>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <section id="hearts-catalog">
-                <h2 class="section-title" data-translate="sectionTitle">💖 Daftar Harga Heart Eksklusif</h2>
-                <p class="section-intro" data-translate="sectionIntro">
-                    Pilih paket yang paling sesuai untukmu! Kami menjamin pengiriman hingga <strong>20 Heart per hari</strong> untuk mempercepat progres Anda di dunia Sky.
-                </p>
-
-                <div class="heart-cards-container">
-                    </div>
-
-                <div class="note" data-translate="noteSection">
-                    <p>⚠️ <strong data-translate="noteTitle">Perhatian Penting:</strong></p>
-                    <ul>
-                        <li data-translate="note1">Pengiriman Heart membutuhkan <strong>interaksi harian</strong> di dalam game.</li>
-                        <li data-translate="note2">Estimasi waktu didasarkan pada kapasitas pengiriman <strong>20 Heart/hari</strong>.</li>
-                        <li data-translate="note3">Pastikan Anda <strong>rutin mengirim cahaya (light)</strong> ke akun kami setiap hari untuk kelancaran proses.</li>
-                        <li data-translate="note4">Harga dalam USD & MYR adalah <strong>estimasi</strong> dan dapat berubah sesuai kurs.</li>
-                    </ul>
-                </div>
-            </section>
+        <!-- Products Section -->
+        <section id="products">
+            <h2 class="section-title" data-translate="sectionTitle"><i class="fas fa-gem"></i> Heart Packages</h2>
+            <p class="section-intro" data-translate="sectionIntro">Choose your package below</p>
             
-            <section id="cart-section" style="display: none;">
-                <h2 class="section-title" data-translate="cartTitle">🛒 Keranjang Belanja Anda</h2>
+            <div class="heart-cards-container"></div>
+            
+            <div class="notes">
+                <h3 data-translate="noteTitle">Important Notes:</h3>
+                <ul>
+                    <li data-translate="note1">Daily interaction required</li>
+                    <li data-translate="note2">20 Hearts per day delivery</li>
+                    <li data-translate="note3">Send light daily for smooth process</li>
+                    <li data-translate="note4">Currency rates may fluctuate</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart-section">
+            <h2 class="cart-title" data-translate="cartTitle"><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+            <div id="empty-cart-message" data-translate="emptyCart">Your cart is empty</div>
+            
+            <div id="cart-form">
+                <div id="cart-items"></div>
                 
-                <div class="buyer-data-form">
+                <form class="cart-form">
                     <div class="form-group">
-                        <label for="sky-id" data-translate="skyIdLabel">Sky ID (Kode QR/Link)</label>
-                        <input type="text" id="sky-id" name="sky-id" placeholder="Contoh: https://sky.thatg.co/..." required>
+                        <label for="sky-id" data-translate="skyIdLabel">Sky ID</label>
+                        <input type="text" id="sky-id" placeholder="https://sky.thatg.co/..." required>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="sky-ign" data-translate="skyIgnLabel">Nama Dalam Game (IGN)</label>
-                        <input type="text" id="sky-ign" name="sky-ign" placeholder="Contoh: Alex" required>
+                        <label for="sky-ign" data-translate="skyIgnLabel">In-Game Name</label>
+                        <input type="text" id="sky-ign" placeholder="Your Sky name" required>
                     </div>
-                </div>
-
-                <div id="cart-items">
-                    <p id="empty-cart-message" data-translate="emptyCart">Keranjang Anda kosong.</p>
-                </div>
-                
-                <div class="cart-summary">
-                    <div class="summary-row" id="coupon-row">
-                        <input type="text" id="coupon-input" placeholder="Masukkan Kode Kupon">
-                        <button id="apply-coupon-button">Apply</button>
+                    
+                    <div class="form-group coupon-group">
+                        <label for="coupon-input">Coupon Code</label>
+                        <div class="coupon-input">
+                            <input type="text" id="coupon-input" placeholder="Enter coupon code">
+                            <button type="button" id="apply-coupon-button">Apply</button>
+                        </div>
                     </div>
-                    <div class="summary-row">
-                        <span data-translate="subtotal">Subtotal</span>
-                        <span id="cart-subtotal">Rp 0</span>
+                    
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span data-translate="subtotal">Subtotal</span>
+                            <span id="cart-subtotal">Rp 0</span>
+                        </div>
+                        <div class="summary-row" id="discount-row">
+                            <span data-translate="discount">Discount</span>
+                            <span id="cart-discount">- Rp 0</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span data-translate="totalPayment">Total</span>
+                            <span id="cart-total">Rp 0</span>
+                        </div>
                     </div>
-                    <div class="summary-row" id="discount-row" style="display: none;">
-                        <span data-translate="discount">Diskon</span>
-                        <span id="cart-discount">- Rp 0</span>
-                    </div>
-                    <div class="summary-row total">
-                        <strong data-translate="totalPayment">Total Pembayaran</strong>
-                        <strong id="cart-total">Rp 0</strong>
-                    </div>
-                </div>
-
-                <div class="payment-methods">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_ovo_purple.svg/1200px-Logo_ovo_purple.svg.png" alt="OVO" title="OVO">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/1200px-Logo_dana_blue.svg.png" alt="DANA" title="DANA">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_BNI_46.svg/1200px-Logo_BNI_46.svg.png" alt="BNI" title="BNI">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/1200px-Bank_Central_Asia.svg.png" alt="BCA" title="BCA">
-                </div>
-
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button id="checkout-button" class="contact-button" disabled>
-                        <span data-translate="checkoutButton">Lanjut ke Pembayaran</span>
+                    
+                    <button type="button" id="checkout-button" class="checkout-button" disabled>
+                        <span data-translate="checkoutButton">Proceed to Payment</span>
+                        <i class="fas fa-arrow-right"></i>
                     </button>
-                </div>
-            </section>
+                </form>
+            </div>
+        </section>
 
-            <section id="faq">
-                <h2 class="section-title" data-translate="faqTitle">❓ Pertanyaan Umum</h2>
-                <div class="faq-container">
-                    </div>
-            </section>
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2 class="faq-title" data-translate="faqTitle"><i class="fas fa-question-circle"></i> FAQs</h2>
+            <div class="faq-container"></div>
+        </section>
 
-            <section id="testimonials">
-                <h2 class="section-title" data-translate="testimonialTitle">🌟 Testimoni Pelanggan</h2>
-                <div class="testimonial-grid">
-                    </div>
-            </section>
-        </main>
+        <!-- Testimonials -->
+        <section id="testimonials">
+            <h2 class="testimonial-title" data-translate="testimonialTitle"><i class="fas fa-star"></i> Testimonials</h2>
+            <div class="testimonial-grid"></div>
+        </section>
+    </main>
 
-        <footer>
-            <p data-translate="footerText">&copy; 2025 JALUSTORE. Didedikasikan untuk Komunitas Sky: Children of the Light.</p>
-        </footer>
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content sky-modal-content">
+            <div class="modal-header">
+                <h3 data-translate="modalTitle">Confirm Order</h3>
+                <button id="cancel-checkout">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-summary"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-checkout-wa" class="whatsapp-button">
+                    <span data-translate="modalConfirm">Confirm & Chat on WA</span>
+                    <i class="fab fa-whatsapp"></i>
+                </button>
+            </div>
+        </div>
     </div>
-    
+
+    <!-- Toast Notifications -->
     <div id="toast-container"></div>
 
-    <div id="confirmation-modal" class="modal-backdrop" style="display: none;">
-        <div class="modal-content">
-            <h3 data-translate="modalTitle">Konfirmasi Pesanan Anda</h3>
-            <div id="modal-summary">
-                </div>
-            <div class="modal-actions">
-                <button id="cancel-checkout" class="button-secondary" data-translate="modalCancel">Batal</button>
-                <a id="confirm-checkout-wa" href="#" target="_blank" class="button-primary" data-translate="modalConfirm">Konfirmasi & Chat WA</a>
-            </div>
-        </div>
+    <!-- Theme/Language Toggles -->
+    <div class="controls">
+        <button id="themeToggle" title="Toggle theme">🌙</button>
+        <button id="langToggle" title="Toggle language">🇬🇧</button>
     </div>
-    
-    <script src="js/script.js"></script>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
-</html>
+    </html>
